@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>퍼리업 전투 프로토타입</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #0e0b08; overflow: hidden; }
+    #game { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+    canvas { image-rendering: auto; }
+    /* 폰트 프리로드 (캔버스 텍스트가 첫 렌더에 폴백 폰트로 찍히는 것 방지) */
+    #fontwarm { position: absolute; left: -9999px; top: -9999px; font-family: "Noto Sans KR"; }
+  </style>
+</head>
+<body>
+  <div id="fontwarm"><span style="font-weight:400">가</span><span style="font-weight:700">가</span></div>
+  <div id="game"></div>
+
+  <script src="vendor/phaser.min.js"></script>
+
+  <!-- 데이터 (기획 수치는 여기서 조정) -->
+  <script src="data/balance.js"></script>
+  <script src="data/characters.js"></script>
+  <script src="data/stages.js"></script>
+  <script src="data/enemies.js"></script>
+
+  <!-- 코어 로직 (렌더링과 분리) -->
+  <script src="src/core/rng.js"></script>
+  <script src="src/core/stagegen.js"></script>
+  <script src="src/core/battle.js"></script>
+  <script src="src/core/run.js"></script>
+
+  <!-- UI / 씬 -->
+  <script src="src/ui/theme.js"></script>
+  <script src="src/flow.js"></script>
+  <script src="src/scenes/BootScene.js"></script>
+  <script src="src/scenes/TitleScene.js"></script>
+  <script src="src/scenes/PickScene.js"></script>
+  <script src="src/scenes/FormationScene.js"></script>
+  <script src="src/scenes/BattleScene.js"></script>
+  <script src="src/scenes/StoryScene.js"></script>
+  <script src="src/scenes/EventScene.js"></script>
+  <script src="src/scenes/ShopScene.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>

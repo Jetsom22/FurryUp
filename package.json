@@ -1,0 +1,10 @@
+{
+  "name": "furryup-battle-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "퍼리업 전투 프로토타입 (Phaser 3, 정적 사이트)",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "node tests/engine.test.js"
+  }
+}
