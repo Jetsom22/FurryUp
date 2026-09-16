@@ -134,7 +134,7 @@ var ShopScene = new Phaser.Class({
       var t1 = self.add.text(x + 120, y + 14, '물품 ' + (i + 1), T.style(14, T.muted)); self.shopLayer.add(t1); self.shopItems.push(t1);
       var t2 = self.add.text(x + 120, y + 36, c.name, T.style(c.name.length > 6 ? 12 : c.name.length > 4 ? 15 : 18, T.text, { fontStyle: 'bold' })); self.shopLayer.add(t2); self.shopItems.push(t2);
       var t3 = self.add.text(x + 120, y + 62, c.role + ' · ' + c.typeName, T.style(13, T.ROLE_COLOR[c.role])); self.shopLayer.add(t3); self.shopItems.push(t3);
-      var t4 = self.add.text(x + 120, y + 84, 'HP ' + c.hp + '\n공 ' + c.atk + ' 방 ' + c.def + ' 마 ' + c.mag + ' 속 ' + c.spd, T.style(12, T.muted)); self.shopLayer.add(t4); self.shopItems.push(t4);
+      var t4 = self.add.text(x + 120, y + 84, 'HP ' + c.hp + '\n공 ' + c.atk + ' 방 ' + c.def + ' 속 ' + c.spd, T.style(12, T.muted)); self.shopLayer.add(t4); self.shopItems.push(t4);
       var b = T.button(self, x + 10, y + 124, 180, 44, item.sold ? '구매 완료' : '가격 : ' + item.price + ' G', function () { if (run.buy(item)) { self.selectedId = item.id; self.render(); } }, { fontSize: 17, enabled: !item.sold && run.gold >= item.price, fill: item.sold ? 0x2a241c : T.accent });
       self.shopLayer.add(b); self.shopItems.push(b);
     });

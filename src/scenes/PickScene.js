@@ -8,7 +8,7 @@ var PickScene = new Phaser.Class({
     var run = Flow.run(this);
     this.cameras.main.setBackgroundColor(T.bgCss);
     var unlocked = CHARACTERS.filter(function (c) { return !c.locked; }).length;
-    T.header(this, '첫 동료 선택', '전체 ' + CHARACTERS.length + '마리 중 ' + (CHARACTERS.length - unlocked) + '마리는 잠금. 나머지 ' + unlocked + '마리 중 1마리를 선택하세요.  (타입 상성: 육 ▶ 공 ▶ 해 ▶ 육)');
+    T.header(this, '첫 동료 선택', '전체 ' + CHARACTERS.length + '마리 중 ' + (CHARACTERS.length - unlocked) + '마리는 잠금. 나머지 ' + unlocked + '마리 중 1마리를 선택하세요.  (규칙 세트 α-02)');
 
     var selected = null;
     var cells = [];
@@ -46,24 +46,21 @@ var PickScene = new Phaser.Class({
       self.scene.start('FormationScene');
     }, { fontSize: 28, enabled: false });
 
-    var roleDesc = { 암살자: '편성 순서가 가장 낮은 적 우선 공격', 보호자: '스테이지 시작 시 최대 체력의 10% 보호막', 돌격자: '적 처치 시 현재 체력의 5% 회복', 결전자: '턴 8 이상 진행 시 공격/방어/마법 +2', 교란자: '15% 확률로 공격 회피', 추격자: '체력 비율이 가장 낮은 적 우선 공격, 잃은 체력에 비례해 피해 증가', 치유자: '턴 종료 시 가장 다친 아군을 5% 회복' };
-    var elName = { WILD: '야성', ARCANE: '비술', DIVINE: '신성' };
-    var tgtName = { enemy_one: '적 하나', enemy_all: '적 전체', enemy_weakest: '가장 약한 적', self: '자신', ally_one: '아군 하나', ally_weakest: '가장 약한 아군', ally_all: '아군 전체', ally_others: '다른 아군', field_others: '아군 전체' };
-    var skillLine = function (label, s) {
-      if (!s) return '';
-      var head = label + ' ' + s.name + '  [' + (s.element ? elName[s.element] + ' · ' : '') + (tgtName[s.target] || s.target) + (s.tier ? ' · 위력 ' + s.tier : '') + (s.spCost ? ' · 투지 ' + s.spCost : '') + ']';
-      var unsupported = (s.effects || []).filter(function (e) { return BattleEngine.SUPPORTED_EFFECTS.indexOf(e.kw) < 0; }).map(function (e) { return e.kwName; });
-      return head + '\n   ' + s.desc + (unsupported.length ? '\n   (프로토타입 미구현: ' + unsupported.join(', ') + ')' : '');
+    var skillLine = function (label, s, provisional) {
+      if (!s) return label + '  (문서 미정 · ' + provisional + ')';
+      return label + ' ' + s.name + (s.cost !== undefined ? '  [투지 ' + s.cost + (s.priority ? ' · 우선도 +' + s.priority : '') + ']' : '') + '\n   ' + s.desc;
     };
 
     this.refresh = function () {
       cells.forEach(function (cell) { cell.p.setBorder(selected && cell.c.id === selected.id ? T.accent : T.line, selected && cell.c.id === selected.id ? 5 : 3); });
       if (!selected) return;
       var c = selected, p = c.pts;
-      infoName.setText(c.name + (c.nameEn ? '  ' + c.nameEn : ''));
-      infoSub.setText(c.role + ' · ' + c.typeName + ' 타입 · ' + c.species + '\n' + c.desc);
-      infoStats.setText('체력 ' + c.hp + ' (' + p.hp + ')  공격 ' + p.atk + '  물방 ' + p.def + '  마방 ' + p.mag + '  속도 ' + p.spd + '\n역할군: ' + roleDesc[c.role]);
-      infoSkills.setText([skillLine('일반기1', c.skills.basic[0]), skillLine('일반기2', c.skills.basic[1]), skillLine('특수기', c.skills.ultimate), skillLine('패시브(표시만)', c.skills.passive)].join('\n\n'));
+      infoName.setText(c.name);
+      var roleLabel = c.role + (c.sourceRole !== c.role ? ' (문서: ' + c.sourceRole + ')' : '');
+      infoSub.setText(roleLabel + ' · ' + c.typeName + ' 타입 · ' + c.species);
+      infoStats.setText('체력 ' + p.hp + ' (HP ' + c.hp + ')   공격 ' + p.atk + '   방어 ' + p.def + '   속도 ' + p.spd + '   합계 ' + (p.hp + p.atk + p.def + p.spd) + '\n역할군 효과: ' + BALANCE.ROLE[c.role].desc);
+      var RR = BALANCE.RULES;
+      infoSkills.setText([skillLine('패시브', c.passive, '역할군 효과만 적용'), skillLine('스킬', c.skill, '공통 스킬: 투지 ' + RR.skillCost + ', 고정 피해 ' + RR.skillDamage), '기본 공격: max(' + RR.minDamage + ', ⌊공격×' + RR.attackFactor + ' − 방어⌋)' + (c.role === '암살자' ? ' · 가장 뒤 슬롯 우선' : '')].join('\n\n'));
       if (bigP) bigP.destroy();
       bigP = T.portrait(self, ix + iw - 150, iy + 12, 130, c.id, { full: true });
       confirm.setEnabled(true);

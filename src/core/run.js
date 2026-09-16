@@ -82,16 +82,14 @@
       var stats = {
         id: e.id,
         name: e.name || base.name,
-        role: e.role || base.role, roleCode: base.roleCode,
+        role: e.role || base.role, sourceRole: base.sourceRole,
         type: e.type || base.type, typeName: base.typeName,
         hp: Math.floor((e.hp || base.hp) * growth * m.hp),
         atk: r1((e.atk || base.atk) * growth * m.atk),
-        def: r1((e.def || base.def) * growth),
-        mag: r1((e.mag || base.mag) * growth * m.atk),
+        def: e.def || base.def,   // 방어는 배율 없음 (뺄셈식이라 배율을 주면 후반 적이 면역이 됨)
         spd: e.spd || base.spd,
         priority: e.priority || 0,
-        skills: base.skills,
-        skill: base.skill,
+        passive: base.passive, skill: base.skill,
         boss: !!e.boss,
       };
       return root.BattleEngine.makeUnit(stats, 'enemy', i + 1);

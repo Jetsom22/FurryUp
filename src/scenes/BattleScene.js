@@ -127,8 +127,7 @@ var BattleScene = new Phaser.Class({
     c.fightText = this.add.text(fx + 38, top + side.fightY + 16, '투지 ' + u.fight, T.style(15, T.accentCss)).setOrigin(0.5);
     c.add([fightBg, c.fightText]);
     // 능력치 (참고용, 작게)
-    var r1 = function (v) { return Math.round(v * 10) / 10; };
-    c.statText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 42, '공 ' + r1(u.atk) + ' 방 ' + r1(u.def) + ' 마 ' + r1(u.mag) + ' 속 ' + r1(u.spd), T.style(12, T.dim)).setOrigin(isAlly ? 1 : 0, 0);
+    c.statText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 42, '', T.style(12, T.dim)).setOrigin(isAlly ? 1 : 0, 0);
     c.statusText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 60, '', T.style(12, '#e0c080', { wordWrap: { width: side.nameW } })).setOrigin(isAlly ? 1 : 0, 0);
     c.add(c.statusText);
     c.add(c.statText);
@@ -166,13 +165,15 @@ var BattleScene = new Phaser.Class({
     c.hpFill.fillColor = ratio > 0.5 ? T.hpGreen : (ratio > 0.25 ? 0xd8a02c : T.hpRed);
     c.shieldFill.width = Math.min(P - 2, (P - 2) * (u.shield / u.maxHp));
     c.hpText.setText(u.hp + ' / ' + u.maxHp + (u.shield ? '  🛡' + u.shield : ''));
-    c.fightText.setText('투지 ' + u.fight + '/' + BALANCE.FIGHT_MAX);
-    var need = u.skills && u.skills.ultimate ? (u.skills.ultimate.spCost || BALANCE.SKILL_COST_DEFAULT) : BALANCE.SKILL_COST_DEFAULT;
-    c.fightText.setColor(u.fight >= need ? '#ffd166' : T.accentCss);
-    var KW = { boost: '각성', bleed: '출혈', mark: '표식', stun: '기절', silence: '침묵', taunt: '도발', haste: '우선' };
-    var labels = {};
-    (u.statuses || []).forEach(function (st) { var k = st.kw === 'boost' && st.amount < 0 ? '쇠약' : (KW[st.kw] || st.kw); labels[k] = (labels[k] || 0) + 1; });
-    c.statusText.setText(Object.keys(labels).map(function (k) { return k + (labels[k] > 1 ? '×' + labels[k] : ''); }).join(' '));
+    var need = BattleEngine.skillCost(u);
+    c.fightText.setText('투지 ' + u.grit + '/' + need);
+    c.fightText.setColor(u.grit >= need ? '#ffd166' : T.accentCss);
+    var r1 = function (v) { return Math.round(v * 10) / 10; };
+    c.statText.setText('공 ' + r1(u.atk) + ' 방 ' + r1(u.def) + ' 속 ' + r1(u.spd));
+    var st = u.statuses || {}, labels = [];
+    if (st.mark) labels.push('표식'); if (st.stunActions > 0) labels.push('기절'); if (st.poison) labels.push('독' + (st.poison.stage ? st.poison.stage + 1 : '')); if (st.bleed) labels.push('출혈'); if (st.current) labels.push('물살');
+    if (u.charge > 0) labels.push('차지' + u.charge); if (u.fullness > 0) labels.push('배부름' + u.fullness); if (u.howlBuff > 0) labels.push('하울링');
+    c.statusText.setText(labels.join(' '));
   },
 
   applyDeath: function (c, instant) {
@@ -277,7 +278,7 @@ var BattleScene = new Phaser.Class({
         this.highlightOrder(ev.uid);
         var dir = actor.unit.side === 'ally' ? 1 : -1;
         actor.setDepth(10);
-        T.floatText(this, actor.centerX, actor.centerY - 90, ev.skillName + (ev.isUltimate ? '!' : ''), ev.isUltimate ? '#ffd166' : '#f0e6d2', ev.isUltimate ? 30 : 22);
+        if (ev.isUltimate) T.floatText(this, actor.centerX, actor.centerY - 90, ev.skillName + '!', '#ffd166', 30);
         this.tweens.add({
           targets: actor, x: 60 * dir, duration: (A.attack / 2) / sp, yoyo: true, ease: 'Quad.easeOut',
           onYoyo: function () {
@@ -321,7 +322,7 @@ var BattleScene = new Phaser.Class({
 
       case 'bleed':
         this.refreshCard(card);
-        T.floatText(this, card.centerX, card.centerY - 40, '-' + ev.amount + ' 출혈', '#e06060', 26);
+        T.floatText(this, card.centerX, card.centerY - 40, '-' + ev.amount + (ev.kw === 'poison' ? ' 독' : ' 출혈'), ev.kw === 'poison' ? '#b070e0' : '#e06060', 26);
         this.time.delayedCall(A.hit / sp, next); break;
 
       case 'status':
@@ -385,7 +386,9 @@ var BattleScene = new Phaser.Class({
       if (s === self.speed) b.setEnabled(false);
       btns.push(b); layer.add(b);
     });
-    layer.add(this.add.text(W / 2, H / 2 + 10, '시드 ' + this.run.seed + '  ·  스테이지 ' + this.run.currentStage().no + ' / ' + this.run.stages.length, T.style(16, T.dim)).setOrigin(0.5));
+    var RR = BALANCE.RULES;
+    layer.add(this.add.text(W / 2, H / 2 - 5, '규칙 세트 α-02 · 피해 = max(' + RR.minDamage + ', ⌊공격×' + RR.attackFactor + ' − 방어⌋) · HP×' + RR.hpMultiplier + ' · 투지 +' + RR.gritGain + '/행동 · 회피 ' + RR.dodgeRate + '%', T.style(14, T.muted)).setOrigin(0.5));
+    layer.add(this.add.text(W / 2, H / 2 + 20, '시드 ' + this.run.seed + '  ·  스테이지 ' + this.run.currentStage().no + ' / ' + this.run.stages.length, T.style(14, T.dim)).setOrigin(0.5));
     layer.add(T.button(this, W / 2 - 210, H / 2 + 50, 420, 56, '아웃게임으로 나가기 (런 포기)', function () { self.scene.start('TitleScene', { message: '런을 포기하고 아웃게임으로 돌아왔습니다.', cleared: false }); }, { fill: T.danger, fontSize: 20 }));
     layer.add(T.button(this, W / 2 - 100, H / 2 + 125, 200, 56, '닫기', function () { layer.destroy(); self.settingsLayer = null; }, { fill: T.panelDark, fontSize: 22 }));
   },
