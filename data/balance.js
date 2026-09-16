@@ -1,58 +1,68 @@
 // =====================================================================
-// 밸런스 상수 (임시값) - 기획서에 수치가 없는 항목을 여기서 한 번에 조정
+// 밸런스 상수 - 기획서/원본 표에 없는 항목을 여기서 한 번에 조정
+// (원본 표에서 온 판정 낱값은 data/rules.js 의 RULES 를 읽는다)
 // =====================================================================
 window.BALANCE = {
-  // ---- 투지 / 스킬 (전투 기획서 p.6 플로우 차트) ----
-  FIGHT_START: 0,          // 스테이지 시작 시 투지
-  FIGHT_MAX: 5,            // 투지 최대치
-  FIGHT_GAIN: 1,           // 공격(일반/스킬 모두) 후 "투지 상승" 값
-  SKILL_COST: 3,           // 스킬 요구 투지. 투지 >= 요구치면 스킬 사용
-  SKILL_MULT: 1.8,         // 스킬 데미지 = 공격력 * SKILL_MULT
+  // ---- 투지 (전투 기획서 p.6 플로우 + 원본 RULES.SP_*) ----
+  FIGHT_START: 0,                                   // 스테이지 시작 시 투지
+  FIGHT_MAX: window.RULES['RULES.SP_MAX'],          // 투지 최대치 (원본 6)
+  FIGHT_GAIN: window.RULES['RULES.SP_GAIN_BASIC'],  // 일반기 사용 후 "투지 상승" 값 (원본 1)
+  // 특수기 요구 투지는 기술 데이터(spCost)를 쓴다. 비어 있으면 아래 기본값
+  SKILL_COST_DEFAULT: window.RULES['RULES.SP_COST_DEFAULT'],
 
-  // ---- 데미지 계산 ----
-  // 데미지 = max(MIN_DAMAGE, floor(공격력 * 배율) - 방어력)
-  MIN_DAMAGE: 1,
+  // ---- 자동 전투 행동 선택 ----
+  AI: {
+    basic2Chance: 0.35,   // 특수기를 못 쓸 때, 투지 비용이 있는 일반기2 를 (쓸 수 있다면) 고를 확률
+  },
 
-  // ---- 역할군 특수 효과 (전투 기획서 p.8) ----
+  // ---- 데미지 계산 (원본 rule.csv 값 + 프로토타입 보정) ----
+  // 데미지 = (공격 능력치 + ATK_OFFSET) × COEF[속성][종류] × POWER_SCALE[위력단계]
+  //          × 방어 경감 × 타입 상성 × 표식/처형 등 배율
+  // 방어 경감 = SCALE / (SCALE + 방어 능력치 × DEF_WEIGHT)   (DEF_WEIGHT 는 프로토타입 임시값)
+  DAMAGE: {
+    DEF_WEIGHT: 6,
+    MIN_DAMAGE: 1,
+    useTypeAdvantage: true,   // 육 > 공 > 해 > 육 (RULES.TYPE_BEATS / ADV_MULT / DIS_MULT)
+  },
+
+  // ---- 역할군 효과 ----
+  // 전투 기획서 p.8 의 5종 + 원본 역할군 설명(추격자/치유자)을 따른 임시 효과 2종
   ROLE: {
     보호자: { shieldRate: 0.10 },                 // 스테이지 시작 시 최대 체력의 10% 보호막
     돌격자: { healRate: 0.05 },                   // 적 처치 시 현재 체력의 5% 회복
-    결전자: { turn: 8, statMult: 1.2 },           // 턴 8 이상 진행 시 공격/방어 20% 증가 (임시)
+    결전자: { turn: 8, statBonus: 2 },            // 턴 8 이상 진행 시 공격/방어/마법 +2 포인트 (임시)
     교란자: { dodgeRate: 0.15 },                  // 15% 확률로 공격 회피
     암살자: {},                                   // 편성 순서가 가장 낮은 적 우선 공격 (로직 내장)
+    추격자: { executeBonus: 0.3 },                // 체력 비율이 가장 낮은 적 우선 공격, 잃은 체력에 비례해 최대 +30% (임시)
+    치유자: { healRate: 0.05 },                   // 턴 종료 시 체력 비율이 가장 낮은 아군을 최대 체력의 5% 회복 (임시)
   },
 
   // ---- 스테이지별 적 능력치 배율 (임시) ----
   ENEMY: {
-    baseMult: 0.8,           // 적 기본 능력치 배율 (아군 대비 약간 약하게)
-    stageGrowth: 0.035,      // 스테이지 인덱스당 능력치 +3.5% (프로토타입엔 아군 성장 수단이 없어 완만하게)
-    midbossMult: { hp: 1.8, atk: 1.2, def: 1.2 },   // 중간보스(1번 슬롯)에만 적용
-    bossMult:    { hp: 3.0, atk: 1.35, def: 1.3 },  // 보스(boss:true)에만 적용
+    baseMult: 0.85,          // 적 기본 배율 (체력·공격·마법)
+    stageGrowth: 0.035,      // 스테이지 번호당 +3.5%
+    midbossMult: { hp: 1.8, atk: 1.15 },   // 중간보스(1번 슬롯)에만 적용
+    bossMult:    { hp: 3.0, atk: 1.3 },    // 보스(boss:true)에만 적용
   },
 
   // ---- 골드 (정비 화면 기획서) ----
   GOLD: {
     start: 100,
     reward: { 일반: 100, 이벤트: 100, 스토리: 50, 중간보스: 200, 보스: 300 },
-    revive: 50,                    // 부활 비용
-    reviveHpRate: 0.5,             // 부활 시 최대 체력 대비 회복 비율
-    characterPrice: [100, 150, 200], // 상점 캐릭터 판매가 후보
+    revive: 50,
+    reviveHpRate: 0.5,
+    characterPrice: [100, 150, 200],
     shopSlots: 4,
+    reroll: 10,
   },
 
   // ---- 이벤트 하위 효과 (임시) ----
   EVENT: {
-    이로운: { healRate: 0.30 },     // 아군 전원 최대 체력의 30% 회복
-    해로운: { damageRate: 0.15 },   // 아군 전원 최대 체력의 15% 피해 (체력 1 이하로는 안 내려감)
-    도박:   { betRate: 0.5, winChance: 0.5, winMult: 2 }, // 골드의 50%를 걸고 50% 확률로 2배 / 실패 시 손실
+    이로운: { healRate: 0.30 },
+    해로운: { damageRate: 0.15 },
+    도박:   { betRate: 0.5, winChance: 0.5, winMult: 2 },
   },
 
   // ---- 연출 속도 (ms) ----
-  ANIM: {
-    orderShow: 700,
-    attack: 520,
-    hit: 260,
-    death: 400,
-    turnGap: 350,
-  },
+  ANIM: { orderShow: 700, attack: 520, hit: 260, death: 400, turnGap: 350 },
 };

@@ -1,0 +1,5214 @@
+{
+  "TYPE_LAND": {
+    "ko": "육",
+    "en": "Land"
+  },
+  "TYPE_SEA": {
+    "ko": "해",
+    "en": "Sea"
+  },
+  "TYPE_AIR": {
+    "ko": "공",
+    "en": "Air"
+  },
+  "ELEM_WILD": {
+    "ko": "야성",
+    "en": "Wild"
+  },
+  "ELEM_ARCANE": {
+    "ko": "신비",
+    "en": "Arcane"
+  },
+  "ELEM_DIVINE": {
+    "ko": "신성",
+    "en": "Divine"
+  },
+  "STAT_hp": {
+    "ko": "체력",
+    "en": "HP"
+  },
+  "STAT_atk": {
+    "ko": "공격력",
+    "en": "ATK"
+  },
+  "STAT_def": {
+    "ko": "방어력",
+    "en": "DEF"
+  },
+  "STAT_mag": {
+    "ko": "마력",
+    "en": "MAG"
+  },
+  "STAT_spd": {
+    "ko": "속도",
+    "en": "SPD"
+  },
+  "STAT_random": {
+    "ko": "무작위 능력치",
+    "en": "a random stat"
+  },
+  "TGT_enemy_one": {
+    "ko": "적 1기",
+    "en": "One enemy"
+  },
+  "TGT_enemy_all": {
+    "ko": "적 전체",
+    "en": "All enemies"
+  },
+  "TGT_field_others": {
+    "ko": "자신 제외 전체",
+    "en": "Everyone but self"
+  },
+  "TGT_enemy_weakest": {
+    "ko": "가장 약한 적",
+    "en": "Weakest enemy"
+  },
+  "TGT_ally_one": {
+    "ko": "아군 1기",
+    "en": "One ally"
+  },
+  "TGT_ally_weakest": {
+    "ko": "체력이 가장 낮은 아군",
+    "en": "Weakest ally"
+  },
+  "TGT_ally_others": {
+    "ko": "자신을 뺀 아군",
+    "en": "Other allies"
+  },
+  "TGT_ally_all": {
+    "ko": "아군 전체",
+    "en": "All allies"
+  },
+  "TGT_self": {
+    "ko": "자신",
+    "en": "Self"
+  },
+  "STA_bleed": {
+    "ko": "출혈",
+    "en": "Bleed"
+  },
+  "STA_stun": {
+    "ko": "기절",
+    "en": "Stun"
+  },
+  "STA_silence": {
+    "ko": "침묵",
+    "en": "Silence"
+  },
+  "STA_mark": {
+    "ko": "표식",
+    "en": "Mark"
+  },
+  "STA_shield": {
+    "ko": "보호",
+    "en": "Shield"
+  },
+  "STA_boost": {
+    "ko": "각성",
+    "en": "Boost"
+  },
+  "STA_boost_down": {
+    "ko": "쇠약",
+    "en": "Weaken"
+  },
+  "STA_haste": {
+    "ko": "우선",
+    "en": "Haste"
+  },
+  "STA_endure": {
+    "ko": "버팀",
+    "en": "Endure"
+  },
+  "STA_immune": {
+    "ko": "면역",
+    "en": "Immune"
+  },
+  "STA_blight": {
+    "ko": "부패",
+    "en": "Blight"
+  },
+  "STA_taunt": {
+    "ko": "도발",
+    "en": "Taunt"
+  },
+  "STA_unbound": {
+    "ko": "간파",
+    "en": "Unbound"
+  },
+  "STA_sheltered": {
+    "ko": "수호",
+    "en": "Shelter"
+  },
+  "STA_swap": {
+    "ko": "전환",
+    "en": "Swap"
+  },
+  "STA_blind": {
+    "ko": "실명",
+    "en": "Blind"
+  },
+  "KW_pierce": {
+    "ko": "방어 {ratio:pct} 관통",
+    "en": "Pierces {ratio:pct} of DEF"
+  },
+  "KW_pierce_HELP": {
+    "ko": "피해를 산출할 때 대상 방어력의 일부를 제외합니다. 방어가 단단한 상대일수록 차이가 큽니다.",
+    "en": "Treats that share of the target's DEF as if it were not there. The tougher the target, the bigger the swing."
+  },
+  "KW_pierce_NAME": {
+    "ko": "관통",
+    "en": "Pierce"
+  },
+  "KW_execute": {
+    "ko": "약한 대상에 최대 +{bonus:pct}",
+    "en": "Up to +{bonus:pct} on wounded targets"
+  },
+  "KW_execute_HELP": {
+    "ko": "대상이 잃은 체력에 비례해 피해량이 증가합니다. 체력이 최대치인 상대에게는 아무것도 붙지 않습니다.",
+    "en": "Hits harder the lower the target's HP. Adds nothing against a target at full HP."
+  },
+  "KW_execute_NAME": {
+    "ko": "처형",
+    "en": "Execute"
+  },
+  "KW_amplify": {
+    "ko": "피해 {mult}배",
+    "en": "{mult}x damage"
+  },
+  "KW_amplify_HELP": {
+    "ko": "조건이 맞을 때만 피해량에 배율이 곱해집니다. 조건은 효과마다 따로 붙습니다.",
+    "en": "Multiplies damage, but only while its condition holds. The condition is attached per effect."
+  },
+  "KW_amplify_NAME": {
+    "ko": "특효",
+    "en": "Amplify"
+  },
+  "KW_desperate": {
+    "ko": "자신이 잃은 체력에 비례해 최대 {bonus:pct} 증가",
+    "en": "Up to +{bonus:pct} scaling with the caster's missing HP"
+  },
+  "KW_desperate_HELP": {
+    "ko": "자신의 체력이 낮을수록 피해가 커집니다. 체력이 가득한 동안에는 배율이 붙지 않습니다.",
+    "en": "The lower the caster's HP, the harder it hits. No effect at full HP."
+  },
+  "KW_desperate_NAME": {
+    "ko": "사투",
+    "en": "Desperate"
+  },
+  "KW_zeal": {
+    "ko": "자신이 보유한 투지에 비례해 최대 {bonus:pct} 증가",
+    "en": "Up to +{bonus:pct} scaling with the caster's spirit"
+  },
+  "KW_zeal_HELP": {
+    "ko": "투지를 많이 들고 있을수록 피해가 커집니다. 투지를 쓰는 기술은 쓰기 전의 투지로 셉니다.",
+    "en": "The more spirit held, the harder it hits. Spirit-spending skills count the amount held before spending."
+  },
+  "KW_zeal_NAME": {
+    "ko": "투기",
+    "en": "Zeal"
+  },
+  "KW_swell": {
+    "ko": "자신의 남은 체력에 비례해 최대 {bonus:pct} 증가",
+    "en": "Up to +{bonus:pct} scaling with the caster's remaining HP"
+  },
+  "KW_swell_HELP": {
+    "ko": "자신의 체력이 높을수록 피해가 커집니다. 깎일수록 배율이 함께 내려갑니다.",
+    "en": "The higher the caster's HP, the harder it hits. No effect at low HP."
+  },
+  "KW_swell_NAME": {
+    "ko": "팽창",
+    "en": "Swell"
+  },
+  "KW_offering": {
+    "ko": "자신에게 걸린 출혈 1점마다 피해 {per:pct} 증가",
+    "en": "+{per:pct} damage per point of the caster's own bleed"
+  },
+  "KW_offering_HELP": {
+    "ko": "자신이 출혈 중일수록 피해가 커집니다. 남이 걸어 준 출혈도 함께 셉니다.",
+    "en": "Scales with the caster's own bleed, whoever inflicted it."
+  },
+  "KW_offering_NAME": {
+    "ko": "제물",
+    "en": "Offering"
+  },
+  "KW_siege": {
+    "ko": "대상 최대 체력의 {ratio:pct}만큼 고정 피해",
+    "en": "Adds flat damage equal to {ratio:pct} of the target's max HP"
+  },
+  "KW_siege_HELP": {
+    "ko": "대상 최대 체력에 비례한 피해가 그대로 더해집니다. 방어력도 상성도 방어 태세도 이 피해를 줄이지 못합니다.",
+    "en": "Flat damage scaling with the target's max HP. Neither DEF, type matchup, nor guarding reduces it."
+  },
+  "KW_siege_NAME": {
+    "ko": "공성",
+    "en": "Siege"
+  },
+  "KW_rally": {
+    "ko": "자신에게 걸린 이로운 상태 하나마다 피해 {per:pct} 증가",
+    "en": "+{per:pct} damage per beneficial status on the caster"
+  },
+  "KW_rally_HELP": {
+    "ko": "자신이 받은 이로운 상태가 많을수록 피해가 커집니다. 아군이 걸어 준 강화도 함께 셉니다.",
+    "en": "Scales with how many buffs the caster carries, including ones cast by allies."
+  },
+  "KW_rally_NAME": {
+    "ko": "고양",
+    "en": "Rally"
+  },
+  "KW_spite": {
+    "ko": "자신에게 걸린 해로운 상태 하나마다 피해 {per:pct} 증가",
+    "en": "+{per:pct} damage per harmful status on the caster"
+  },
+  "KW_spite_HELP": {
+    "ko": "자신이 받은 해로운 상태가 많을수록 피해가 커집니다. 종류가 다른 것끼리만 따로 셉니다.",
+    "en": "Scales with how many harmful statuses the caster carries. No effect when clean."
+  },
+  "KW_spite_NAME": {
+    "ko": "원한",
+    "en": "Spite"
+  },
+  "KW_avenge": {
+    "ko": "쓰러진 아군 하나마다 피해 {per:pct} 증가",
+    "en": "+{per:pct} damage per fallen ally"
+  },
+  "KW_avenge_HELP": {
+    "ko": "내 편에서 쓰러진 수만큼 피해량이 늘어납니다. 스스로 만들 수 있는 조건이 아닙니다.",
+    "en": "Damage rises with the number of fallen allies. You cannot make it happen without losing the match."
+  },
+  "KW_avenge_NAME": {
+    "ko": "설욕",
+    "en": "Avenge"
+  },
+  "KW_bypass": {
+    "ko": "보호막을 무시",
+    "en": "Ignores shields"
+  },
+  "KW_bypass_HELP": {
+    "ko": "대상의 보호막을 지나쳐 체력을 직접 깎습니다. 보호막이 남아 있어도 전투불능이 될 수 있습니다.",
+    "en": "Damage goes past the shield straight to HP. The target can fall with its shield intact."
+  },
+  "KW_bypass_NAME": {
+    "ko": "투과",
+    "en": "Bypass"
+  },
+  "KW_gap": {
+    "ko": "마력이 앞선 1점마다 피해 {per:pct} 증가",
+    "en": "+{per:pct} damage per point of MAG lead"
+  },
+  "KW_gap_HELP": {
+    "ko": "자신의 마력이 대상보다 앞선 만큼 피해가 늘어납니다. 뒤처져 있으면 배율이 붙지 않습니다.",
+    "en": "Scales with how far the caster's MAG leads the target's. No effect when behind."
+  },
+  "KW_gap_NAME": {
+    "ko": "격차",
+    "en": "Gap"
+  },
+  "KW_temper": {
+    "ko": "상성 배율 {ratio:pct}만 적용",
+    "en": "Type multiplier applies at {ratio:pct}"
+  },
+  "KW_temper_HELP": {
+    "ko": "타입 상성 배율을 일부만 적용받습니다. 유리한 상성과 불리한 상성이 함께 무뎌집니다.",
+    "en": "Dulls the type multiplier. Both the bad matchups and the good ones move toward even."
+  },
+  "KW_temper_NAME": {
+    "ko": "상성완화",
+    "en": "Temper"
+  },
+  "KW_recoil": {
+    "ko": "가한 피해의 {ratio:pct} 반동",
+    "en": "Recoil for {ratio:pct} of damage dealt"
+  },
+  "KW_recoil_HELP": {
+    "ko": "가한 피해에 비례해 시전자도 피해를 입습니다. 크게 칠수록 되돌아오는 몫도 커집니다.",
+    "en": "The caster takes damage in proportion to what it dealt. It buys budget back with HP."
+  },
+  "KW_recoil_NAME": {
+    "ko": "반동",
+    "en": "Recoil"
+  },
+  "KW_drain": {
+    "ko": "피해의 {ratio:pct} 흡혈",
+    "en": "Drains {ratio:pct} of damage"
+  },
+  "KW_drain_HELP": {
+    "ko": "가한 피해에 비례해 시전자가 회복합니다. 빗나가거나 피해가 없으면 회복도 없습니다.",
+    "en": "Heals the caster in proportion to damage dealt. No damage, no healing."
+  },
+  "KW_drain_NAME": {
+    "ko": "흡혈",
+    "en": "Drain"
+  },
+  "KW_heal": {
+    "ko": "최대 체력의 {ratio:pct} 회복",
+    "en": "Heals {ratio:pct} of max HP"
+  },
+  "KW_heal_HELP": {
+    "ko": "대상 최대 체력에 비례해 회복시킵니다. 최대치를 넘는 분량은 버려집니다.",
+    "en": "Heals for a share of the target's max HP. Overhealing is discarded."
+  },
+  "KW_heal_NAME": {
+    "ko": "회복",
+    "en": "Heal"
+  },
+  "KW_charge": {
+    "ko": "투지 {amount:signed}",
+    "en": "SP {amount:signed}"
+  },
+  "KW_charge_HELP": {
+    "ko": "시전자의 투지가 증가합니다. 투지는 특수기를 사용하는 데 소모됩니다.",
+    "en": "Raises the caster's SP. SP is what an ultimate costs."
+  },
+  "KW_charge_NAME": {
+    "ko": "투지획득",
+    "en": "Charge"
+  },
+  "KW_siphon": {
+    "ko": "대상 투지 -{amount}",
+    "en": "Target SP -{amount}"
+  },
+  "KW_siphon_HELP": {
+    "ko": "대상의 투지를 감소시킵니다. 상대가 특수기를 쓰는 시점이 늦춰집니다.",
+    "en": "Drains the target's SP, pushing back the moment they can use their ultimate."
+  },
+  "KW_siphon_NAME": {
+    "ko": "투지흡수",
+    "en": "Siphon"
+  },
+  "KW_bleed": {
+    "ko": "{turns}턴간 출혈 {amount}",
+    "en": "Bleed {amount} for {turns} turns"
+  },
+  "KW_bleed_HELP": {
+    "ko": "매 라운드 종료 시 고정 피해를 입습니다. 방어력과 타입 상성을 적용받지 않습니다. 다시 걸면 따로 쌓이고, 각각 제 지속만큼 흐릅니다.",
+    "en": "Deals fixed damage at the end of every round, ignoring DEF and type matchup. Re-applying adds a separate stack that runs out on its own timer."
+  },
+  "KW_bleed_NAME": {
+    "ko": "출혈",
+    "en": "Bleed"
+  },
+  "KW_stun": {
+    "ko": "기절 1턴",
+    "en": "Stunned for 1 turn"
+  },
+  "KW_stun_HELP": {
+    "ko": "한 라운드를 통째로 건너뜁니다. 기술도 방어 태세도 사용할 수 없습니다.",
+    "en": "Skips a whole round. Neither skills nor guarding are available."
+  },
+  "KW_stun_NAME": {
+    "ko": "기절",
+    "en": "Stun"
+  },
+  "KW_silence": {
+    "ko": "침묵 {turns}턴",
+    "en": "Silenced for {turns} turns"
+  },
+  "KW_silence_HELP": {
+    "ko": "특수기만 봉인합니다. 일반기와 방어 태세는 그대로 사용합니다.",
+    "en": "Locks the ultimate only. Basic skills and guarding still work."
+  },
+  "KW_silence_NAME": {
+    "ko": "침묵",
+    "en": "Silence"
+  },
+  "KW_mark": {
+    "ko": "{turns}턴간 받는 피해 +{ratio:pct}",
+    "en": "Takes +{ratio:pct} damage for {turns} turns"
+  },
+  "KW_mark_HELP": {
+    "ko": "부여된 동안 받는 피해량이 증가합니다. 공격자가 누구든 적용됩니다.",
+    "en": "Increases the damage taken while it lasts, no matter who is attacking."
+  },
+  "KW_mark_NAME": {
+    "ko": "표식",
+    "en": "Mark"
+  },
+  "KW_shield": {
+    "ko": "{turns}턴간 최대 체력의 {ratio:pct}만큼 흡수",
+    "en": "Absorbs {ratio:pct} of max HP for {turns} turns"
+  },
+  "KW_shield_HELP": {
+    "ko": "여벌 체력이 생겨 받는 피해를 대신 받습니다. 다 쓰면 지속이 남아 있어도 사라집니다.",
+    "en": "Adds a spare pool that takes damage first. It ends once spent, even if turns remain."
+  },
+  "KW_shield_NAME": {
+    "ko": "보호",
+    "en": "Shield"
+  },
+  "KW_taunt": {
+    "ko": "{turns}턴간 도발",
+    "en": "Taunts for {turns} turns"
+  },
+  "KW_taunt_HELP": {
+    "ko": "적이 하나를 겨누는 기술은 도발한 대상만 지정할 수 있습니다. 적 전체를 치는 기술은 그대로 나갑니다.",
+    "en": "Enemy single-target skills can only aim at the taunting unit. Skills that hit everyone are unaffected."
+  },
+  "KW_taunt_NAME": {
+    "ko": "도발",
+    "en": "Taunt"
+  },
+  "KW_unbind": {
+    "ko": "{turns}턴간 간파",
+    "en": "Unbound for {turns} turns"
+  },
+  "KW_unbind_HELP": {
+    "ko": "적의 도발에 겨눔이 묶이지 않습니다. 수호는 그대로 적용되어 지키는 아군이 대신 맞습니다.",
+    "en": "Enemy taunts no longer force the target. Shelter still applies, so a keeper takes the hit."
+  },
+  "KW_unbind_NAME": {
+    "ko": "간파",
+    "en": "Unbind"
+  },
+  "KW_shelter": {
+    "ko": "{turns}턴간 수호",
+    "en": "Shelters for {turns} turns"
+  },
+  "KW_shelter_HELP": {
+    "ko": "대상 하나를 겨눈 공격을 시전자가 대신 받습니다. 시전자가 쓰러지면 수호는 사라집니다.",
+    "en": "The caster takes single-target attacks aimed at the ward. It ends if the caster falls."
+  },
+  "KW_shelter_NAME": {
+    "ko": "수호",
+    "en": "Shelter"
+  },
+  "KW_boost": {
+    "ko": "{turns}턴간 {stat:@STAT} {amount:signed}",
+    "en": "{stat:@STAT} {amount:signed} for {turns} turns"
+  },
+  "KW_boost_HELP": {
+    "ko": "능력치 하나를 증가시키거나 감소시킵니다. 부호가 양수면 각성이고 음수면 쇠약입니다.",
+    "en": "Raises or lowers one stat. Positive is a buff, negative is a debuff."
+  },
+  "KW_boost_NAME": {
+    "ko": "각성",
+    "en": "Boost"
+  },
+  "KW_whet": {
+    "ko": "때릴 때마다 {stat:@STAT} {amount:signed}, {upto}까지 누적",
+    "en": "{stat:@STAT} {amount:signed} per hit, stacking up to {upto}"
+  },
+  "KW_whet_HELP": {
+    "ko": "적의 체력을 실제로 깎을 때마다 능력치가 한 점씩 오릅니다. 오른 값은 전투가 끝날 때까지 남고, 기술에 적힌 상한까지만 쌓입니다.",
+    "en": "Each time the owner actually cuts an enemy's HP, the stat rises by one. It lasts the rest of the battle and stops at the listed cap."
+  },
+  "KW_whet_NAME": {
+    "ko": "벼림",
+    "en": "Whet"
+  },
+  "KW_devour": {
+    "ko": "대상의 이로운 상태를 모두 먹고 하나마다 최대 체력의 {ratio:pct} 회복",
+    "en": "Devours every buff on the target and heals {ratio:pct} of max HP per one"
+  },
+  "KW_devour_HELP": {
+    "ko": "대상에게 걸린 이로운 상태를 모두 해제합니다. 해제한 수만큼 자신의 체력이 회복됩니다.",
+    "en": "Strips all beneficial statuses from the target and heals per status removed."
+  },
+  "KW_devour_NAME": {
+    "ko": "포식",
+    "en": "Devour"
+  },
+  "KW_blight": {
+    "ko": "{turns}턴간 받는 회복량이 {ratio:pct}로 감소",
+    "en": "Healing received drops to {ratio:pct} for {turns} turns"
+  },
+  "KW_blight_HELP": {
+    "ko": "대상이 받는 회복량이 줄어듭니다. 스스로 회복하는 것도 아군이 회복시켜 주는 것도 함께 줄어듭니다.",
+    "en": "All healing the target receives is reduced, whether self-cast or from an ally."
+  },
+  "KW_blight_NAME": {
+    "ko": "부패",
+    "en": "Blight"
+  },
+  "KW_mend": {
+    "ko": "받는 회복량이 {mult}배",
+    "en": "Healing received is multiplied by {mult}"
+  },
+  "KW_mend_HELP": {
+    "ko": "자신이 받는 회복량이 늘어납니다. 스스로 회복하는 것도 남이 회복시켜 주는 것도 함께 늘어납니다.",
+    "en": "All healing the owner receives is increased, whether self-cast or from an ally."
+  },
+  "KW_mend_NAME": {
+    "ko": "가호",
+    "en": "Mend"
+  },
+  "KW_clot": {
+    "ko": "받는 출혈 피해가 {mult}배",
+    "en": "Bleed damage taken is multiplied by {mult}"
+  },
+  "KW_clot_HELP": {
+    "ko": "자신이 받는 출혈 피해가 줄어듭니다. 스스로 건 출혈도 남이 건 출혈도 함께 줄어듭니다.",
+    "en": "Bleed damage the owner takes is reduced, whether self-inflicted or from an enemy."
+  },
+  "KW_clot_NAME": {
+    "ko": "응혈",
+    "en": "Clot"
+  },
+  "KW_renew": {
+    "ko": "출혈을 걸 때마다 대상의 앞선 출혈 지속도 함께 늘림",
+    "en": "Each bleed applied also extends the target's earlier bleeds"
+  },
+  "KW_renew_HELP": {
+    "ko": "대상에게 출혈을 부여할 때마다 그 대상에게 이미 걸려 있던 출혈의 지속이 함께 늘어납니다. 계속 물어 두면 먼저 건 것도 안 빠집니다.",
+    "en": "Applying a bleed also refreshes every bleed already on that target, so earlier stacks stay while you keep biting."
+  },
+  "KW_renew_NAME": {
+    "ko": "갱신",
+    "en": "Renew"
+  },
+  "KW_linger": {
+    "ko": "자신이 받는 출혈의 지속이 끝나지 않음",
+    "en": "Bleeds on the owner never expire"
+  },
+  "KW_linger_HELP": {
+    "ko": "자신에게 걸린 출혈이 지속시간으로 사라지지 않습니다. 남이 걸어 준 출혈도 함께 남습니다.",
+    "en": "Bleeds on the owner never run out. Bleeds inflicted by enemies stay as well."
+  },
+  "KW_linger_NAME": {
+    "ko": "잔류",
+    "en": "Linger"
+  },
+  "KW_toll": {
+    "ko": "자신의 최대 체력의 {ratio:pct}만큼 자해",
+    "en": "Costs {ratio:pct} of the caster's max HP"
+  },
+  "KW_toll_HELP": {
+    "ko": "기술을 쓰면서 자신의 체력을 바로 깎습니다. 때리지 않는 기술에도 붙습니다.",
+    "en": "The caster pays HP on cast, even for skills that deal no damage."
+  },
+  "KW_toll_NAME": {
+    "ko": "대가",
+    "en": "Toll"
+  },
+  "KW_cleanse": {
+    "ko": "대상의 해로운 상태 해제",
+    "en": "Clears own debuffs"
+  },
+  "KW_cleanse_HELP": {
+    "ko": "대상에게 부여된 해로운 상태를 모두 해제합니다. 이로운 상태는 유지됩니다. 자신을 정화하려면 대상을 자신으로 잡습니다.",
+    "en": "Clears every harmful status from the target and keeps the beneficial ones. Aim at yourself to cleanse yourself."
+  },
+  "KW_cleanse_NAME": {
+    "ko": "정화",
+    "en": "Cleanse"
+  },
+  "KW_haste": {
+    "ko": "우선 행동 {turns}턴",
+    "en": "Acts first for {turns} turns"
+  },
+  "KW_haste_HELP": {
+    "ko": "속도와 무관하게 먼저 행동합니다. 우선 행동끼리는 다시 속도로 순서를 가릅니다.",
+    "en": "Acts before anyone without it, whatever the SPD. Among hasted units, SPD decides again."
+  },
+  "KW_haste_NAME": {
+    "ko": "우선",
+    "en": "Haste"
+  },
+  "KW_endure": {
+    "ko": "치명타 1회 버팀 {turns}턴",
+    "en": "Survives one lethal hit for {turns} turns"
+  },
+  "KW_endure_HELP": {
+    "ko": "전투불능이 될 피해를 1회 견디고 체력 1로 생존합니다. 견딘 순간 효과가 사라집니다.",
+    "en": "Survives one lethal blow at 1 HP, and is consumed the moment it does."
+  },
+  "KW_endure_NAME": {
+    "ko": "버팀",
+    "en": "Endure"
+  },
+  "KW_immune": {
+    "ko": "상태이상 면역 {turns}턴",
+    "en": "Immune to debuffs for {turns} turns"
+  },
+  "KW_immune_HELP": {
+    "ko": "해로운 상태가 부여되지 않습니다. 이로운 상태는 그대로 들어옵니다.",
+    "en": "Harmful statuses do not stick. Beneficial ones still land."
+  },
+  "KW_immune_NAME": {
+    "ko": "면역",
+    "en": "Immune"
+  },
+  "KW_immune_except": {
+    "ko": "{except:@STA}을 뺀 상태이상 면역 {turns}턴",
+    "en": "Immune to status effects except {except:@STA} for {turns} turns"
+  },
+  "KW_swap": {
+    "ko": "공격과 방어 전환 {turns}턴",
+    "en": "Swaps ATK and DEF for {turns} turns"
+  },
+  "KW_swap_HELP": {
+    "ko": "공격력과 방어력을 서로 맞바꿉니다. 맞바꾼 동안에는 방어력이 공격 자리에 서므로 피해가 커지는 대신 맞으면 크게 깎입니다.",
+    "en": "Swaps ATK and DEF, letting a tough unit hit hard for a while."
+  },
+  "KW_swap_NAME": {
+    "ko": "전환",
+    "en": "Swap"
+  },
+  "KW_blind": {
+    "ko": "실명 {turns}턴",
+    "en": "Blinded for {turns} turns"
+  },
+  "KW_blind_HELP": {
+    "ko": "위력이 있는 기술이 전부 빗나갑니다. 위력이 없는 지원기는 정상 발동합니다.",
+    "en": "Attacking skills miss outright. Support skills with no power still go off."
+  },
+  "KW_blind_NAME": {
+    "ko": "실명",
+    "en": "Blind"
+  },
+  "KW_gift": {
+    "ko": "대상 투지 +{amount}",
+    "en": "Target SP +{amount}"
+  },
+  "KW_gift_HELP": {
+    "ko": "지목한 아군의 투지를 증가시킵니다. 자신이 아니라 그 아군의 특수기를 앞당깁니다.",
+    "en": "Raises the resolve of the ally you aim at, bringing their ultimate forward rather than your own."
+  },
+  "KW_gift_NAME": {
+    "ko": "투지전달",
+    "en": "Gift"
+  },
+  "KW_retire": {
+    "ko": "시전 후 스스로 전투불능",
+    "en": "Falls after the cast"
+  },
+  "KW_retire_HELP": {
+    "ko": "시전을 마친 뒤 스스로 전투불능이 됩니다. 되돌릴 수 없습니다.",
+    "en": "The caster falls after using it. There is no taking it back."
+  },
+  "KW_retire_NAME": {
+    "ko": "퇴장",
+    "en": "Retire"
+  },
+  "KW_multihit": {
+    "ko": "{hits}회 연속 공격",
+    "en": "Strikes {hits} times"
+  },
+  "KW_multihit_HELP": {
+    "ko": "시전 한 번에 여러 번 타격합니다. 얹은 효과는 타격마다가 아니라 시전마다 한 번 돕니다.",
+    "en": "Strikes several times per cast. Attached effects roll once per strike."
+  },
+  "KW_multihit_NAME": {
+    "ko": "연타",
+    "en": "Multi-hit"
+  },
+  "KW_multihit_range": {
+    "ko": "{min}~{max}회 연속 공격 (횟수는 무작위)",
+    "en": "Strikes {min}–{max} times at random"
+  },
+  "TRG_cast": {
+    "ko": "기술을 시전할 때",
+    "en": "On cast"
+  },
+  "TRG_battle_start": {
+    "ko": "전투 개시 시",
+    "en": "At the start of battle"
+  },
+  "TRG_round_start": {
+    "ko": "매 라운드 개시 시",
+    "en": "Each round"
+  },
+  "TRG_on_endure": {
+    "ko": "버텨 냈을 때",
+    "en": "On enduring"
+  },
+  "TRG_on_hurt": {
+    "ko": "피해를 입었을 때",
+    "en": "When struck"
+  },
+  "TRG_on_kill": {
+    "ko": "대상을 전투불능으로 만들었을 때",
+    "en": "On a kill"
+  },
+  "TRG_on_strike": {
+    "ko": "자신이 피해를 입혔을 때",
+    "en": "When the owner deals damage"
+  },
+  "TRG_on_fall": {
+    "ko": "전장에서 전투불능이 발생했을 때",
+    "en": "When someone falls"
+  },
+  "TRG_on_death": {
+    "ko": "자신이 전투불능이 되었을 때",
+    "en": "When the owner falls"
+  },
+  "TRG_always": {
+    "ko": "상시",
+    "en": "Always"
+  },
+  "CND_advantage": {
+    "ko": "상성 우위일 때",
+    "en": "When at type advantage"
+  },
+  "CND_ally_fallen": {
+    "ko": "아군이 1기 이상 전투불능일 때",
+    "en": "When an ally has fallen"
+  },
+  "CND_alone": {
+    "ko": "생존한 아군이 자신뿐일 때",
+    "en": "When I am the last one standing"
+  },
+  "CND_ally_all_alive": {
+    "ko": "아군 전원이 생존해 있을 때",
+    "en": "While all allies live"
+  },
+  "CND_hp_below": {
+    "ko": "자신의 체력이 {ratio:pct} 미만일 때",
+    "en": "While own HP is below {ratio:pct}"
+  },
+  "CND_hp_full": {
+    "ko": "자신의 체력이 최대치일 때",
+    "en": "While at full HP"
+  },
+  "CND_target_bleeding": {
+    "ko": "대상이 출혈 중일 때",
+    "en": "Target is bleeding"
+  },
+  "CND_sp_above": {
+    "ko": "자신의 투지가 {amount} 이상일 때",
+    "en": "Own SP is {amount} or more"
+  },
+  "CND_self_shielded": {
+    "ko": "자신이 보호막을 두르고 있을 때",
+    "en": "Self is shielded"
+  },
+  "CND_self_bleeding": {
+    "ko": "자신이 출혈 중일 때",
+    "en": "Caster is bleeding"
+  },
+  "CND_attacker_type": {
+    "ko": "때린 쪽이 {type:@TYPE} 타입일 때",
+    "en": "Attacker is {type:@TYPE} type"
+  },
+  "CND_target_hp_above": {
+    "ko": "대상의 체력이 {ratio:pct} 이상일 때",
+    "en": "While target HP is at least {ratio:pct}"
+  },
+  "CND_target_hp_below": {
+    "ko": "대상의 체력이 {ratio:pct} 미만일 때",
+    "en": "While target HP is below {ratio:pct}"
+  },
+  "CND_struck_slower": {
+    "ko": "때린 대상이 자신보다 느릴 때",
+    "en": "if what I struck is slower than me"
+  },
+  "CND_ally_fell": {
+    "ko": "쓰러진 것이 아군일 때",
+    "en": "if the one who fell was an ally"
+  },
+  "CND_self_boosted": {
+    "ko": "자신의 공격력이 각성으로 올라 있을 때",
+    "en": "if the owner's ATK is raised by a buff"
+  },
+  "CND_round_after": {
+    "ko": "{round}라운드부터",
+    "en": "From round {round}"
+  },
+  "CND_skill_element": {
+    "ko": "판정 중인 공격이 {element:@ELEM} 속성일 때",
+    "en": "When the attack is {element:@ELEM}"
+  },
+  "CND_target_hexed": {
+    "ko": "대상이 해로운 상태를 하나라도 두르고 있을 때",
+    "en": "if the target carries any harmful status"
+  },
+  "CND_target_has": {
+    "ko": "대상에게 {status:@STA}가 부여되어 있을 때",
+    "en": "When the target has {status:@STA}"
+  },
+  "CND_enemy_type": {
+    "ko": "대상이 {type:@TYPE} 타입일 때",
+    "en": "When the target is {type:@TYPE}"
+  },
+  "CND_same_type": {
+    "ko": "대상이 자신과 같은 타입일 때",
+    "en": "When the target shares my type"
+  },
+  "CND_faster_than_target": {
+    "ko": "자신의 속도가 대상보다 높을 때",
+    "en": "When faster than the target"
+  },
+  "UI_TITLE": {
+    "ko": "로켓몬스터 : 시비르기 지하 결투장 로캣",
+    "en": "RocketMonster : The Rocat Pit"
+  },
+  "UI_AD_TITLE": {
+    "ko": "로켓몬스터 관리 도구",
+    "en": "Rocket Monster operations"
+  },
+  "UI_AD_HOME": {
+    "ko": "관리",
+    "en": "Operations"
+  },
+  "UI_AD_FOOT": {
+    "ko": "운영자만 들어옵니다. 지우는 손은 되돌릴 수 없습니다.",
+    "en": "Operators only. Deletions cannot be undone."
+  },
+  "UI_AD_NAV_ACCOUNTS": {
+    "ko": "계정",
+    "en": "Accounts"
+  },
+  "UI_AD_NAV_DUELS": {
+    "ko": "진행 중인 판",
+    "en": "Live duels"
+  },
+  "UI_AD_NAV_MISHAPS": {
+    "ko": "사고",
+    "en": "Mishaps"
+  },
+  "UI_AD_NAV_STATS": {
+    "ko": "기록",
+    "en": "Records"
+  },
+  "UI_AD_ROLE_ADMIN": {
+    "ko": "운영",
+    "en": "Op"
+  },
+  "UI_AD_SEARCH": {
+    "ko": "이름으로 찾습니다",
+    "en": "Search by name"
+  },
+  "UI_AD_CONFIRM": {
+    "ko": "되돌릴 수 없습니다. 그대로 두려면 취소하고, 진행하려면 {word:을를} 그대로 적으십시오",
+    "en": "This cannot be undone. Type {word} to continue."
+  },
+  "UI_AD_ACCOUNTS_NOTE": {
+    "ko": "{n}명입니다. 판수 옆의 붉은 수는 진행 중인 판입니다.",
+    "en": "{n} accounts. The red number beside the duel count is live duels."
+  },
+  "UI_AD_DUELS_NOTE": {
+    "ko": "{n}판이 진행 중입니다. 오래 안 움직인 것이 위에 섭니다.",
+    "en": "{n} duels in progress, least recently touched first."
+  },
+  "UI_AD_MISHAPS_NOTE": {
+    "ko": "같은 자리에서 난 것은 한 줄로 세어 묶습니다. 서른 날이 지나면 스스로 걷힙니다.",
+    "en": "Mishaps from the same spot are counted on one row. They expire after thirty days."
+  },
+  "UI_AD_T_ACCOUNTS": {
+    "ko": "계정",
+    "en": "Accounts"
+  },
+  "UI_AD_T_PACKS": {
+    "ko": "편성함",
+    "en": "With a team"
+  },
+  "UI_AD_T_LIVE": {
+    "ko": "진행 중",
+    "en": "Live"
+  },
+  "UI_AD_T_DONE": {
+    "ko": "끝난 판",
+    "en": "Finished"
+  },
+  "UI_AD_T_QUEUED": {
+    "ko": "줄 선 사람",
+    "en": "In queue"
+  },
+  "UI_AD_T_MISHAPS": {
+    "ko": "사고",
+    "en": "Mishaps"
+  },
+  "UI_AD_C_NAME": {
+    "ko": "이름",
+    "en": "Name"
+  },
+  "UI_AD_C_DISPLAY": {
+    "ko": "표시",
+    "en": "Display"
+  },
+  "UI_AD_C_DUELS": {
+    "ko": "판",
+    "en": "Duels"
+  },
+  "UI_AD_C_PACK": {
+    "ko": "편성",
+    "en": "Team"
+  },
+  "UI_AD_C_PIN": {
+    "ko": "암호",
+    "en": "PIN"
+  },
+  "UI_AD_C_SEEN": {
+    "ko": "마지막 진입",
+    "en": "Last seen"
+  },
+  "UI_AD_C_HANDS": {
+    "ko": "손",
+    "en": "Actions"
+  },
+  "UI_AD_C_MODE": {
+    "ko": "모드",
+    "en": "Mode"
+  },
+  "UI_AD_C_ROUND": {
+    "ko": "라운드",
+    "en": "Round"
+  },
+  "UI_AD_C_A": {
+    "ko": "A편",
+    "en": "Side A"
+  },
+  "UI_AD_C_B": {
+    "ko": "B편",
+    "en": "Side B"
+  },
+  "UI_AD_C_FILED": {
+    "ko": "제출",
+    "en": "Filed"
+  },
+  "UI_AD_C_IDLE": {
+    "ko": "멈춘 지",
+    "en": "Idle"
+  },
+  "UI_AD_C_KIND": {
+    "ko": "갈래",
+    "en": "Kind"
+  },
+  "UI_AD_C_WHERE": {
+    "ko": "어디서",
+    "en": "Where"
+  },
+  "UI_AD_C_WHAT": {
+    "ko": "무엇이",
+    "en": "What"
+  },
+  "UI_AD_C_HITS": {
+    "ko": "횟수",
+    "en": "Hits"
+  },
+  "UI_AD_C_LAST": {
+    "ko": "마지막",
+    "en": "Last"
+  },
+  "UI_AD_H_PACK": {
+    "ko": "편성 비움",
+    "en": "Clear team"
+  },
+  "UI_AD_H_PIN": {
+    "ko": "암호 비움",
+    "en": "Clear PIN"
+  },
+  "UI_AD_H_PROMOTE": {
+    "ko": "운영자로",
+    "en": "Make op"
+  },
+  "UI_AD_H_DEMOTE": {
+    "ko": "참가자로",
+    "en": "Make player"
+  },
+  "UI_AD_H_DROP": {
+    "ko": "계정 삭제",
+    "en": "Delete"
+  },
+  "UI_AD_H_CLOSE": {
+    "ko": "판 삭제",
+    "en": "Delete"
+  },
+  "UI_AD_H_OPEN": {
+    "ko": "펼치기",
+    "en": "Expand"
+  },
+  "UI_AD_H_CLEAR": {
+    "ko": "내리기",
+    "en": "Dismiss"
+  },
+  "UI_AD_AGO_MIN": {
+    "ko": "{n}분 전",
+    "en": "{n}m ago"
+  },
+  "UI_AD_AGO_HOUR": {
+    "ko": "{n}시간 전",
+    "en": "{n}h ago"
+  },
+  "UI_AD_AGO_DAY": {
+    "ko": "{n}일 전",
+    "en": "{n}d ago"
+  },
+  "UI_COMMON_ALL": {
+    "ko": "전체",
+    "en": "All"
+  },
+  "UI_COMMON_GUEST": {
+    "ko": "게스트",
+    "en": "Guest"
+  },
+  "UI_COMMON_BACK": {
+    "ko": "뒤로",
+    "en": "Back"
+  },
+  "UI_COMMON_CLOSE": {
+    "ko": "닫기",
+    "en": "Close"
+  },
+  "UI_S40_CANCEL": {
+    "ko": "선택 취소",
+    "en": "Undo the pick"
+  },
+  "UI_M20_PASSIVE": {
+    "ko": "패시브",
+    "en": "PASSIVE"
+  },
+  "UI_M20_GLOSSARY": {
+    "ko": "용어",
+    "en": "GLOSSARY"
+  },
+  "UI_COMMON_LOADING": {
+    "ko": "불러오는 중입니다",
+    "en": "Loading"
+  },
+  "UI_COMMON_LOAD_FAILED": {
+    "ko": "불러오지 못했습니다",
+    "en": "Could not load"
+  },
+  "UI_COMMON_LOAD_FAIL": {
+    "ko": "불러오지 못했습니다. {why}",
+    "en": "Could not load. {why}"
+  },
+  "UI_COMMON_ESC_LOBBY": {
+    "ko": "ESC를 누르면 대기실로 돌아갑니다",
+    "en": "ESC returns to the hall"
+  },
+  "UI_COMMON_WIN": {
+    "ko": "승리",
+    "en": "Win"
+  },
+  "UI_COMMON_LOSS": {
+    "ko": "패배",
+    "en": "Loss"
+  },
+  "UI_COMMON_DRAW": {
+    "ko": "무승부",
+    "en": "Draw"
+  },
+  "UI_S00_LOGO": {
+    "ko": "로켓몬스터",
+    "en": "RocketMonster"
+  },
+  "UI_S00_SUB": {
+    "ko": "시비르기 지하 결투장 · 로캣",
+    "en": "The Sibirgi Pit · Rocat"
+  },
+  "UI_S00_ENTER": {
+    "ko": "결투장 입장",
+    "en": "Enter the pit"
+  },
+  "UI_S00_CONTINUE": {
+    "ko": "기록 이어하기",
+    "en": "Continue"
+  },
+  "UI_S00_VER": {
+    "ko": "v0.6 프로토타입 · [em]F[/em] 전체화면",
+    "en": "v0.6 prototype · [em]F[/em] fullscreen"
+  },
+  "UI_S01_HEAD": {
+    "ko": "이름을 밝혀 주십시오",
+    "en": "Give your name"
+  },
+  "UI_S01_SUB": {
+    "ko": "처음 대는 이름이면 계정을 그 자리에서 만듭니다",
+    "en": "A name we have not seen yet opens an account on the spot"
+  },
+  "UI_S01_ID": {
+    "ko": "이름",
+    "en": "Name"
+  },
+  "UI_S01_ID_HINT": {
+    "ko": "2~16자",
+    "en": "2-16 characters"
+  },
+  "UI_S01_PIN": {
+    "ko": "암호",
+    "en": "PIN"
+  },
+  "UI_S01_PIN_HINT": {
+    "ko": "숫자 네 자리",
+    "en": "Four digits"
+  },
+  "UI_S01_SUBMIT": {
+    "ko": "입장",
+    "en": "Enter"
+  },
+  "UI_S01_PRACTICE": {
+    "ko": "연습 결투",
+    "en": "Practice duel"
+  },
+  "UI_S10_TITLE": {
+    "ko": "대기실",
+    "en": "Hall"
+  },
+  "UI_S10_LEAVE": {
+    "ko": "퇴장",
+    "en": "Leave"
+  },
+  "UI_S10_DUEL": {
+    "ko": "결투",
+    "en": "Duel"
+  },
+  "UI_S10_DUEL_SUB": {
+    "ko": "붙을 상대를 찾습니다",
+    "en": "Find someone to face"
+  },
+  "UI_S10_CODEX": {
+    "ko": "도감",
+    "en": "Codex"
+  },
+  "UI_S10_CODEX_SUB": {
+    "ko": "링에 선 {n}명을 살펴봅니다",
+    "en": "Look over the {n} in the ring"
+  },
+  "UI_S10_RANK": {
+    "ko": "순위표",
+    "en": "Standings"
+  },
+  "UI_S10_RANK_SUB": {
+    "ko": "경쟁전 순위를 봅니다",
+    "en": "See the arena standings"
+  },
+  "UI_S10_FAVORITE_PICK": {
+    "ko": "대표 변경",
+    "en": "Change"
+  },
+  "UI_S10_STATS": {
+    "ko": "기록",
+    "en": "Records"
+  },
+  "UI_S10_STATS_SUB": {
+    "ko": "몬스터별 픽률과 밴률과 승률을 봅니다",
+    "en": "Pick, ban and win rates by monster"
+  },
+  "UI_S10_ADMIN": {
+    "ko": "관리",
+    "en": "Operations"
+  },
+  "UI_S10_ADMIN_SUB": {
+    "ko": "계정과 판과 사고를 손봅니다",
+    "en": "Accounts, duels and mishaps"
+  },
+  "UI_S10_NEWS": {
+    "ko": "소식",
+    "en": "NEWS"
+  },
+  "UI_S10_NEWS_EMPTY": {
+    "ko": "아직 전할 소식이 없습니다",
+    "en": "Nothing to report yet."
+  },
+  "UI_S10_RATING": {
+    "ko": "점수",
+    "en": "Points"
+  },
+  "UI_S10_NO_HERO": {
+    "ko": "대표를 아직 정하지 않았습니다",
+    "en": "No favorite picked yet"
+  },
+  "UI_S10_TEAM_EMPTY": {
+    "ko": "팀 없음",
+    "en": "No team"
+  },
+  "UI_M10_TITLE": {
+    "ko": "대표 캐릭터",
+    "en": "PICK A FAVORITE"
+  },
+  "UI_M30_TITLE": {
+    "ko": "참가자",
+    "en": "PLAYERS"
+  },
+  "UI_S10_RANK_LABEL": {
+    "ko": "순위",
+    "en": "Rank"
+  },
+  "UI_S10_PLAYED": {
+    "ko": "판",
+    "en": "Games"
+  },
+  "UI_S10_WINS": {
+    "ko": "승",
+    "en": "W"
+  },
+  "UI_S20_TITLE": {
+    "ko": "준비실",
+    "en": "Ready room"
+  },
+  "UI_S20_ROSTER": {
+    "ko": "도감",
+    "en": "Codex"
+  },
+  "UI_S20_SLOT": {
+    "ko": "출전 {n}",
+    "en": "Slot {n}"
+  },
+  "UI_S20_SLOT_EMPTY": {
+    "ko": "도감에서 고릅니다",
+    "en": "Pick from the codex"
+  },
+  "UI_S20_DETAIL": {
+    "ko": "상세",
+    "en": "Details"
+  },
+  "UI_S20_DETAIL_HINT": {
+    "ko": "{name}의 기술과 수치를 봅니다",
+    "en": "See {name}’s skills and stats"
+  },
+  "UI_S20_BY_TYPE": {
+    "ko": "타입",
+    "en": "Type"
+  },
+  "UI_S20_BY_ELEMENT": {
+    "ko": "기술 속성",
+    "en": "Skill element"
+  },
+  "UI_S30_TITLE": {
+    "ko": "결투",
+    "en": "Duel"
+  },
+  "UI_S30_NEW": {
+    "ko": "연습 결투",
+    "en": "Practice duel"
+  },
+  "UI_S30_ASYNC_NOTE": {
+    "ko": "한 라운드는 30초입니다. 자리를 비우면 명령이 방어 태세로 채워집니다. 두 번째부터는 몰수패입니다.",
+    "en": "A round lasts 30 seconds. Miss it and guard is filled in for you. Miss twice and you forfeit."
+  },
+  "UI_S30_OFFLINE_NOTE": {
+    "ko": "결투장에 닿지 않습니다. 연습은 할 수 있지만 전적은 남지 않습니다.",
+    "en": "The pit is out of reach. You can practice, but nothing is recorded."
+  },
+  "UI_S30_ONGOING": {
+    "ko": "진행 중인 결투",
+    "en": "Duels in progress"
+  },
+  "UI_S30_OFFLINE": {
+    "ko": "결투장에 닿지 않습니다",
+    "en": "The pit is out of reach."
+  },
+  "UI_S30_PROGRESS": {
+    "ko": "{round}라운드 · {mine} : {theirs}",
+    "en": "Round {round} · {mine} : {theirs}"
+  },
+  "UI_S30_SEE_LOG": {
+    "ko": "기록 보기",
+    "en": "See log"
+  },
+  "UI_S30_MY_TURN": {
+    "ko": "내 차례",
+    "en": "Your turn"
+  },
+  "UI_S30_WAIT": {
+    "ko": "상대 대기",
+    "en": "Waiting"
+  },
+  "UI_S30_NO_DUEL": {
+    "ko": "진행 중인 결투가 없습니다",
+    "en": "No duels in progress."
+  },
+  "UI_S30_CHALLENGE": {
+    "ko": "도전",
+    "en": "Challenge"
+  },
+  "UI_S30_BUSY": {
+    "ko": "이미 붙는 중",
+    "en": "Already in a duel"
+  },
+  "UI_S30_NO_FOE": {
+    "ko": "팀을 편성한 상대가 아직 없습니다",
+    "en": "Nobody has built a team yet."
+  },
+  "UI_S30_MATCH": {
+    "ko": "랜덤 매칭",
+    "en": "FIND A MATCH"
+  },
+  "UI_S30_MATCH_WAIT": {
+    "ko": "{sec}초째 상대를 찾고 있습니다",
+    "en": "Searching for {sec}s"
+  },
+  "UI_S30_MATCH_CANCEL": {
+    "ko": "취소",
+    "en": "Cancel"
+  },
+  "UI_S30_INBOX": {
+    "ko": "받은 도전",
+    "en": "CHALLENGES"
+  },
+  "UI_S30_OUTBOX": {
+    "ko": "보낸 도전",
+    "en": "SENT"
+  },
+  "UI_S30_ACCEPT": {
+    "ko": "수락",
+    "en": "Accept"
+  },
+  "UI_S30_DECLINE": {
+    "ko": "거절",
+    "en": "Decline"
+  },
+  "UI_S30_WITHDRAW": {
+    "ko": "철회",
+    "en": "Withdraw"
+  },
+  "UI_S30_PICK_FOE": {
+    "ko": "상대 고르기",
+    "en": "PICK AN OPPONENT"
+  },
+  "UI_S30_OPEN_FOES": {
+    "ko": "결투 신청",
+    "en": "CHALLENGE"
+  },
+  "UI_S30_NO_INBOX": {
+    "ko": "받은 도전이 없습니다",
+    "en": "No challenges received."
+  },
+  "UI_S30_WAITING_REPLY": {
+    "ko": "답변 대기",
+    "en": "Awaiting a reply"
+  },
+  "UI_S30_SENT": {
+    "ko": "{name}에게 도전을 보냈습니다",
+    "en": "Challenge sent to {name}"
+  },
+  "UI_S30_RATING": {
+    "ko": "{n}점",
+    "en": "{n} pts"
+  },
+  "UI_S40_AFK_LEFT": {
+    "ko": "자리를 한 번 더 비우면 몰수패입니다",
+    "en": "One more timeout and you forfeit"
+  },
+  "UI_S41_RATING": {
+    "ko": "{n}점",
+    "en": "{n} pts"
+  },
+  "UI_S30_CHALLENGE_FAIL": {
+    "ko": "도전하지 못했습니다. {why}",
+    "en": "Could not challenge. {why}"
+  },
+  "UI_S30_OPEN_FAIL": {
+    "ko": "결투를 열지 못했습니다. {why}",
+    "en": "Could not open the duel. {why}"
+  },
+  "UI_S40_ROUND": {
+    "ko": "라운드 {n}",
+    "en": "Round {n}"
+  },
+  "UI_S40_CLOCK_UNIT": {
+    "ko": "초",
+    "en": "s"
+  },
+  "UI_S40_VS": {
+    "ko": "상대 ·",
+    "en": "vs ·"
+  },
+  "UI_S40_AWAY": {
+    "ko": "자리 비움",
+    "en": "Away"
+  },
+  "UI_S40_SPEED": {
+    "ko": "속도 ×{n}",
+    "en": "Speed ×{n}"
+  },
+  "UI_S40_AUTO": {
+    "ko": "자동 진행",
+    "en": "Auto"
+  },
+  "UI_S40_LOGTAB": {
+    "ko": "기록",
+    "en": "Log"
+  },
+  "UI_S40_LOGPANEL": {
+    "ko": "전투 기록",
+    "en": "Battle log"
+  },
+  "UI_S40_RESOLVE": {
+    "ko": "라운드 실행",
+    "en": "Resolve round"
+  },
+  "UI_S40_SKIP": {
+    "ko": "라운드 생략",
+    "en": "Skip the round"
+  },
+  "UI_S40_SENDING": {
+    "ko": "보내는 중입니다",
+    "en": "Sending"
+  },
+  "UI_S40_OVER": {
+    "ko": "판이 끝났습니다",
+    "en": "The match is over"
+  },
+  "UI_S40_SENT": {
+    "ko": "명령을 냈습니다. 상대가 낼 때까지 판정되지 않습니다.",
+    "en": "Orders are in. Nothing resolves until your opponent submits."
+  },
+  "UI_S40_STUNNED": {
+    "ko": "기절해 움직일 수 없습니다",
+    "en": "Stunned and cannot act"
+  },
+  "UI_S40_GUARD": {
+    "ko": "방어 태세",
+    "en": "Guard"
+  },
+  "UI_S40_GUARD_META": {
+    "ko": "받는 피해 절반 · 투지 +{sp}",
+    "en": "Half damage taken · {sp} SP"
+  },
+  "UI_S40_SP_SHORT": {
+    "ko": "투지 {sp}",
+    "en": "SP {sp}"
+  },
+  "UI_S40_PASSIVE": {
+    "ko": "패시브",
+    "en": "Passive"
+  },
+  "UI_S40_TIP_BASIC": {
+    "ko": "일반기",
+    "en": "Basic"
+  },
+  "UI_S40_TIP_ULT": {
+    "ko": "특수기",
+    "en": "Ultimate"
+  },
+  "UI_S40_TIP_POWER": {
+    "ko": "위력 {n}단계",
+    "en": "Power {n}"
+  },
+  "UI_S40_TIP_SPEED": {
+    "ko": "속도 {n}",
+    "en": "Speed {n}"
+  },
+  "UI_S40_TIP_SP": {
+    "ko": "투지 {n}",
+    "en": "SP {n}"
+  },
+  "UI_S40_PRACTICE_FOE": {
+    "ko": "{name}의 팀",
+    "en": "{name}'s team"
+  },
+  "UI_S40_SEND_FAIL": {
+    "ko": "명령을 보내지 못했습니다. {why}",
+    "en": "Could not send orders. {why}"
+  },
+  "UI_S40_SPD_FAST": {
+    "ko": "빠름 +{n}",
+    "en": "Fast +{n}"
+  },
+  "UI_S40_SPD_SLOW": {
+    "ko": "느림 {n}",
+    "en": "Slow {n}"
+  },
+  "UI_S40_HINT_WAITING": {
+    "ko": "상대의 명령을 기다리고 있습니다. 나가도 판은 그대로 남습니다.",
+    "en": "Waiting on your opponent. The board keeps if you leave."
+  },
+  "UI_S40_HINT_SENDING": {
+    "ko": "명령을 보내는 중입니다",
+    "en": "Sending orders."
+  },
+  "UI_S40_HINT_PLAYING": {
+    "ko": "되짚는 중입니다. 아무 곳이나 누르면 건너뜁니다.",
+    "en": "Replaying. Click anywhere to skip."
+  },
+  "UI_S40_HINT_PICK_ALLY": {
+    "ko": "효과를 받을 아군을 고릅니다",
+    "en": "Pick the ally to receive it."
+  },
+  "UI_S40_HINT_PICK_FOE": {
+    "ko": "겨눌 상대를 고릅니다",
+    "en": "Choose who to strike."
+  },
+  "UI_S40_HINT_FIXED": {
+    "ko": "{target}에게 나갑니다. 밝혀진 몬스터를 눌러 확정합니다.",
+    "en": "Goes to {target}. Click the lit unit to confirm."
+  },
+  "UI_S40_HINT_ALL_DOWN": {
+    "ko": "전원이 쓰러져 있습니다. 라운드를 넘깁니다.",
+    "en": "Everyone is down. Skip the round."
+  },
+  "UI_S40_HINT_READY": {
+    "ko": "명령이 모두 정해졌습니다",
+    "en": "All orders are set."
+  },
+  "UI_S40_DESYNC": {
+    "ko": "이 화면의 판정이 서버와 갈렸습니다. 새로 고쳐 주십시오.",
+    "en": "This screen has drifted from the server. Please reload."
+  },
+  "UI_S40_HINT_PARTIAL": {
+    "ko": "명령을 안 낸 {n}기는 그대로 서 있습니다",
+    "en": "{n} without orders will stand still."
+  },
+  "UI_S40_HINT_PICK_SKILL": {
+    "ko": "몬스터마다 기술이나 방어 태세를 고릅니다",
+    "en": "Pick a skill or guard for each unit."
+  },
+  "UI_LAB_TITLE": {
+    "ko": "로켓몬스터 밸런스 실험실",
+    "en": "Rocket Monster balance lab"
+  },
+  "UI_LAB_HOME": {
+    "ko": "실험실",
+    "en": "Lab"
+  },
+  "UI_LAB_NAV_STATS": {
+    "ko": "기록",
+    "en": "Records"
+  },
+  "UI_LAB_NAV_BUILD": {
+    "ko": "설계 도구",
+    "en": "Skill builder"
+  },
+  "UI_LAB_ROSTER": {
+    "ko": "로스터",
+    "en": "Roster"
+  },
+  "UI_LAB_RUN": {
+    "ko": "돌린 결과",
+    "en": "Result"
+  },
+  "UI_LAB_GAMES": {
+    "ko": "판수",
+    "en": "Games"
+  },
+  "UI_LAB_GO": {
+    "ko": "돌린다",
+    "en": "Run"
+  },
+  "UI_LAB_GOING": {
+    "ko": "도는 중",
+    "en": "Running"
+  },
+  "UI_LAB_REVERT": {
+    "ko": "되돌린다",
+    "en": "Revert"
+  },
+  "UI_LAB_PICK": {
+    "ko": "왼쪽에서 몬스터를 고르십시오",
+    "en": "Pick a monster on the left"
+  },
+  "UI_LAB_DIRTY": {
+    "ko": "{n}종을 고쳤습니다",
+    "en": "{n} edited"
+  },
+  "UI_LAB_F_TIER": {
+    "ko": "위력",
+    "en": "Power"
+  },
+  "UI_LAB_F_ELEMENT": {
+    "ko": "속성",
+    "en": "Element"
+  },
+  "UI_LAB_F_TARGET": {
+    "ko": "대상",
+    "en": "Target"
+  },
+  "UI_LAB_F_SP": {
+    "ko": "투지",
+    "en": "Spirit"
+  },
+  "UI_LAB_F_GRADE": {
+    "ko": "등급",
+    "en": "Grade"
+  },
+  "UI_LAB_F_CHANCE": {
+    "ko": "확률",
+    "en": "Chance"
+  },
+  "UI_LAB_C_NAME": {
+    "ko": "몬스터",
+    "en": "Monster"
+  },
+  "UI_LAB_C_RATE": {
+    "ko": "승률",
+    "en": "Win %"
+  },
+  "UI_LAB_C_MOVE": {
+    "ko": "직전 대비",
+    "en": "Change"
+  },
+  "UI_LAB_C_GAMES": {
+    "ko": "판",
+    "en": "Games"
+  },
+  "UI_LAB_NOTE": {
+    "ko": "여기서 고친 것은 이 브라우저 안에만 남습니다. 리포에도 라이브에도 닿지 않습니다. 판 수가 적어 몬스터마다 오차가 1%p 안팎이므로, 크게 움직였는지를 보는 자리이지 띠 밖이 몇 명인지 확정하는 자리가 아닙니다.",
+    "en": "Edits stay in this browser only. The sample is small, so read the direction of a change, not a final count."
+  },
+  "UI_LAB_RESULT": {
+    "ko": "{n}판을 돌렸습니다. 띠 밖 {out}명, 평균 {rounds}라운드, 무승부 {draws}%입니다.",
+    "en": "{n} games. {out} outside the band, {rounds} rounds on average, {draws}% draws."
+  },
+  "UI_LOG_FOE": {
+    "ko": "적 {name}",
+    "en": "Enemy {name}"
+  },
+  "UI_LOG_cast": {
+    "ko": "{who}의 {skill} → {target}",
+    "en": "{who} uses {skill} → {target}"
+  },
+  "UI_LOG_cast_ult": {
+    "ko": "{who}의 특수기 {skill} → {target}",
+    "en": "{who} uses ultimate {skill} → {target}"
+  },
+  "UI_LOG_guard": {
+    "ko": "{who} 자세를 굳힌다",
+    "en": "{who} braces"
+  },
+  "UI_LOG_heal": {
+    "ko": "{who} 상처가 아문다",
+    "en": "{who} mends"
+  },
+  "UI_LOG_bleed": {
+    "ko": "{who} 피가 흐른다",
+    "en": "{who} bleeds"
+  },
+  "UI_LOG_pressure": {
+    "ko": "{who} 전장이 조여 온다",
+    "en": "{who} is crushed by the closing arena"
+  },
+  "UI_LOG_recoil": {
+    "ko": "{who} 반동을 맞는다",
+    "en": "{who} takes recoil"
+  },
+  "UI_LOG_stunned": {
+    "ko": "{who} 기절해 움직이지 못한다",
+    "en": "{who} is stunned"
+  },
+  "UI_LOG_silenced": {
+    "ko": "{who} 침묵으로 특수기가 막혔다",
+    "en": "{who} is silenced"
+  },
+  "UI_LOG_nosp": {
+    "ko": "{who} 투지가 모자란다",
+    "en": "{who} lacks SP"
+  },
+  "UI_LOG_miss": {
+    "ko": "{who} 빗나갔다",
+    "en": "{who} misses"
+  },
+  "UI_LOG_immune": {
+    "ko": "{who} 면역으로 막았다",
+    "en": "{who} shrugs it off"
+  },
+  "UI_LOG_retire": {
+    "ko": "{who} 스스로 물러난다",
+    "en": "{who} falls after the blow"
+  },
+  "UI_LOG_status": {
+    "ko": "{who} {what} {turns}턴",
+    "en": "{who} {what} for {turns} turns"
+  },
+  "UI_LOG_boost": {
+    "ko": "{stat} {amount:signed}",
+    "en": "{stat} {amount:signed}"
+  },
+  "UI_LOG_ADV": {
+    "ko": "상성 우위",
+    "en": "Advantage"
+  },
+  "UI_LOG_WEAK": {
+    "ko": "상성 불리",
+    "en": "Disadvantage"
+  },
+  "UI_LOG_DOWN": {
+    "ko": "전투불능",
+    "en": "Down"
+  },
+  "UI_S41_KICKER": {
+    "ko": "결투 종료",
+    "en": "Duel over"
+  },
+  "UI_S41_KICKER_ARENA": {
+    "ko": "경쟁전 종료",
+    "en": "Arena match over"
+  },
+  "UI_S41_DETAIL": {
+    "ko": "{round}라운드 · 생존 {mine} : {theirs}",
+    "en": "Round {round} · standing {mine} : {theirs}"
+  },
+  "UI_S41_DOWN": {
+    "ko": "전투불능",
+    "en": "Down"
+  },
+  "UI_S41_AGAIN": {
+    "ko": "재결투",
+    "en": "Duel again"
+  },
+  "UI_S41_AGAIN_DUEL": {
+    "ko": "다음 결투",
+    "en": "Next duel"
+  },
+  "UI_S41_LOBBY": {
+    "ko": "대기실로",
+    "en": "To the hall"
+  },
+  "UI_S50_TITLE": {
+    "ko": "도감",
+    "en": "Codex"
+  },
+  "UI_S50_COUNT": {
+    "ko": "{n}명",
+    "en": "{n}"
+  },
+  "UI_S60_TITLE": {
+    "ko": "순위표",
+    "en": "Standings"
+  },
+  "UI_S60_PANEL": {
+    "ko": "경쟁전 전적",
+    "en": "Arena record"
+  },
+  "UI_S60_NO": {
+    "ko": "등수",
+    "en": "#"
+  },
+  "UI_S60_NAME": {
+    "ko": "이름",
+    "en": "Name"
+  },
+  "UI_S60_PLAYED": {
+    "ko": "판",
+    "en": "Games"
+  },
+  "UI_S60_WIN": {
+    "ko": "승",
+    "en": "W"
+  },
+  "UI_S60_LOSS": {
+    "ko": "패",
+    "en": "L"
+  },
+  "UI_S60_RATE": {
+    "ko": "승률",
+    "en": "Rate"
+  },
+  "UI_S60_ELO": {
+    "ko": "점수",
+    "en": "Points"
+  },
+  "UI_S60_OFFLINE": {
+    "ko": "결투장에 이름을 올린 사람만 전적을 남깁니다",
+    "en": "Only those who sign in leave a record"
+  },
+  "UI_S60_OFFLINE_NOTE": {
+    "ko": "이름을 밝히고 들어오면 이 자리에 순위가 오릅니다",
+    "en": "Give a name and your line appears here"
+  },
+  "UI_S60_EMPTY": {
+    "ko": "아직 아무도 붙지 않았습니다",
+    "en": "Nobody has fought yet"
+  },
+  "UI_S60_EMPTY_NOTE": {
+    "ko": "첫 경쟁전이 끝나면 이 자리가 채워집니다",
+    "en": "The first finished arena match fills this in"
+  },
+  "UI_M20_BY": {
+    "ko": "설계 {name}",
+    "en": "Designed by {name}"
+  },
+  "UI_M20_STORY": {
+    "ko": "이야기",
+    "en": "STORY"
+  },
+  "UI_M20_SKILLS": {
+    "ko": "기술",
+    "en": "SKILLS"
+  },
+  "UI_M20_STATS": {
+    "ko": "수치",
+    "en": "STATS"
+  },
+  "ROLE_ASSASSIN": {
+    "ko": "암살자",
+    "en": "Assassin"
+  },
+  "ROLE_ASSASSIN_HELP": {
+    "ko": "몸이 얇은 대신 한 번에 크게 냅니다. 도발을 지나쳐 노린 자리를 그대로 치거나, 첫 라운드에 먼저 들어가 판을 가르는 설계가 여기 듭니다.",
+    "en": "Fragile but hits enormously hard, slipping past taunts or deciding the first round."
+  },
+  "ROLE_HUNTER": {
+    "ko": "추격자",
+    "en": "Hunter"
+  },
+  "ROLE_HUNTER_HELP": {
+    "ko": "먼저 움직여 다친 쪽을 마저 잡습니다. 대상이 잃은 체력만큼 피해가 붙으므로, 누가 얼마나 깎였는지를 보고 겨눔을 정해야 값을 합니다.",
+    "en": "Moves first and finishes the wounded, with follow-up blows after a kill."
+  },
+  "ROLE_CHARGER": {
+    "ko": "돌격자",
+    "en": "Charger"
+  },
+  "ROLE_CHARGER_HELP": {
+    "ko": "앞에서 밀고 들어가 꾸준히 냅니다. 맞을수록 능력치가 오르는 몸이라 오래 서 있을수록 세집니다.",
+    "en": "Pushes in from the front and keeps dealing, growing stronger as it takes hits."
+  },
+  "ROLE_GUARDIAN": {
+    "ko": "보호자",
+    "en": "Guardian"
+  },
+  "ROLE_GUARDIAN_HELP": {
+    "ko": "아군을 대신 맞습니다. 도발로 겨눔을 끌어오고 수호로 한 방을 가로채며, 보호막을 둘러 그 몫을 버팁니다.",
+    "en": "Takes hits for allies and pulls aim, holding the team up with shields and wards."
+  },
+  "ROLE_TRICKSTER": {
+    "ko": "교란자",
+    "en": "Trickster"
+  },
+  "ROLE_TRICKSTER_HELP": {
+    "ko": "판을 흔들어 상대의 수를 줄입니다. 침묵과 기절로 기술을 막거나, 다른 역할군에 없는 조건을 걸어 이깁니다.",
+    "en": "Bends the match in ways the other groups cannot, blocking plays or winning on odd terms."
+  },
+  "ROLE_CLOSER": {
+    "ko": "결전자",
+    "en": "Closer"
+  },
+  "ROLE_CLOSER_HELP": {
+    "ko": "후반으로 갈수록 세집니다. 라운드가 쌓여야 값이 붙는 설계라 오래 버티는 편성을 뚫는 자리에 섭니다.",
+    "en": "Grows stronger the longer it runs, breaking through stalling teams to end the match."
+  },
+  "ROLE_HEALER": {
+    "ko": "치유자",
+    "en": "Healer"
+  },
+  "ROLE_HEALER_HELP": {
+    "ko": "아군의 체력을 되돌리고 걸린 상태를 지웁니다. 한 라운드에 내는 것이 적은 대신 판이 길어지면 그만큼 쌓입니다.",
+    "en": "Restores allies and clears their statuses, paying off more the longer the match runs."
+  },
+  "UI_COMMON_TYPE": {
+    "ko": "타입",
+    "en": "Type"
+  },
+  "UI_COMMON_ROLE": {
+    "ko": "역할군",
+    "en": "Role"
+  },
+  "UI_SKILL_SP": {
+    "ko": "투지 {sp}",
+    "en": "{sp} SP"
+  },
+  "UI_SKILL_TIER": {
+    "ko": "위력 {tier}단계",
+    "en": "Power {tier}"
+  },
+  "SYS_UNKNOWN": {
+    "ko": "알 수 없는 오류가 발생했습니다",
+    "en": "Something went wrong"
+  },
+  "SYS_NO_ROUTE": {
+    "ko": "존재하지 않는 경로입니다",
+    "en": "No such route"
+  },
+  "SYS_WS_REQUIRED": {
+    "ko": "실시간 연결로 열어야 합니다",
+    "en": "This endpoint needs a websocket"
+  },
+  "SYS_ROUND_MISSING": {
+    "ko": "라운드 번호가 빠져 있습니다",
+    "en": "No round number"
+  },
+  "SYS_ROSTER_MISSING": {
+    "ko": "도감에 없는 몬스터입니다. {key}",
+    "en": "Not in the codex: {key}"
+  },
+  "SYS_MISHAP_SHAPE": {
+    "ko": "어디서 무엇이 넘어졌는지가 비어 있습니다",
+    "en": "The report is missing where or what failed"
+  },
+  "SYS_ID_SHAPE": {
+    "ko": "이름은 2~16자의 한글, 영문, 숫자, 밑줄로 짓습니다",
+    "en": "Names are 2-16 letters, digits, or underscores"
+  },
+  "SYS_PIN_SHAPE": {
+    "ko": "암호는 네 자리 숫자로 적습니다",
+    "en": "The PIN is four digits"
+  },
+  "SYS_ID_MISMATCH": {
+    "ko": "이름이나 암호가 맞지 않습니다",
+    "en": "Wrong name or PIN"
+  },
+  "SYS_PLAYER_MISSING": {
+    "ko": "그런 사람이 없습니다",
+    "en": "No such player"
+  },
+  "SYS_NAME_TAKEN": {
+    "ko": "이미 쓰이는 이름입니다",
+    "en": "That name is taken"
+  },
+  "SYS_BIO_LONG": {
+    "ko": "한 줄 소개는 {n}자까지 적습니다",
+    "en": "The one-line bio holds up to {n} characters"
+  },
+  "SYS_PIN_WRONG": {
+    "ko": "지금 암호가 맞지 않습니다",
+    "en": "The current PIN does not match"
+  },
+  "SYS_ADMIN_ONLY": {
+    "ko": "운영자만 들어갈 수 있습니다",
+    "en": "Only an operator may open this"
+  },
+  "SYS_ADMIN_LAST": {
+    "ko": "마지막 운영자는 내리거나 지울 수 없습니다",
+    "en": "The last operator cannot be removed"
+  },
+  "SYS_ADMIN_NO_ACCOUNT": {
+    "ko": "그런 계정이 없습니다",
+    "en": "No such account"
+  },
+  "SYS_ADMIN_NO_DUEL": {
+    "ko": "그런 판이 없습니다",
+    "en": "No such duel"
+  },
+  "SYS_ADMIN_RENAME_KEY": {
+    "ko": "대소문자만 다른 이름으로만 고칠 수 있습니다",
+    "en": "Only letter case may change"
+  },
+  "SYS_AUTH_REQUIRED": {
+    "ko": "먼저 들어서야 합니다",
+    "en": "Sign in first"
+  },
+  "SYS_SESSION_EXPIRED": {
+    "ko": "세션이 만료되었습니다",
+    "en": "The session expired"
+  },
+  "SYS_PACK_SIZE": {
+    "ko": "팀은 {n}명으로 편성합니다",
+    "en": "A team holds {n}"
+  },
+  "SYS_PACK_DUPLICATE": {
+    "ko": "같은 몬스터를 두 번 넣었습니다",
+    "en": "The same unit is in twice"
+  },
+  "SYS_PACK_UNKNOWN": {
+    "ko": "도감에 없는 몬스터가 섞여 있습니다",
+    "en": "Someone is not in the codex"
+  },
+  "SYS_PACK_REQUIRED": {
+    "ko": "팀을 먼저 편성하십시오",
+    "en": "Build a team first"
+  },
+  "SYS_DUEL_MISSING": {
+    "ko": "그런 판이 없습니다",
+    "en": "No such match"
+  },
+  "SYS_DUEL_NOT_YOURS": {
+    "ko": "이 판의 참가자가 아닙니다",
+    "en": "You are not in this match"
+  },
+  "SYS_DUEL_CLOSED": {
+    "ko": "이미 끝난 판입니다",
+    "en": "That match is already over"
+  },
+  "SYS_DUEL_SELF": {
+    "ko": "자기 자신에게는 도전할 수 없습니다",
+    "en": "You cannot challenge yourself"
+  },
+  "SYS_DUEL_FOE_BUSY": {
+    "ko": "그 상대와는 지금 붙을 수 없습니다",
+    "en": "That opponent is not available"
+  },
+  "SYS_DUEL_FOE_MISSING": {
+    "ko": "상대를 찾지 못했습니다",
+    "en": "No such opponent"
+  },
+  "SYS_CHALLENGE_DUP": {
+    "ko": "이미 도전이 오가는 중입니다",
+    "en": "A challenge is already open"
+  },
+  "SYS_CHALLENGE_MISSING": {
+    "ko": "그런 도전이 없습니다",
+    "en": "No such challenge"
+  },
+  "SYS_CHALLENGE_NOT_YOURS": {
+    "ko": "본인이 보낸 도전이 아닙니다",
+    "en": "Not your challenge"
+  },
+  "SYS_CHALLENGE_CLOSED": {
+    "ko": "이미 끝난 도전입니다",
+    "en": "That challenge is already settled"
+  },
+  "SYS_DUEL_NO_FOE": {
+    "ko": "지금 붙을 수 있는 상대가 없습니다",
+    "en": "Nobody is available right now"
+  },
+  "SYS_DUEL_TOO_MANY": {
+    "ko": "진행 중인 결투가 {n}판입니다. 먼저 끝내야 합니다.",
+    "en": "{n} duels are still open. Finish one first"
+  },
+  "SYS_DUEL_WRONG_ROUND": {
+    "ko": "지금은 {round}라운드입니다",
+    "en": "It is round {round} now"
+  },
+  "SYS_DUEL_ALREADY_SENT": {
+    "ko": "이미 명령을 냈습니다",
+    "en": "Orders are already in"
+  },
+  "SYS_ORDERS_SHAPE": {
+    "ko": "명령이 배열이 아닙니다",
+    "en": "Orders must be a list"
+  },
+  "SYS_ORDER_NO_SLOT": {
+    "ko": "존재하지 않는 자리입니다. {slot}",
+    "en": "No such slot: {slot}"
+  },
+  "SYS_ORDER_ACTION": {
+    "ko": "알 수 없는 행동입니다. {action}",
+    "en": "Unknown action: {action}"
+  },
+  "SYS_ORDER_NO_SKILL": {
+    "ko": "존재하지 않는 기술 번호입니다. {n}",
+    "en": "No such skill: {n}"
+  },
+  "SYS_ORDER_NO_TARGET": {
+    "ko": "{skill:이가} 겨눌 대상이 없습니다",
+    "en": "{skill} has no target"
+  },
+  "SYS_ORDER_SKILL_LOCKED": {
+    "ko": "{name:은는} 지금 그 기술을 쓸 수 없습니다",
+    "en": "{name} cannot use that skill now"
+  },
+  "SYS_ORDER_DUPLICATE": {
+    "ko": "{name:이가} 명령을 둘 받았습니다",
+    "en": "{name} got two orders"
+  },
+  "SYS_RULES_STALE": {
+    "ko": "규칙이 새로 나갔습니다. 화면을 새로 고칩니다.",
+    "en": "The rules moved on. Reloading the page"
+  },
+  "SYS_NET_DOWN": {
+    "ko": "서버에 닿지 않습니다",
+    "en": "The server is out of reach"
+  },
+  "SYS_NET_STATUS": {
+    "ko": "서버 오류가 났습니다. {code}",
+    "en": "Server error {code}"
+  },
+  "SYS_NET_GARBLED": {
+    "ko": "응답을 읽을 수 없습니다",
+    "en": "The response could not be read"
+  },
+  "FMT_chance": {
+    "ko": "{chance}% 확률로 {body}",
+    "en": "{chance}% chance to {body}"
+  },
+  "FMT_conditional": {
+    "ko": "{cond} {body}",
+    "en": "{cond}, {body}"
+  },
+  "FMT_triggered": {
+    "ko": "{when} {body}",
+    "en": "{when}: {body}"
+  },
+  "FMT_side_self": {
+    "ko": "자신에게 {body}",
+    "en": "on self, {body}"
+  },
+  "FMT_side_ally": {
+    "ko": "아군 전체에게 {body}",
+    "en": "on all allies, {body}"
+  },
+  "FMT_power": {
+    "ko": "위력 {n}단계",
+    "en": "Power {n}"
+  },
+  "FMT_speed": {
+    "ko": "속도 {n:signed}",
+    "en": "Speed {n:signed}"
+  },
+  "FMT_sp": {
+    "ko": "투지 {n}",
+    "en": "{n} SP"
+  },
+  "CND_foe_fell": {
+    "ko": "쓰러진 것이 적일 때",
+    "en": "When an enemy falls"
+  },
+  "CND_target_weaker": {
+    "ko": "대상의 체력이 자신보다 낮을 때",
+    "en": "When the target's health is lower than yours"
+  },
+  "UI_S20_GROW_LEFT": {
+    "ko": "남은 점수 {n}",
+    "en": "{n} left"
+  },
+  "UI_S20_GROW_FULL": {
+    "ko": "점수를 모두 넣었습니다",
+    "en": "Every point is spent"
+  },
+  "UI_S20_GROW_RESET": {
+    "ko": "초기화",
+    "en": "Reset"
+  },
+  "UI_S20_GROW_ADD": {
+    "ko": "{stat}에 1 넣습니다",
+    "en": "Add 1 to {stat}"
+  },
+  "UI_S20_GROW_SUB": {
+    "ko": "{stat}에서 1 뺍니다",
+    "en": "Take 1 from {stat}"
+  },
+  "UI_S20_PRESET": {
+    "ko": "저장한 편성",
+    "en": "Saved teams"
+  },
+  "UI_S20_PRESET_NAME": {
+    "ko": "편성 이름",
+    "en": "Team name"
+  },
+  "UI_S20_PRESET_LOAD": {
+    "ko": "{name:을를} 불러옵니다",
+    "en": "Load {name}"
+  },
+  "UI_S20_PRESET_SAVED": {
+    "ko": "{name:으로} 저장했습니다",
+    "en": "Saved as {name}"
+  },
+  "UI_S20_PRESET_FAIL": {
+    "ko": "저장하지 못했습니다. {why}",
+    "en": "Could not save. {why}"
+  },
+  "UI_S30_PRESET": {
+    "ko": "편성 고르기",
+    "en": "Choose a team"
+  },
+  "SYS_PRESET_MISSING": {
+    "ko": "그 편성이 없습니다",
+    "en": "No such team"
+  },
+  "SYS_PRESET_NAME": {
+    "ko": "편성 이름을 적으십시오",
+    "en": "Give the team a name"
+  },
+  "SYS_PRESET_FULL": {
+    "ko": "편성은 {n}벌까지 저장합니다",
+    "en": "You may save up to {n} teams"
+  },
+  "SYS_BUILD_SPENT_OVER": {
+    "ko": "성장 배분이 {n}점을 넘습니다",
+    "en": "Growth points exceed {n}"
+  },
+  "SYS_BUILD_SPENT_NEGATIVE": {
+    "ko": "성장 배분은 0 이상이어야 합니다",
+    "en": "Growth points cannot be negative"
+  },
+  "SYS_BUILD_STAT_UNKNOWN": {
+    "ko": "모르는 능력치입니다",
+    "en": "Unknown stat"
+  },
+  "SYS_BUILD_STAT_OVER": {
+    "ko": "한 능력치가 상한을 넘습니다",
+    "en": "A stat exceeds its cap"
+  },
+  "UI_COMMON_SAVE": {
+    "ko": "저장",
+    "en": "Save"
+  },
+  "UI_M31_TITLE": {
+    "ko": "어느 편성으로 붙습니까",
+    "en": "Which team do you bring?"
+  },
+  "UI_M31_NOTE": {
+    "ko": "고른 편성이 그대로 이 결투의 팀이 됩니다. 판이 열린 뒤에는 바꾸지 못합니다.",
+    "en": "The team you pick becomes this duel’s team. It cannot change once the duel opens."
+  },
+  "UI_M31_GO": {
+    "ko": "이 편성으로 출전",
+    "en": "Go with this team"
+  },
+  "UI_S20_GROW_ADD_DEAR": {
+    "ko": "{stat}에 1 넣습니다. {n}점이 듭니다.",
+    "en": "Add 1 to {stat}. Costs {n}"
+  },
+  "SYS_ARENA_RESET_CONFIRM": {
+    "ko": "되돌리려면 확인 문구가 필요합니다",
+    "en": "Resetting needs a confirmation word"
+  },
+  "SYS_ARENA_PACK_REQUIRED": {
+    "ko": "경쟁전 팀을 먼저 편성하십시오",
+    "en": "Build your arena team first"
+  },
+  "SYS_DRAFT_MISSING": {
+    "ko": "그 밴픽이 없습니다",
+    "en": "No such draft"
+  },
+  "SYS_DRAFT_NOT_YOURS": {
+    "ko": "이 밴픽의 참가자가 아닙니다",
+    "en": "You are not in this draft"
+  },
+  "SYS_DRAFT_PHASE": {
+    "ko": "지금 할 수 있는 차례가 아닙니다",
+    "en": "Not this phase"
+  },
+  "SYS_DRAFT_BAN_COUNT": {
+    "ko": "밴은 {n}명까지 고릅니다",
+    "en": "Ban up to {n}"
+  },
+  "SYS_DRAFT_BAN_UNKNOWN": {
+    "ko": "상대 편성에 없는 몬스터입니다",
+    "en": "That monster is not on their team"
+  },
+  "SYS_DRAFT_PICK_BANNED": {
+    "ko": "밴당한 몬스터는 데려갈 수 없습니다",
+    "en": "You cannot bring a banned monster"
+  },
+  "TIER_champion": {
+    "ko": "챔피온",
+    "en": "Champion"
+  },
+  "TIER_diamond": {
+    "ko": "다이아",
+    "en": "Diamond"
+  },
+  "TIER_gold": {
+    "ko": "골드",
+    "en": "Gold"
+  },
+  "TIER_silver": {
+    "ko": "실버",
+    "en": "Silver"
+  },
+  "TIER_bronze": {
+    "ko": "브론즈",
+    "en": "Bronze"
+  },
+  "TIER_placing": {
+    "ko": "배치 중",
+    "en": "Placing"
+  },
+  "TIER_PLACING_LEFT": {
+    "ko": "배치까지 {n}판 남았습니다",
+    "en": "{n} to place"
+  },
+  "UI_S60_TIER": {
+    "ko": "티어",
+    "en": "Tier"
+  },
+  "UI_S41_PROMOTED": {
+    "ko": "{tier:으로} 올라섰습니다",
+    "en": "Promoted to {tier}"
+  },
+  "UI_S31_TITLE": {
+    "ko": "밴픽",
+    "en": "Draft"
+  },
+  "UI_S31_FOE": {
+    "ko": "상대 편성",
+    "en": "Their team"
+  },
+  "UI_S31_MINE": {
+    "ko": "내 편성",
+    "en": "Your team"
+  },
+  "UI_S31_VEILED": {
+    "ko": "상대의 성장 배분은 보이지 않습니다",
+    "en": "Their growth is hidden"
+  },
+  "UI_S31_SUBMIT_BAN": {
+    "ko": "밴 확정",
+    "en": "Confirm bans"
+  },
+  "UI_S31_SUBMIT_PICK": {
+    "ko": "픽 확정",
+    "en": "Confirm picks"
+  },
+  "UI_S31_WAIT": {
+    "ko": "상대 대기",
+    "en": "Waiting"
+  },
+  "UI_S31_BANNED": {
+    "ko": "밴",
+    "en": "Banned"
+  },
+  "UI_S31_LEAVE": {
+    "ko": "기권",
+    "en": "Forfeit"
+  },
+  "UI_S20_TAB_PACK": {
+    "ko": "편성",
+    "en": "Teams"
+  },
+  "UI_S20_TAB_PROFILE": {
+    "ko": "프로필",
+    "en": "Profile"
+  },
+  "UI_S20_TAB_RECORD": {
+    "ko": "전적",
+    "en": "Record"
+  },
+  "UI_S20_NEW": {
+    "ko": "새 편성",
+    "en": "New team"
+  },
+  "UI_S20_PICK_PRESET": {
+    "ko": "왼쪽에서 편성을 고르거나 새로 만드십시오",
+    "en": "Pick a team on the left, or make a new one"
+  },
+  "UI_S20_GROUP_DUEL": {
+    "ko": "결투 3명",
+    "en": "Duel · three"
+  },
+  "UI_S20_GROUP_ARENA": {
+    "ko": "경쟁전 7명",
+    "en": "Arena · seven"
+  },
+  "UI_S20_SEATED": {
+    "ko": "출전 중",
+    "en": "In use"
+  },
+  "UI_S20_EDIT_NEW": {
+    "ko": "새 편성",
+    "en": "New team"
+  },
+  "UI_S20_PROF_HEAD": {
+    "ko": "프로필",
+    "en": "Profile"
+  },
+  "UI_S20_PROF_ENTER_NAME": {
+    "ko": "들어서는 이름",
+    "en": "Sign-in name"
+  },
+  "UI_S20_PROF_ENTER_NOTE": {
+    "ko": "이 이름은 바꾸지 못합니다. 다음에 들어설 때도 이 이름을 댑니다.",
+    "en": "This one never changes. You sign in with it next time too."
+  },
+  "UI_S20_PROF_NICK": {
+    "ko": "닉네임",
+    "en": "Nickname"
+  },
+  "UI_S20_PROF_NICK_NOTE": {
+    "ko": "순위표와 도전 목록에 오르는 이름입니다",
+    "en": "This is the name that shows on the standings and the challenge list."
+  },
+  "UI_S20_PROF_BIO": {
+    "ko": "상태 메시지",
+    "en": "Status message"
+  },
+  "UI_S20_PROF_BIO_HINT": {
+    "ko": "비워 두어도 됩니다",
+    "en": "Leaving it blank is fine"
+  },
+  "UI_S20_PROF_HERO": {
+    "ko": "대표 캐릭터",
+    "en": "Banner monster"
+  },
+  "UI_S20_PROF_HERO_NOTE": {
+    "ko": "프로필 그림이 되고 대기실에도 섭니다. 전투와는 무관합니다.",
+    "en": "It becomes your avatar and stands in your hall. It does not affect battle."
+  },
+  "UI_S20_PROF_PIN": {
+    "ko": "네 자리 암호",
+    "en": "Four-digit PIN"
+  },
+  "UI_S20_PROF_PIN_NOW": {
+    "ko": "지금 암호",
+    "en": "Current PIN"
+  },
+  "UI_S20_PROF_PIN_NEXT": {
+    "ko": "새 암호",
+    "en": "New PIN"
+  },
+  "UI_S20_PROF_PIN_SAVE": {
+    "ko": "암호 변경",
+    "en": "Change PIN"
+  },
+  "UI_S20_PROF_PIN_DONE": {
+    "ko": "암호를 바꾸었습니다",
+    "en": "The PIN is changed"
+  },
+  "UI_S20_PROF_SAVED": {
+    "ko": "저장했습니다",
+    "en": "Saved"
+  },
+  "UI_S20_PROF_AVATAR_NOTE": {
+    "ko": "지금은 대표 캐릭터의 초상을 씁니다. 따로 그린 프로필 그림은 나중에 붙입니다.",
+    "en": "For now it uses the banner monster's portrait. A drawn avatar comes later."
+  },
+  "UI_S20_REC_ARENA": {
+    "ko": "경쟁전",
+    "en": "Arena"
+  },
+  "UI_S20_REC_DUEL": {
+    "ko": "결투",
+    "en": "Duels"
+  },
+  "UI_S20_REC_TALLY": {
+    "ko": "{games}판 {wins}승 {losses}패",
+    "en": "{games} games, {wins}W {losses}L"
+  },
+  "UI_S20_REC_RATE": {
+    "ko": "승률 {n}%",
+    "en": "{n}% win rate"
+  },
+  "UI_S20_REC_NONE": {
+    "ko": "아직 끝난 판이 없습니다",
+    "en": "No finished games yet"
+  },
+  "UI_S20_REC_MONS": {
+    "ko": "몬스터별 성적",
+    "en": "By monster"
+  },
+  "UI_S20_REC_LOG": {
+    "ko": "최근 판",
+    "en": "Recent games"
+  },
+  "UI_S20_REC_ROUNDS": {
+    "ko": "{n}라운드",
+    "en": "{n} rounds"
+  },
+  "UI_S20_REC_FORFEIT_MINE": {
+    "ko": "몰수패",
+    "en": "Forfeit"
+  },
+  "UI_S20_REC_FORFEIT_THEIRS": {
+    "ko": "몰수승",
+    "en": "Won by forfeit"
+  },
+  "UI_S20_REC_OFFLINE": {
+    "ko": "들어서야 전적이 쌓입니다",
+    "en": "Sign in to build a record"
+  },
+  "UI_S20_PROF_OFFLINE": {
+    "ko": "들어서야 프로필을 고칩니다",
+    "en": "Sign in to edit your profile"
+  },
+  "UI_COMMON_DELETE": {
+    "ko": "삭제",
+    "en": "Delete"
+  },
+  "UI_S20_LEAVE_DIRTY": {
+    "ko": "저장하지 않은 편성이 있습니다. 두고 나가시겠습니까.",
+    "en": "This team is not saved. Leave it behind?"
+  },
+  "UI_S20_NO_PRESET": {
+    "ko": "저장한 편성이 없습니다",
+    "en": "No saved teams"
+  },
+  "UI_S30_NO_PRESET": {
+    "ko": "팀을 먼저 편성하십시오",
+    "en": "Build a team first"
+  },
+  "UI_S30_GO_READY": {
+    "ko": "준비실로",
+    "en": "To the hall"
+  },
+  "UI_S10_READY": {
+    "ko": "준비실",
+    "en": "Ready room"
+  },
+  "UI_S10_READY_SUB": {
+    "ko": "편성과 프로필과 전적",
+    "en": "Teams, profile and record"
+  },
+  "UI_S20_HERO_NONE": {
+    "ko": "대표를 아직 고르지 않았습니다",
+    "en": "No banner monster yet"
+  },
+  "UI_S20_SEAT_MARK": {
+    "ko": "대표",
+    "en": "Banner"
+  },
+  "UI_S20_LEFTOVER": {
+    "ko": "쓰지 않은 점수가 있습니다. {who}",
+    "en": "Unspent points remain. {who}"
+  },
+  "UI_S20_LEFTOVER_ONE": {
+    "ko": "{name} {n}점",
+    "en": "{name} {n}"
+  },
+  "UI_S20_LEFTOVER_ASK": {
+    "ko": "쓰지 않은 점수가 있습니다. {who}\n이대로 저장하시겠습니까.",
+    "en": "Unspent points remain. {who}\nSave it as it stands?"
+  },
+  "UI_S10_ARENA": {
+    "ko": "경쟁전",
+    "en": "Arena"
+  },
+  "UI_S10_ARENA_SUB": {
+    "ko": "팀을 편성하고 밴픽으로 붙습니다",
+    "en": "Build a team and fight through a draft"
+  },
+  "UI_S32_TITLE": {
+    "ko": "경쟁전",
+    "en": "Arena"
+  },
+  "UI_S32_PRESET": {
+    "ko": "편성 고르기",
+    "en": "Choose a team"
+  },
+  "UI_S32_NOTE": {
+    "ko": "짝이 되면 서로의 팀이 공개됩니다. 다만 성장 배분은 가려집니다. 상대 팀에서 두 명을 밴하고 남은 다섯 명에서 세 명을 골라 붙습니다.",
+    "en": "When you are matched both teams are revealed, though growth stays hidden. Ban two of theirs, then take three of the five that remain."
+  },
+  "UI_S32_MATCH": {
+    "ko": "경쟁전 매칭",
+    "en": "Find an arena match"
+  },
+  "UI_S32_NO_PRESET": {
+    "ko": "경쟁전 팀을 먼저 편성하십시오",
+    "en": "Build your arena team first"
+  },
+  "UI_S32_TIER": {
+    "ko": "티어",
+    "en": "Tier"
+  },
+  "UI_S32_RATING": {
+    "ko": "점수 {n}",
+    "en": "{n} pts"
+  },
+  "UI_S32_LIVE": {
+    "ko": "진행 중인 경쟁전",
+    "en": "Arena in progress"
+  },
+  "UI_S32_NO_DUEL": {
+    "ko": "진행 중인 경쟁전이 없습니다",
+    "en": "No arena matches in progress."
+  },
+  "UI_S31_PHASE_BAN": {
+    "ko": "밴",
+    "en": "Ban"
+  },
+  "UI_S31_PHASE_PICK": {
+    "ko": "픽",
+    "en": "Pick"
+  },
+  "UI_S31_BAN_HINT": {
+    "ko": "상대 팀에서 두 명을 밴합니다",
+    "en": "Ban two from their team"
+  },
+  "UI_S31_PICK_HINT": {
+    "ko": "남은 다섯 명에서 세 명을 고릅니다. 고른 차례가 곧 자리 순서입니다.",
+    "en": "Pick three of the five that remain. The order you pick is the order they stand"
+  },
+  "UI_S31_CHOSE": {
+    "ko": "{n}/{max}",
+    "en": "{n}/{max}"
+  },
+  "UI_S31_FOOT_BAN": {
+    "ko": "밴은 동시에 냅니다. 내지 않으면 상대 팀이 그대로 살아남습니다.",
+    "en": "Bans are submitted at once. Submit none and their team survives whole"
+  },
+  "UI_S31_FOOT_PICK": {
+    "ko": "1번 자리는 상대 패시브가 먼저 노리는 자리입니다",
+    "en": "Passives reach for the first seat"
+  },
+  "UI_S31_LEAVE_ASK": {
+    "ko": "지금 나가면 몰수패입니다. 나가시겠습니까.",
+    "en": "Leaving now forfeits the match. Leave?"
+  },
+  "UI_ST_NAV_SIM": {
+    "ko": "시뮬레이터",
+    "en": "Simulator"
+  },
+  "UI_ST_SIM_HEAD": {
+    "ko": "시뮬레이터 승률",
+    "en": "Simulated win rates"
+  },
+  "UI_ST_SIM_NOTE": {
+    "ko": "{n}판을 무작위 3:3으로 돌린 결과입니다. 명령도 성장 배분도 난수이므로 사람이 골라 쓰면 값이 달라집니다.",
+    "en": "From {n} random 3v3 games. Orders and growth are random, so hand-played results differ."
+  },
+  "UI_ST_SIM_ERROR": {
+    "ko": "몬스터별 표준오차 {p}%p",
+    "en": "Standard error {p}%p per monster"
+  },
+  "UI_ST_SIM_MISSING": {
+    "ko": "아직 올린 회차가 없습니다",
+    "en": "No simulation round has been published yet."
+  },
+  "UI_ST_COL_SIM": {
+    "ko": "시뮬 승률",
+    "en": "Sim rate"
+  },
+  "UI_ST_SORT": {
+    "ko": "정렬",
+    "en": "Sort"
+  },
+  "UI_ST_SORT_RATE": {
+    "ko": "승률",
+    "en": "Win rate"
+  },
+  "UI_ST_SORT_PICK": {
+    "ko": "픽률",
+    "en": "Pick rate"
+  },
+  "UI_ST_SORT_BAN": {
+    "ko": "밴률",
+    "en": "Ban rate"
+  },
+  "UI_ST_SORT_NAME": {
+    "ko": "가나다",
+    "en": "Name"
+  },
+  "UI_ST_SORT_PLAYED": {
+    "ko": "판수",
+    "en": "Games"
+  },
+  "UI_ST_SEASON": {
+    "ko": "시즌",
+    "en": "Season"
+  },
+  "UI_ST_SEASON_PRE": {
+    "ko": "프리시즌",
+    "en": "Preseason"
+  },
+  "UI_ST_SEASON_OLD": {
+    "ko": "그 이전",
+    "en": "Before"
+  },
+  "UI_ST_SEASON_NOTE": {
+    "ko": "규칙이 바뀐 앞뒤를 나눠 셉니다. 한 표에 섞으면 어느 쪽 수치인지 가릴 수 없습니다.",
+    "en": "Games before and after the rules changed are counted apart. Mixed together, neither reads."
+  },
+  "UI_ST_TITLE": {
+    "ko": "로켓몬스터 기록",
+    "en": "Rocketmonster Records"
+  },
+  "UI_ST_HOME": {
+    "ko": "기록",
+    "en": "Records"
+  },
+  "UI_ST_NAV_MONS": {
+    "ko": "몬스터",
+    "en": "Monsters"
+  },
+  "UI_ST_NAV_PLAYERS": {
+    "ko": "수강생",
+    "en": "Players"
+  },
+  "UI_ST_NAV_GAME": {
+    "ko": "게임으로",
+    "en": "To the game"
+  },
+  "UI_ST_FOOT": {
+    "ko": "끝난 판만 셉니다. 진행 중인 판은 어느 숫자에도 들어가지 않습니다.",
+    "en": "Only finished games are counted. Games in progress enter no number here."
+  },
+  "UI_ST_MONS_HEAD": {
+    "ko": "몬스터별 성적",
+    "en": "By monster"
+  },
+  "UI_ST_COUNTED": {
+    "ko": "끝난 판 {n}개를 집계했습니다",
+    "en": "Counted {n} finished games."
+  },
+  "UI_ST_COUNTED_BAN": {
+    "ko": "끝난 판 {n}개와 밴픽 {d}회를 집계했습니다",
+    "en": "Counted {n} finished games and {d} drafts."
+  },
+  "UI_ST_ROSTER": {
+    "ko": "로스터 {n}명",
+    "en": "{n} monsters"
+  },
+  "UI_ST_COL_MONSTER": {
+    "ko": "몬스터",
+    "en": "Monster"
+  },
+  "UI_ST_COL_TYPE": {
+    "ko": "타입",
+    "en": "Type"
+  },
+  "UI_ST_COL_PICK": {
+    "ko": "픽률",
+    "en": "Pick"
+  },
+  "UI_ST_COL_BAN": {
+    "ko": "밴률",
+    "en": "Ban"
+  },
+  "UI_ST_BY_TYPE": {
+    "ko": "타입별",
+    "en": "By type"
+  },
+  "UI_ST_BY_ELEMENT": {
+    "ko": "속성별",
+    "en": "By element"
+  },
+  "UI_ST_ELEMENT_NOTE": {
+    "ko": "기술마다 속성이 붙으므로 한 명이 여러 줄에 실립니다. 줄의 합은 로스터 수를 넘습니다.",
+    "en": "Elements sit on skills, so one monster lands in several rows. The rows add up to more than the roster."
+  },
+  "UI_ST_ROLL_SUB": {
+    "ko": "{n}명 · 출전 {games}회",
+    "en": "{n} monsters · {games} entries"
+  },
+  "UI_ST_NO_MONSTER": {
+    "ko": "그런 몬스터가 없습니다",
+    "en": "No such monster"
+  },
+  "UI_ST_BACK_MONS": {
+    "ko": "몬스터 표로 돌아갑니다",
+    "en": "Back to the monster table"
+  },
+  "UI_ST_BACK_PLAYERS": {
+    "ko": "수강생 목록으로 돌아갑니다",
+    "en": "Back to the player list"
+  },
+  "UI_ST_FIG_DRAW": {
+    "ko": "무",
+    "en": "Draws"
+  },
+  "UI_ST_PLAYERS_HEAD": {
+    "ko": "수강생",
+    "en": "Players"
+  },
+  "UI_ST_PLAYERS_NOTE": {
+    "ko": "{n}명입니다. 이름을 누르면 그 사람의 전적을 봅니다.",
+    "en": "{n} players. Press a name to see that record."
+  },
+  "UI_ST_SEARCH": {
+    "ko": "이름으로 찾습니다",
+    "en": "Search by name"
+  },
+  "UI_ST_COL_BIO": {
+    "ko": "상태 메시지",
+    "en": "Status"
+  },
+  "UI_ST_MORE": {
+    "ko": "{n}명이 더 있습니다. 이름을 적어 찾으십시오.",
+    "en": "{n} more. Type a name to find them."
+  },
+  "UI_ST_NO_NAME": {
+    "ko": "그런 이름이 없습니다",
+    "en": "No such name"
+  },
+  "UI_ST_NO_BIO": {
+    "ko": "한 줄 소개가 없습니다",
+    "en": "No status message."
+  },
+  "UI_ST_FAVOURITES": {
+    "ko": "즐겨 쓰는 몬스터",
+    "en": "Most played"
+  },
+  "UI_ST_COL_MODE": {
+    "ko": "모드",
+    "en": "Mode"
+  },
+  "UI_ST_COL_WHEN": {
+    "ko": "친 시각",
+    "en": "Played"
+  },
+  "UI_ST_COL_FOE": {
+    "ko": "상대",
+    "en": "Opponent"
+  },
+  "UI_ST_COL_PACK": {
+    "ko": "데려간 팀",
+    "en": "Team"
+  },
+  "UI_ST_COL_LENGTH": {
+    "ko": "길이",
+    "en": "Length"
+  },
+  "UI_ST_COL_POINTS": {
+    "ko": "점수",
+    "en": "Points"
+  },
+  "UI_ST_COL_RESULT": {
+    "ko": "결과",
+    "en": "Result"
+  },
+  "UI_ST_DUEL_ONE": {
+    "ko": "결투 한 판",
+    "en": "One duel"
+  },
+  "UI_ST_ARENA_ONE": {
+    "ko": "경쟁전 한 판",
+    "en": "One arena match"
+  },
+  "UI_ST_DUEL_NOTE": {
+    "ko": "{when} · {n}라운드",
+    "en": "{when} · {n} rounds"
+  },
+  "UI_ST_FORFEIT": {
+    "ko": "몰수로 끝났습니다",
+    "en": "Ended by forfeit"
+  },
+  "UI_ST_SIDE_A": {
+    "ko": "A편",
+    "en": "Side A"
+  },
+  "UI_ST_SIDE_B": {
+    "ko": "B편",
+    "en": "Side B"
+  },
+  "UI_ST_ROUNDS_HEAD": {
+    "ko": "라운드",
+    "en": "Rounds"
+  },
+  "UI_ST_GUARD": {
+    "ko": "방어 태세",
+    "en": "Guard"
+  },
+  "UI_ST_SLOT": {
+    "ko": "{n}번 자리",
+    "en": "Seat {n}"
+  },
+  "UI_ST_DESC": {
+    "ko": "시비르기 지하 결투장 로캣의 대전 기록입니다. 몬스터별 픽률과 밴률과 승률을 봅니다.",
+    "en": "Match records from the Rocat pit under Sibirgi. Pick, ban and win rates by monster."
+  },
+  "UI_ST_BRAND": {
+    "ko": "로켓몬스터",
+    "en": "Rocketmonster"
+  },
+  "UI_S60_PLAYED_N": {
+    "ko": "{n}판",
+    "en": "{n} games"
+  },
+  "SYS_SEEN_UNKNOWN": {
+    "ko": "알 수 없는 안내입니다",
+    "en": "Unknown guide mark"
+  },
+  "UI_S10_RULES": {
+    "ko": "규칙",
+    "en": "Rules"
+  },
+  "UI_S10_RULES_SUB": {
+    "ko": "판을 두는 법",
+    "en": "How a match works"
+  },
+  "UI_S51_TITLE": {
+    "ko": "규칙",
+    "en": "Rules"
+  },
+  "UI_S51_LEARN": {
+    "ko": "배울 여섯",
+    "en": "The six"
+  },
+  "UI_S51_R1_HEAD": {
+    "ko": "동시에 냅니다",
+    "en": "Both sides commit at once"
+  },
+  "UI_S51_R1_BODY": {
+    "ko": "양쪽이 같은 라운드의 명령을 각자 정하고, 둘 다 내면 그 자리에서 판정합니다. 상대가 무엇을 냈는지는 판정이 끝난 뒤에 보입니다.",
+    "en": "Both sides choose their orders for the same round, and the round resolves once both have committed. You see the opponent’s orders only after it resolves."
+  },
+  "UI_S51_R2_HEAD": {
+    "ko": "명령은 넷입니다",
+    "en": "Four commands each"
+  },
+  "UI_S51_R2_BODY": {
+    "ko": "몬스터마다 기술 둘과 특수기 하나와 방어 태세 가운데 하나를 고릅니다. 세 자리가 각자 정하고 한 번에 나갑니다.",
+    "en": "Each monster picks one of two skills, its ultimate, or a guard stance. All three slots choose, then commit together."
+  },
+  "UI_S51_R3_HEAD": {
+    "ko": "투지가 특수기를 엽니다",
+    "en": "Spirit unlocks the ultimate"
+  },
+  "UI_S51_R3_BODY": {
+    "ko": "기술을 쓰면 투지가 {basic} 오르고 방어 태세를 취하면 {guard} 오릅니다. 최대 {max}까지 차며, 특수기는 정해진 투지를 소모합니다.",
+    "en": "A skill raises spirit by {basic} and a guard stance by {guard}, up to {max}. An ultimate spends the amount it lists."
+  },
+  "UI_S51_R4_HEAD": {
+    "ko": "방어 태세는 반값입니다",
+    "en": "Guarding halves the damage"
+  },
+  "UI_S51_R4_BODY": {
+    "ko": "그 라운드에 받는 피해가 절반으로 줄고 투지가 {guard} 찹니다. 아무것도 안 하는 것이 아니라 다음 라운드를 사는 수입니다.",
+    "en": "Damage taken that round is halved and spirit rises by {guard}. It is not a wasted turn but a turn bought for the next round."
+  },
+  "UI_S51_R5_HEAD": {
+    "ko": "타입이 상성을 가릅니다",
+    "en": "Type decides the matchup"
+  },
+  "UI_S51_R5_BODY": {
+    "ko": "해가 육을 이기고 육이 공을 이기며 공이 해를 이깁니다. 맞으면 {adv}배로 들어가고 엇나가면 {dis}배로 줄어듭니다.",
+    "en": "Sea beats Land, Land beats Air, and Air beats Sea. A favourable matchup deals {adv}x and an unfavourable one {dis}x."
+  },
+  "UI_S51_R6_HEAD": {
+    "ko": "자리를 비우면 집니다",
+    "en": "Leaving the table loses it"
+  },
+  "UI_S51_R6_BODY": {
+    "ko": "명령을 안 내면 첫 번째는 방어 태세로 채워 주고, 두 번째는 몰수패로 판이 끝납니다.",
+    "en": "Miss one commit and a guard stance is filled in for you. Miss a second and the match is forfeited."
+  },
+  "UI_S51_GLOSSARY": {
+    "ko": "말 풀이",
+    "en": "Glossary"
+  },
+  "UI_S51_GLOSSARY_NOTE": {
+    "ko": "기술 설명에 나오는 낱말입니다. 모르는 것이 나오면 여기서 찾습니다.",
+    "en": "The terms that skill descriptions use. Look them up here when one is unfamiliar."
+  },
+  "UI_S51_TERMS": {
+    "ko": "낱말 {n}개",
+    "en": "{n} terms"
+  },
+  "GUIDE_NAME": {
+    "ko": "길잡이",
+    "en": "Guide"
+  },
+  "GUIDE_ASK_1": {
+    "ko": "저는 길잡이입니다. 여기는 셋을 데려가 셋과 붙는 결투장입니다.",
+    "en": "I am the guide. Down here, three of yours face three of theirs."
+  },
+  "GUIDE_ASK_2": {
+    "ko": "처음이시면 편성부터 첫 판까지 옆에서 짚어 드리겠습니다.",
+    "en": "If this is your first time, I will walk you from the lineup to your first match."
+  },
+  "GUIDE_START_1": {
+    "ko": "양쪽이 같은 라운드의 명령을 동시에 냅니다. 둘 다 내야 판정이 돕니다.",
+    "en": "Both sides commit their orders for the same round at once. Nothing resolves until both have."
+  },
+  "GUIDE_START_2": {
+    "ko": "먼저 데려갈 셋을 고릅니다. 준비실로 가겠습니다.",
+    "en": "First, choose the three you bring. Let us go to the ready room."
+  },
+  "GUIDE_READY": {
+    "ko": "준비실입니다. 편성을 만들어 저장하면 결투와 경쟁전이 그것을 씁니다.",
+    "en": "This is the ready room. Build a lineup and save it; duels and ranked both draw from what you save."
+  },
+  "GUIDE_BATTLE": {
+    "ko": "자리마다 명령을 하나씩 정합니다. 셋이 다 정해지면 한 번에 나갑니다.",
+    "en": "Set one order per slot. All three commit together once they are set."
+  },
+  "GUIDE_ARENA_1": {
+    "ko": "경쟁전은 일곱을 짜서 나갑니다. 서로의 일곱이 공개되고 둘씩 밴합니다.",
+    "en": "Ranked runs on a roster of seven. Both rosters are revealed and each side bans two."
+  },
+  "GUIDE_ARENA_2": {
+    "ko": "남은 다섯에서 셋을 골라 붙습니다. {n}판을 쳐야 티어가 붙습니다.",
+    "en": "Three of the remaining five go to the match. A tier is assigned after {n} matches."
+  },
+  "GUIDE_DUEL_R1": {
+    "ko": "겨눌 자리를 지목한 뒤 명령을 냅니다.",
+    "en": "Point at the slot you target, then commit."
+  },
+  "GUIDE_DUEL_R2": {
+    "ko": "투지가 찼습니다. 방어 태세를 취하면 한 번에 {n} 오릅니다.",
+    "en": "Spirit has risen. A guard stance raises it by {n} at once."
+  },
+  "GUIDE_DUEL_ULT": {
+    "ko": "특수기가 열렸습니다. 투지를 내주는 대신 크게 들어갑니다.",
+    "en": "The ultimate is open. It gives up spirit and lands far harder."
+  },
+  "UI_M50_LEARN": {
+    "ko": "학습",
+    "en": "Learn"
+  },
+  "UI_M50_LATER": {
+    "ko": "생략",
+    "en": "Skip"
+  },
+  "UI_M50_NEXT": {
+    "ko": "다음",
+    "en": "Next"
+  },
+  "UI_M50_DONE": {
+    "ko": "확인",
+    "en": "Got it"
+  },
+  "GUIDE_STEP_NEW": {
+    "ko": "여기를 눌러 편성을 하나 엽니다.",
+    "en": "Press here to open a new lineup."
+  },
+  "GUIDE_STEP_PICK": {
+    "ko": "데려갈 몬스터를 누릅니다. 세 자리를 채웁니다.",
+    "en": "Press a monster to bring it along. Fill all three slots."
+  },
+  "GUIDE_STEP_NAME": {
+    "ko": "편성에 이름을 붙입니다. 나중에 이 이름으로 고릅니다.",
+    "en": "Name the lineup. You will pick it by this name later."
+  },
+  "GUIDE_STEP_SAVE": {
+    "ko": "저장하면 이 편성으로 나갑니다. 그대로 첫 판을 열겠습니다.",
+    "en": "Saving sets this lineup as the one you field. Your first match opens right after."
+  },
+  "GUIDE_STEP_SKILL": {
+    "ko": "기술을 하나 누릅니다.",
+    "en": "Press one skill."
+  },
+  "GUIDE_STEP_TARGET": {
+    "ko": "겨눌 자리를 누릅니다.",
+    "en": "Press the slot you target."
+  },
+  "GUIDE_STEP_SEND": {
+    "ko": "셋이 다 정해졌습니다. 여기서 명령을 냅니다.",
+    "en": "All three are set. Commit them here."
+  },
+  "UI_COACH_NEXT": {
+    "ko": "다음",
+    "en": "Next"
+  },
+  "UI_COACH_STOP": {
+    "ko": "안내 종료",
+    "en": "End guide"
+  },
+  "UI_S10_TOURNEY": {
+    "ko": "토너먼트",
+    "en": "Tournament"
+  },
+  "UI_S10_TOURNEY_SUB": {
+    "ko": "방을 열고 코드로 모아 단판으로 겨룹니다",
+    "en": "Open a room, gather by code, single elimination"
+  },
+  "UI_S70_TITLE": {
+    "ko": "토너먼트",
+    "en": "Tournament"
+  },
+  "UI_S71_TITLE": {
+    "ko": "관전",
+    "en": "Spectate"
+  },
+  "UI_S70_NAME": {
+    "ko": "방 이름",
+    "en": "Room name"
+  },
+  "UI_S70_CODE": {
+    "ko": "초대 코드",
+    "en": "Invite code"
+  },
+  "UI_S70_OPEN": {
+    "ko": "방 개설",
+    "en": "Open"
+  },
+  "UI_S70_JOIN": {
+    "ko": "참가",
+    "en": "Join"
+  },
+  "UI_S70_START": {
+    "ko": "개시",
+    "en": "Start"
+  },
+  "UI_S70_GO": {
+    "ko": "내 판으로",
+    "en": "My match"
+  },
+  "UI_S70_LEAVE": {
+    "ko": "퇴장",
+    "en": "Leave"
+  },
+  "UI_S70_WATCH": {
+    "ko": "관전",
+    "en": "Watch"
+  },
+  "UI_S70_SEATS": {
+    "ko": "참가자 {n}명",
+    "en": "{n} entrants"
+  },
+  "UI_S70_MY_CODE": {
+    "ko": "초대 코드는 {code} 입니다. 이 코드를 받은 사람만 들어옵니다.",
+    "en": "Invite code {code}. Only people with this code can enter."
+  },
+  "UI_S70_ROUND": {
+    "ko": "{n}라운드",
+    "en": "Round {n}"
+  },
+  "UI_S70_FINAL": {
+    "ko": "결승",
+    "en": "Final"
+  },
+  "UI_S70_BYE": {
+    "ko": "부전승",
+    "en": "Bye"
+  },
+  "UI_S70_WAITING": {
+    "ko": "아직 시작하지 않았습니다. 호스트가 개시하면 대진이 섭니다.",
+    "en": "Not started. The bracket forms when the host begins."
+  },
+  "UI_S70_HOST_NOTE": {
+    "ko": "코드를 나눠 주고 모두 들어오면 개시합니다. 참가자는 최대 {n}명입니다.",
+    "en": "Share the code, then start once everyone is in. Up to {n} entrants."
+  },
+  "UI_S70_NONE": {
+    "ko": "들어가 있는 방이 없습니다. 방을 열거나 코드로 참가합니다.",
+    "en": "You are not in a room. Open one or join with a code."
+  },
+  "UI_S70_NEED_PACK": {
+    "ko": "경쟁전 편성 일곱이 있어야 참가합니다. 준비실에서 짭니다.",
+    "en": "A seven-monster arena lineup is required. Build it in the ready room."
+  },
+  "UI_S70_OUT": {
+    "ko": "{n}라운드에서 탈락했습니다. 남은 판은 관전할 수 있습니다.",
+    "en": "Eliminated in round {n}. You can still watch the remaining matches."
+  },
+  "UI_S70_WON": {
+    "ko": "{who} 님이 우승했습니다.",
+    "en": "{who} won the tournament."
+  },
+  "UI_S70_MINE": {
+    "ko": "{n}라운드가 열렸습니다. 밴픽부터 시작합니다.",
+    "en": "Round {n} is open. Begin with the ban and pick phase."
+  },
+  "UI_S71_NOTE": {
+    "ko": "끝난 라운드만 보입니다. 아직 내지 않은 명령은 나오지 않습니다.",
+    "en": "Only resolved rounds appear. Pending orders are never shown."
+  },
+  "UI_S71_EMPTY": {
+    "ko": "아직 끝난 라운드가 없습니다.",
+    "en": "No resolved rounds yet."
+  },
+  "UI_S71_ROUND": {
+    "ko": "{n}라운드",
+    "en": "Round {n}"
+  },
+  "UI_S71_OVER": {
+    "ko": "판이 끝났습니다.",
+    "en": "The match is over."
+  },
+  "SYS_TOURNEY_NAME": {
+    "ko": "방 이름은 1자에서 {n}자까지 적습니다.",
+    "en": "Room name must be 1 to {n} characters."
+  },
+  "SYS_TOURNEY_HOSTING": {
+    "ko": "이미 연 방이 있습니다. 그 방을 닫고 다시 엽니다.",
+    "en": "You already host a room. Close it first."
+  },
+  "SYS_TOURNEY_MISSING": {
+    "ko": "그런 방이 없습니다. 코드를 다시 확인합니다.",
+    "en": "No such room. Check the code."
+  },
+  "SYS_TOURNEY_STARTED": {
+    "ko": "이미 시작한 방입니다.",
+    "en": "That room has already started."
+  },
+  "SYS_TOURNEY_FULL": {
+    "ko": "자리가 찼습니다. {n}명까지 들어갑니다.",
+    "en": "The room is full at {n} entrants."
+  },
+  "SYS_TOURNEY_NOT_HOST": {
+    "ko": "개시는 방을 연 사람이 합니다.",
+    "en": "Only the host can start."
+  },
+  "SYS_TOURNEY_TOO_FEW": {
+    "ko": "{n}명은 모여야 시작합니다.",
+    "en": "At least {n} entrants are needed."
+  },
+  "SYS_TOURNEY_NO_PACK": {
+    "ko": "경쟁전 편성이 없는 참가자가 있습니다.",
+    "en": "Some entrants have no arena lineup."
+  },
+  "SYS_TOURNEY_NOT_SEATED": {
+    "ko": "그 방에 들어가 있지 않습니다.",
+    "en": "You are not in that room."
+  },
+  "SYS_TOURNEY_CODE": {
+    "ko": "초대 코드를 만들지 못했습니다. 다시 시도합니다.",
+    "en": "Could not mint an invite code. Try again."
+  },
+  "SYS_WATCH_CLOSED": {
+    "ko": "이 판은 관전할 수 없습니다.",
+    "en": "This match cannot be watched."
+  },
+  "UI_S41_FORFEIT_MINE": {
+    "ko": "자리를 비워 몰수패로 끝났습니다.",
+    "en": "Forfeited for being away."
+  },
+  "UI_S41_FORFEIT_FOE": {
+    "ko": "상대가 자리를 비워 몰수승으로 끝났습니다.",
+    "en": "Won by forfeit. Your opponent was away."
+  },
+  "UI_S41_FORFEIT_BOTH": {
+    "ko": "양쪽 다 자리를 비워 무승부로 끝났습니다.",
+    "en": "Both sides were away. The match is a draw."
+  },
+  "CHR_001_NAME": {
+    "ko": "괴룸파",
+    "en": ""
+  },
+  "CHR_001_SPECIES": {
+    "ko": "우파루파",
+    "en": ""
+  },
+  "CHR_001_DESC": {
+    "ko": "시비르기 마을 뒤쪽 늪지엔 어디선가 본 거 같은 우파루파 수인이 살고있다",
+    "en": ""
+  },
+  "CHR_001_STORY": {
+    "ko": "시비르기 마을 근처 이리마을에 사는 고양이 수인인 괴렘을 보고 인간화 했다는 소문이 있는 정체 불명의 수인이다",
+    "en": ""
+  },
+  "SKL_1001_NAME": {
+    "ko": "자연치유",
+    "en": ""
+  },
+  "SKL_1001_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, 자신의 체력을 최대치의 {e1_ratio:pct}만큼 회복합니다.",
+    "en": ""
+  },
+  "SKL_2001_NAME": {
+    "ko": "늪의 온기",
+    "en": ""
+  },
+  "SKL_2001_DESC": {
+    "ko": "자신의 체력을 최대치의 {e1_ratio:pct}만큼 깎고, 자신을 뺀 아군에게 {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_5001_NAME": {
+    "ko": "자폭",
+    "en": ""
+  },
+  "SKL_5001_DESC": {
+    "ko": "자신의 남은 체력에 비례해 최대 {e2_bonus:pct}까지 피해량이 증가한 뒤, 적 전체에게 치명적인 피해를 입힙니다. 그 뒤 스스로 전투불능이 됩니다.",
+    "en": ""
+  },
+  "SKL_7001_NAME": {
+    "ko": "늪의 살갗",
+    "en": ""
+  },
+  "SKL_7001_DESC": {
+    "ko": "{e1_when_type} 타입에게 피해를 입으면 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "CHR_002_NAME": {
+    "ko": "네벨라",
+    "en": "Nebella"
+  },
+  "CHR_002_SPECIES": {
+    "ko": "누에나방",
+    "en": ""
+  },
+  "CHR_002_DESC": {
+    "ko": "북부의 모험가 이야기 中 '만약 북부의 설산에서 밤에 당신을 바라보는 흰 눈동자와 마주쳤다면 그저 즉사를 기도하는 것 말곤 무의미 할 것이다.'",
+    "en": ""
+  },
+  "CHR_002_STORY": {
+    "ko": "북부 설산에서 발견된 수인. 굉장히 호전적인 모습을 보이며 조난당한 수인, 인간을 습격하는 사건이 잦았다. 모험가들에게 토벌되어 붙잡힌 뒤 북부의 불법 지하 결투장에서부터 몬스터로 활동하게 된다.",
+    "en": ""
+  },
+  "SKL_1002_NAME": {
+    "ko": "에어 클로",
+    "en": ""
+  },
+  "SKL_1002_DESC": {
+    "ko": "적 하나에게 피해를 입힌 뒤 투지를 {e1_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2002_NAME": {
+    "ko": "흰 눈동자",
+    "en": ""
+  },
+  "SKL_2002_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 공격력을 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_5002_NAME": {
+    "ko": "포식",
+    "en": ""
+  },
+  "SKL_5002_DESC": {
+    "ko": "체력이 가장 낮은 적에게 잃은 체력에 비례해 최대 {e2_bonus:pct}까지 늘어난 피해를 입히고, 가한 피해의 {e1_ratio:pct}만큼 자신의 체력을 회복합니다.",
+    "en": ""
+  },
+  "SKL_7002_NAME": {
+    "ko": "질풍날개",
+    "en": ""
+  },
+  "SKL_7002_DESC": {
+    "ko": "전투 개시 시 {e1_turns}턴간 속도와 무관하게 먼저 행동합니다. 가하는 피해량이 보유한 투지에 비례해 최대 {e2_bonus:pct} 증가하며, 투지를 쓰는 기술은 쓰기 전의 투지로 셉니다.",
+    "en": ""
+  },
+  "CHR_003_NAME": {
+    "ko": "누디안",
+    "en": "Nudibranch"
+  },
+  "CHR_003_SPECIES": {
+    "ko": "갯민숭달팽이",
+    "en": ""
+  },
+  "CHR_003_DESC": {
+    "ko": "화려한 색채와 부드러운 외형 속에 강력한 육체를 숨긴 갯민숭달팽이 수인 격투가.",
+    "en": ""
+  },
+  "CHR_003_STORY": {
+    "ko": "누디안은 갯민숭달팽이 특유의 화려한 색과 말미잘 같은 아가미를 지닌 해양계 수인이다. 칠성장어 같은 위협적인 원형 입을 숨기고 있으며 키가 3미터 가까이 되며 근육질이여서 격투 싸움을 잘하여 오우거 같은 실루엣을 가지고 있다.",
+    "en": ""
+  },
+  "SKL_1003_NAME": {
+    "ko": "거대한 주먹",
+    "en": ""
+  },
+  "SKL_1003_DESC": {
+    "ko": "적 하나에게 피해를 입히고 자신의 투지를 {e1_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2003_NAME": {
+    "ko": "점액 방벽",
+    "en": ""
+  },
+  "SKL_2003_DESC": {
+    "ko": "아군 전체에게 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_5003_NAME": {
+    "ko": "바다의 독",
+    "en": ""
+  },
+  "SKL_5003_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다. 자신은 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_7003_NAME": {
+    "ko": "점액 보호막",
+    "en": ""
+  },
+  "SKL_7003_DESC": {
+    "ko": "매 라운드 개시 시 면역을 얻어 {e1_turns}턴간 해로운 상태에 걸리지 않습니다.",
+    "en": ""
+  },
+  "CHR_004_NAME": {
+    "ko": "라피엘",
+    "en": "Lapiel"
+  },
+  "CHR_004_SPECIES": {
+    "ko": "토끼",
+    "en": ""
+  },
+  "CHR_004_DESC": {
+    "ko": "신성에 가장 가깝다고 여겨지는 수수께끼의 몬스터",
+    "en": ""
+  },
+  "CHR_004_STORY": {
+    "ko": "다른 생물을 극도로 경계하여 알려진 정보가 거의 없다. 생명이 위태로운 생물 앞에 나타나 따스한 빛으로 상처를 치료한다고 한다. 치료가 끝나면 어디론가 사라지기 때문에 온전한 모습을 목격한 이는 매우 드물다. 이러한 모습으로 인해 예로부터 가장 신성에 가까운 생물이라고 여겨졌다.",
+    "en": ""
+  },
+  "SKL_1004_NAME": {
+    "ko": "치유의 빛",
+    "en": ""
+  },
+  "SKL_1004_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, 체력이 가장 낮은 아군의 체력을 최대치의 {e1_ratio:pct}만큼 회복시킵니다.",
+    "en": ""
+  },
+  "SKL_2004_NAME": {
+    "ko": "축복",
+    "en": ""
+  },
+  "SKL_2004_DESC": {
+    "ko": "아군 하나의 체력을 최대치의 {e1_ratio:pct}만큼 회복시키고, 그 대상의 해로운 상태를 모두 해제합니다.",
+    "en": ""
+  },
+  "SKL_5004_NAME": {
+    "ko": "생츄어리",
+    "en": ""
+  },
+  "SKL_5004_DESC": {
+    "ko": "아군 전체의 체력을 최대치의 {e1_ratio:pct}만큼 회복시키고, {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_7004_NAME": {
+    "ko": "수호",
+    "en": ""
+  },
+  "SKL_7004_DESC": {
+    "ko": "자신의 체력이 {e1_when_ratio:pct} 미만이면 매 라운드 개시 시 면역을 얻습니다. 면역이 걸린 {e1_turns}턴 동안에는 기절을 제외한 해로운 상태에 걸리지 않습니다.",
+    "en": ""
+  },
+  "CHR_005_NAME": {
+    "ko": "로데레",
+    "en": "Rodere"
+  },
+  "CHR_005_SPECIES": {
+    "ko": "쥐",
+    "en": ""
+  },
+  "CHR_005_DESC": {
+    "ko": "비밀스럽고 교활하며 예측하기 힘든 쥐 수인",
+    "en": ""
+  },
+  "CHR_005_STORY": {
+    "ko": "생존을 위해서라면 수단과 방법을 가리지 않는다, 쥐 처럼 재빠르고 교활하다, 조금의 금전적인 문제로 로캣에 참여하게 된다",
+    "en": ""
+  },
+  "SKL_1005_NAME": {
+    "ko": "목 긋기",
+    "en": ""
+  },
+  "SKL_1005_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입히고, {e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시킵니다. 그 대상은 {e2_turns}턴간 특수기 사용이 봉인됩니다.",
+    "en": ""
+  },
+  "SKL_2005_NAME": {
+    "ko": "뒤쫓기",
+    "en": ""
+  },
+  "SKL_2005_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_5005_NAME": {
+    "ko": "복수",
+    "en": ""
+  },
+  "SKL_5005_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입힙니다. 자신의 체력이 {e1_when_ratio:pct} 미만이면 이 피해가 {e1_mult}배로 늘어납니다.",
+    "en": ""
+  },
+  "SKL_7005_NAME": {
+    "ko": "교활한 쥐",
+    "en": ""
+  },
+  "SKL_7005_DESC": {
+    "ko": "적을 쓰러뜨릴 때마다 투지를 {e1_amount} 획득하고, {e2_turns}턴간 속도와 무관하게 먼저 행동합니다.",
+    "en": ""
+  },
+  "CHR_006_NAME": {
+    "ko": "로페스",
+    "en": "Lopus"
+  },
+  "CHR_006_SPECIES": {
+    "ko": "늑대",
+    "en": ""
+  },
+  "CHR_006_DESC": {
+    "ko": "우두머리를 노리는 베테랑 늑대 수인",
+    "en": ""
+  },
+  "CHR_006_STORY": {
+    "ko": "로캣에서 자신의 능력을 보여 늑대 수인들의 우두머리로 인정받으려 한다 늑대의 하울링은 아군의 사기를 올리고 적의 사기를 떨어뜨린다",
+    "en": ""
+  },
+  "SKL_1006_NAME": {
+    "ko": "물어 뜯기",
+    "en": ""
+  },
+  "SKL_1006_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상이 받는 피해량을 {e1_ratio:pct} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_2006_NAME": {
+    "ko": "고독한 사냥",
+    "en": ""
+  },
+  "SKL_2006_DESC": {
+    "ko": "적 하나에게 강한 피해를 입힙니다. 쓰러진 아군 하나마다 이 피해가 {e1_per:pct}씩 늘어납니다.",
+    "en": ""
+  },
+  "SKL_5006_NAME": {
+    "ko": "최후의 포효",
+    "en": ""
+  },
+  "SKL_5006_DESC": {
+    "ko": "적 전체에게 피해를 입히고, 대상 최대 체력의 {e1_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다.",
+    "en": ""
+  },
+  "SKL_7006_NAME": {
+    "ko": "우두머리",
+    "en": ""
+  },
+  "SKL_7006_DESC": {
+    "ko": "아군이 쓰러질 때마다 전투가 끝날 때까지 체력 상한과 공격력과 방어력이 각각 {e1_amount} 증가합니다.",
+    "en": ""
+  },
+  "CHR_007_NAME": {
+    "ko": "롭",
+    "en": "Lob"
+  },
+  "CHR_007_SPECIES": {
+    "ko": "바닷가재",
+    "en": ""
+  },
+  "CHR_007_DESC": {
+    "ko": "거대한 집게로 자르고 박살낸다.",
+    "en": ""
+  },
+  "CHR_007_STORY": {
+    "ko": "롭의 날카로운 집게는 적을 잘라내며, 단단한 갑각은 공격을 방어한다. 또한 롭은 유사시에 집게를 둔기로 활용하기도 한다.",
+    "en": ""
+  },
+  "SKL_1007_NAME": {
+    "ko": "자르기",
+    "en": ""
+  },
+  "SKL_1007_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 그 대상의 방어력을 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_2007_NAME": {
+    "ko": "집게 방패",
+    "en": ""
+  },
+  "SKL_2007_DESC": {
+    "ko": "{e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻고, {e2_turns}턴간 자신을 도발 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_5007_NAME": {
+    "ko": "박살",
+    "en": ""
+  },
+  "SKL_5007_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상의 방어력을 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_7007_NAME": {
+    "ko": "단단한 갑각",
+    "en": ""
+  },
+  "SKL_7007_DESC": {
+    "ko": "피해를 입을 때마다 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "CHR_008_NAME": {
+    "ko": "루미",
+    "en": "Lumi"
+  },
+  "CHR_008_SPECIES": {
+    "ko": "글라우쿠스 아틀란티쿠스",
+    "en": ""
+  },
+  "CHR_008_DESC": {
+    "ko": "바다를 관장하는 신의 아이",
+    "en": ""
+  },
+  "CHR_008_STORY": {
+    "ko": "바다에 쓰레기를 버리는 나쁜 인간들을 물리치기 위해 깊은 잠에서 깨어났다",
+    "en": ""
+  },
+  "SKL_1008_NAME": {
+    "ko": "물뿜기",
+    "en": ""
+  },
+  "SKL_1008_DESC": {
+    "ko": "적 하나에게 방어력과 무관한 피해를 입히고, {e1_turns}턴간 그 대상의 방어력을 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_2008_NAME": {
+    "ko": "썩는 물",
+    "en": ""
+  },
+  "SKL_2008_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, {e1_turns}턴간 받는 회복량을 {e1_ratio:pct}로 줄입니다.",
+    "en": ""
+  },
+  "SKL_5008_NAME": {
+    "ko": "신의 물결",
+    "en": ""
+  },
+  "SKL_5008_DESC": {
+    "ko": "적 전체에게 방어력과 무관한 피해를 입히고, {e1_turns}턴간 받는 회복량을 {e1_ratio:pct}로 줄입니다.",
+    "en": ""
+  },
+  "SKL_7008_NAME": {
+    "ko": "잔잔한 바다",
+    "en": ""
+  },
+  "SKL_7008_DESC": {
+    "ko": "자신의 체력이 최대치인 동안에는 가하는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_009_NAME": {
+    "ko": "마노",
+    "en": "Mano"
+  },
+  "CHR_009_SPECIES": {
+    "ko": "날도마뱀",
+    "en": ""
+  },
+  "CHR_009_DESC": {
+    "ko": "구름 위의 권태롭고 지고한 존재",
+    "en": ""
+  },
+  "CHR_009_STORY": {
+    "ko": "긴 동면에서 깨어난 마노. 바뀐 시대에서 가장 놀라운건 로캣대회였다. 그 대회가 이렇게 변하다니. 상상도 못했던 일이지. 마노는 친히 새로운 시대의 존재들과 어울려보기로 했다. 자신을 이긴 이에게는 친히 얼굴을 보이고 공을 치하할 것이다.",
+    "en": ""
+  },
+  "SKL_1009_NAME": {
+    "ko": "들숨",
+    "en": ""
+  },
+  "SKL_1009_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고 대상의 투지를 {e1_amount} 감소시킵니다. 그 뒤 자신은 투지를 {e2_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2009_NAME": {
+    "ko": "구름 나눔",
+    "en": ""
+  },
+  "SKL_2009_DESC": {
+    "ko": "아군 하나의 투지를 {e1_amount} 증가시키고, 그 대상의 체력을 최대치의 {e2_ratio:pct}만큼 회복시킵니다.",
+    "en": ""
+  },
+  "SKL_5009_NAME": {
+    "ko": "날숨",
+    "en": ""
+  },
+  "SKL_5009_DESC": {
+    "ko": "아군이 1기 이상 전투불능일 때만 사용할 수 있습니다. 아군 전체의 공격력을 {e1_turns}턴간 {e1_amount} 증가시키고, 투지를 {e2_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_7009_NAME": {
+    "ko": "유희",
+    "en": ""
+  },
+  "SKL_7009_DESC": {
+    "ko": "매 라운드 개시 시 투지를 {e1_amount} 획득합니다. 자신의 투지가 {e2_when_amount} 이상이면 자신의 체력을 최대치의 {e2_ratio:pct}만큼 함께 회복합니다.",
+    "en": ""
+  },
+  "CHR_010_NAME": {
+    "ko": "메카리스",
+    "en": "Mecaris"
+  },
+  "CHR_010_SPECIES": {
+    "ko": "귀상어 · 인간 · 매",
+    "en": ""
+  },
+  "CHR_010_DESC": {
+    "ko": "어느 실험실에서 태어난 기계괴수, 이 괴물이 폭주하여 연구실에서 나온다 과연 이 미친 괴수를 막을자 누구인가",
+    "en": ""
+  },
+  "CHR_010_STORY": {
+    "ko": "실험실에서 태어난 괴수병기 였으나 어느날 폭주하여 연구실을 괴멸 시키고 탈출하였다. 탈출 후 폭주 상태는 안정화 되었으나 그 폭주사태 이후로 이 기계 괴수는 점점 미쳐버려 피와 분노에 빠져들었다",
+    "en": ""
+  },
+  "SKL_1010_NAME": {
+    "ko": "장갑 강화",
+    "en": ""
+  },
+  "SKL_1010_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 약한 피해를 입힙니다. 그 뒤 {e2_turns}턴간 자신의 방어력을 {e2_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_2010_NAME": {
+    "ko": "마력탄",
+    "en": ""
+  },
+  "SKL_2010_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상이 받는 피해량을 {e1_ratio:pct} 증가시킵니다. 이 공격은 보호막을 지나쳐 체력을 직접 깎습니다.",
+    "en": ""
+  },
+  "SKL_5010_NAME": {
+    "ko": "전탄 발사",
+    "en": ""
+  },
+  "SKL_5010_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7010_NAME": {
+    "ko": "증폭 장갑",
+    "en": ""
+  },
+  "SKL_7010_DESC": {
+    "ko": "자신에게 걸린 이로운 상태 하나마다 자신이 입히는 피해량이 {e1_per:pct}씩 증가합니다.",
+    "en": ""
+  },
+  "CHR_011_NAME": {
+    "ko": "버그킹",
+    "en": "Bugking"
+  },
+  "CHR_011_SPECIES": {
+    "ko": "장수풍뎅이 · 잠자리 · 개미",
+    "en": ""
+  },
+  "CHR_011_DESC": {
+    "ko": "벌레 군집의 왕",
+    "en": ""
+  },
+  "CHR_011_STORY": {
+    "ko": "아포칼립스 세계의 진화한 벌레들중에 가장 강한 우두머리가 되기 위한 한 장수풍뎅이의 여정",
+    "en": ""
+  },
+  "SKL_1011_NAME": {
+    "ko": "뿔 치기",
+    "en": ""
+  },
+  "SKL_1011_DESC": {
+    "ko": "적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2011_NAME": {
+    "ko": "돌진",
+    "en": ""
+  },
+  "SKL_2011_DESC": {
+    "ko": "{e1_turns}턴간 자신의 방어력을 {e1_amount_abs} 감소시키는 대신, 적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_5011_NAME": {
+    "ko": "왕의 도약",
+    "en": ""
+  },
+  "SKL_5011_DESC": {
+    "ko": "적 하나에게 피해를 입히고 {e1_turns}턴간 행동 불능 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_7011_NAME": {
+    "ko": "갑각",
+    "en": ""
+  },
+  "SKL_7011_DESC": {
+    "ko": "매 라운드 개시 시 버팀을 얻습니다. 버팀으로 견뎌 내면 {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "CHR_012_NAME": {
+    "ko": "벨제버브",
+    "en": "Beelzebub"
+  },
+  "CHR_012_SPECIES": {
+    "ko": "파리",
+    "en": ""
+  },
+  "CHR_012_DESC": {
+    "ko": "화합을 거부하는 악당 로캣몬",
+    "en": ""
+  },
+  "CHR_012_STORY": {
+    "ko": "수없이 많은 탈피를 거듭하며 강력한 힘을 손에 넣은 갑옷 파리 로캣몬. 화합을 거부하며 새로운 세력 제옥제국을 세우고, 황제를 참칭하고 있다.",
+    "en": ""
+  },
+  "SKL_1012_NAME": {
+    "ko": "약자멸시",
+    "en": ""
+  },
+  "SKL_1012_DESC": {
+    "ko": "대상이 잃은 체력에 비례해 최대 {e1_bonus:pct}까지 피해량이 증가한 뒤, 체력이 가장 낮은 적에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2012_NAME": {
+    "ko": "군림",
+    "en": ""
+  },
+  "SKL_2012_DESC": {
+    "ko": "{e1_turns}턴간 자신을 도발 상태로 만들고, 그동안 자신의 방어력을 {e2_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5012_NAME": {
+    "ko": "탈피",
+    "en": ""
+  },
+  "SKL_5012_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 자신의 마력을 {e1_amount} 증가시키며 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_7012_NAME": {
+    "ko": "위화감",
+    "en": ""
+  },
+  "SKL_7012_DESC": {
+    "ko": "매 라운드 개시 시 상대 진영 선두에 침묵을 부여하여 {e1_turns}턴간 특수기 사용을 봉인합니다.",
+    "en": ""
+  },
+  "CHR_013_NAME": {
+    "ko": "비대온",
+    "en": "Bidaeon"
+  },
+  "CHR_013_SPECIES": {
+    "ko": "빈대",
+    "en": ""
+  },
+  "CHR_013_DESC": {
+    "ko": "세상 모든 피를 빨겠따!",
+    "en": ""
+  },
+  "CHR_013_STORY": {
+    "ko": "어릴 적 흡혈 충동을 참지 못하여 피를 보면 무작정 달려들어 사고를 많이 쳤다, 어느 날, 지나가던 행인과 다툼이 있고 난 후 충동을 어떻게 해소할까 고민을 가지게 되었는데 로켓 배틀 방송을 보고 이거라면 다양한 피를 합법적으로 맛볼 수 있다는 사실을 알게 되었고, 로벳 배틀에 참가하게 되는 계기가 되었다. 세상 모든 피를 맛보기 위해서.",
+    "en": ""
+  },
+  "SKL_1013_NAME": {
+    "ko": "마구 흡혈",
+    "en": ""
+  },
+  "SKL_1013_DESC": {
+    "ko": "적 하나에게 피해를 입히고 대상 최대 체력의 {e2_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다. 가한 피해의 {e1_ratio:pct}만큼 자신의 체력을 회복하는 대신, {e3_turns}턴간 자신의 속도가 {e3_amount_abs} 감소합니다.",
+    "en": ""
+  },
+  "SKL_2013_NAME": {
+    "ko": "목덜미",
+    "en": ""
+  },
+  "SKL_2013_DESC": {
+    "ko": "적 하나에게 피해를 입히고 대상 최대 체력의 {e2_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다. 가한 피해의 {e1_ratio:pct}만큼 자신의 체력을 회복하고, {e3_turns}턴간 간파를 얻습니다.",
+    "en": ""
+  },
+  "SKL_5013_NAME": {
+    "ko": "만찬 시간!",
+    "en": ""
+  },
+  "SKL_5013_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, 대상 최대 체력의 {e1_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다.",
+    "en": ""
+  },
+  "SKL_7013_NAME": {
+    "ko": "배불러..",
+    "en": ""
+  },
+  "SKL_7013_DESC": {
+    "ko": "피해를 입힌 대상의 공격력을 {e1_turns}턴간 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "CHR_014_NAME": {
+    "ko": "삼치",
+    "en": ""
+  },
+  "CHR_014_SPECIES": {
+    "ko": "세발치",
+    "en": ""
+  },
+  "CHR_014_DESC": {
+    "ko": "심해 바닥에서 종일 서 있는 물고기",
+    "en": ""
+  },
+  "CHR_014_STORY": {
+    "ko": "바다 밑바닥에서 때를 기다리는 캐릭터. 마을에서도 가만히 기다리고만 있다.",
+    "en": ""
+  },
+  "SKL_1014_NAME": {
+    "ko": "속박",
+    "en": ""
+  },
+  "SKL_1014_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 {e1_turns}턴간 특수기 사용을 봉인합니다.",
+    "en": ""
+  },
+  "SKL_2014_NAME": {
+    "ko": "심해의 벽",
+    "en": ""
+  },
+  "SKL_2014_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, {e1_turns}턴간 속도를 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_5014_NAME": {
+    "ko": "또속박",
+    "en": ""
+  },
+  "SKL_5014_DESC": {
+    "ko": "적 전체에게 피해를 입히고 {e1_turns}턴간 특수기 사용을 봉인하며, {e2_turns}턴간 속도를 {e2_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_7014_NAME": {
+    "ko": "스며드는 물살",
+    "en": ""
+  },
+  "SKL_7014_DESC": {
+    "ko": "자신의 공격은 대상의 보호막을 지나쳐 체력을 직접 깎습니다.",
+    "en": ""
+  },
+  "CHR_015_NAME": {
+    "ko": "샤키아",
+    "en": "Shakira"
+  },
+  "CHR_015_SPECIES": {
+    "ko": "상어",
+    "en": ""
+  },
+  "CHR_015_DESC": {
+    "ko": "사나운 상어의 본능을 타고났지만, 칭찬에는 꼬리가 먼저 흔들리는 귀여운 바다의 포식자.",
+    "en": ""
+  },
+  "CHR_015_STORY": {
+    "ko": "겉보기에는 차갑고 무서워 보이지만 실제로는 칭찬에 약하고 쉽게 당황하는 순수한 성격의 소유자다. 특히 경기에서 흥분하면 본능적으로 꼬리를 크게 흔들거나 상대를 집요하게 쫓아가는 습관이 있다.",
+    "en": ""
+  },
+  "SKL_1015_NAME": {
+    "ko": "깨물기",
+    "en": ""
+  },
+  "SKL_1015_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_2015_NAME": {
+    "ko": "집요한 추적",
+    "en": ""
+  },
+  "SKL_2015_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_5015_NAME": {
+    "ko": "신속한 사냥",
+    "en": ""
+  },
+  "SKL_5015_DESC": {
+    "ko": "대상이 출혈 중이면 피해량이 {e1_mult}배로 늘어난 뒤, 적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7015_NAME": {
+    "ko": "피의 흥분",
+    "en": ""
+  },
+  "SKL_7015_DESC": {
+    "ko": "출혈 중인 대상에게는 가하는 피해량이 {e1_mult}배가 됩니다. 또한 출혈을 부여할 때마다 그 대상에게 이미 걸린 출혈의 지속도 함께 늘어납니다.",
+    "en": ""
+  },
+  "CHR_016_NAME": {
+    "ko": "센주아나",
+    "en": "San Juana"
+  },
+  "CHR_016_SPECIES": {
+    "ko": "하이에나",
+    "en": ""
+  },
+  "CHR_016_DESC": {
+    "ko": "신성력을 가진 주먹으로 때리는 하이에나",
+    "en": ""
+  },
+  "CHR_016_STORY": {
+    "ko": "깨달음을 얻고 아프리카에서 수련을 통해 변화했다",
+    "en": ""
+  },
+  "SKL_1016_NAME": {
+    "ko": "자애의 주먹",
+    "en": ""
+  },
+  "SKL_1016_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_2016_NAME": {
+    "ko": "성스러운 포효",
+    "en": ""
+  },
+  "SKL_2016_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, 아군 전체가 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_5016_NAME": {
+    "ko": "인내",
+    "en": ""
+  },
+  "SKL_5016_DESC": {
+    "ko": "아군 전체에게 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 부여하고, {e2_turns}턴간 공격력을 {e2_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_7016_NAME": {
+    "ko": "신념",
+    "en": ""
+  },
+  "SKL_7016_DESC": {
+    "ko": "자신이 보호막을 두르고 있으면 자신이 입히는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_017_NAME": {
+    "ko": "셰일",
+    "en": "Shail"
+  },
+  "CHR_017_SPECIES": {
+    "ko": "사슴",
+    "en": ""
+  },
+  "CHR_017_DESC": {
+    "ko": "자연과 소통하는 숲의 대리인",
+    "en": ""
+  },
+  "CHR_017_STORY": {
+    "ko": "숲 속에 은거하며 자연을 섬기며 살아가는 존재. 방문자의 요청으로 세상 나들이를 나오게 되었고, 접수처의 착각으로 경기에 참가되었다.",
+    "en": ""
+  },
+  "SKL_1017_NAME": {
+    "ko": "평화의 노래",
+    "en": ""
+  },
+  "SKL_1017_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, {e1_turns}턴간 그 대상의 공격력을 {e1_amount_abs} 감소시킵니다. 자신의 투지를 {e2_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2017_NAME": {
+    "ko": "숲의 결계",
+    "en": ""
+  },
+  "SKL_2017_DESC": {
+    "ko": "아군 전체에게 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_5017_NAME": {
+    "ko": "잎새의 보호",
+    "en": ""
+  },
+  "SKL_5017_DESC": {
+    "ko": "아군 전체의 체력을 최대치의 {e1_ratio:pct}만큼 회복시키고, {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_7017_NAME": {
+    "ko": "생명 친화",
+    "en": ""
+  },
+  "SKL_7017_DESC": {
+    "ko": "타입 상성 배율을 {e1_ratio:pct}만 적용받습니다. 유리한 상성과 불리한 상성 양쪽에 적용됩니다.",
+    "en": ""
+  },
+  "CHR_018_NAME": {
+    "ko": "수리",
+    "en": "Quila"
+  },
+  "CHR_018_SPECIES": {
+    "ko": "흰머리수리",
+    "en": ""
+  },
+  "CHR_018_DESC": {
+    "ko": "하늘의 암살자",
+    "en": ""
+  },
+  "CHR_018_STORY": {
+    "ko": "수리는 민첩한 움직임으로 적을 낚아채고, 날카롭고 강력한 발톱으로 적을 공격한다.",
+    "en": ""
+  },
+  "SKL_1018_NAME": {
+    "ko": "할퀴기",
+    "en": ""
+  },
+  "SKL_1018_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2018_NAME": {
+    "ko": "급습",
+    "en": ""
+  },
+  "SKL_2018_DESC": {
+    "ko": "적 하나에게 강한 피해를 입힙니다. 속도 보정이 높아 같은 라운드의 다른 기술보다 앞서 나갑니다.",
+    "en": ""
+  },
+  "SKL_5018_NAME": {
+    "ko": "낚아채기",
+    "en": ""
+  },
+  "SKL_5018_DESC": {
+    "ko": "대상의 체력이 {e1_when_ratio:pct} 미만이면 피해량이 {e1_mult}배로 늘어난 뒤, 적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7018_NAME": {
+    "ko": "맹금류의 민첩성",
+    "en": ""
+  },
+  "SKL_7018_DESC": {
+    "ko": "전투가 끝날 때까지 간파를 얻습니다. 자신보다 느린 대상에게는 가하는 피해량이 {e2_mult}배가 되고, 그 대상에게서 받는 피해량은 {e3_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_019_NAME": {
+    "ko": "스웜 레이쓰",
+    "en": "Swarm Wraith"
+  },
+  "CHR_019_SPECIES": {
+    "ko": "날벌레 군체",
+    "en": ""
+  },
+  "CHR_019_DESC": {
+    "ko": "수천의 날벌레가 하나의 신체가 되어 경기장을 뒤덮는 군집형 수인",
+    "en": ""
+  },
+  "CHR_019_STORY": {
+    "ko": "스웜 레이쓰는 수많은 작은 날벌레가 하나의 의식을 공유하며 신체를 이룬 수인이다. 위협을 느끼면 몸을 이루던 군체를 흩뜨려 공격을 피하고, 다시 거대한 형상으로 뭉치는 독특한 능력을 지녔다. 군체의 변화무쌍한 움직임을 무기로 사용하는 공중 타입 선수로 활약하고 있다.",
+    "en": ""
+  },
+  "SKL_1019_NAME": {
+    "ko": "망령 강타",
+    "en": ""
+  },
+  "SKL_1019_DESC": {
+    "ko": "적 하나에게 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_2019_NAME": {
+    "ko": "군체 분산",
+    "en": ""
+  },
+  "SKL_2019_DESC": {
+    "ko": "{e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻고, {e2_turns}턴간 공격력을 {e2_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5019_NAME": {
+    "ko": "망령의 전진",
+    "en": ""
+  },
+  "SKL_5019_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_7019_NAME": {
+    "ko": "흩어지는 신체",
+    "en": ""
+  },
+  "SKL_7019_DESC": {
+    "ko": "자신의 속도가 대상보다 높을 때는 그 대상에게서 받는 피해량이 {e1_mult}배가 됩니다. 출혈 중인 대상을 때리면 가한 피해의 {e2_ratio:pct}만큼 자신의 체력을 회복합니다.",
+    "en": ""
+  },
+  "CHR_020_NAME": {
+    "ko": "스위피",
+    "en": "Swipy"
+  },
+  "CHR_020_SPECIES": {
+    "ko": "칼새",
+    "en": ""
+  },
+  "CHR_020_DESC": {
+    "ko": "바람보다 빠르게! 인연을 이어주는 쾌활한 공중 배달부.",
+    "en": ""
+  },
+  "CHR_020_STORY": {
+    "ko": "스위피는 빠른 비행을 꿈꾸며, 하늘길로 소식과 물자를 전하는 젊은 배달부다. 누군가의 감정이 담겨있는 편지, 물자와 독보적인 비행능력으로 낯선 지역을 누비며, 사람들에게 소식을 전해준다. 위기 앞에서도 환한 미소를 잃지 않지만, 누군가의 메시지가 끝내 도착하지 못하는 일만큼은 절대 용납하지 않는다.",
+    "en": ""
+  },
+  "SKL_1020_NAME": {
+    "ko": "급강하",
+    "en": ""
+  },
+  "SKL_1020_DESC": {
+    "ko": "대상 방어력의 {e1_ratio:pct}를 무시하고 적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2020_NAME": {
+    "ko": "특급 배송",
+    "en": ""
+  },
+  "SKL_2020_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 속도와 무관하게 먼저 행동합니다. 같은 기간 동안 간파를 얻습니다.",
+    "en": ""
+  },
+  "SKL_5020_NAME": {
+    "ko": "풍신소녀",
+    "en": ""
+  },
+  "SKL_5020_DESC": {
+    "ko": "적 하나에게 방어력과 무관한 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7020_NAME": {
+    "ko": "편지왔습니다!",
+    "en": ""
+  },
+  "SKL_7020_DESC": {
+    "ko": "매 라운드 개시 시 상대 진영 선두의 속도를 {e1_turns}턴간 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "CHR_021_NAME": {
+    "ko": "스콜라",
+    "en": "Schola"
+  },
+  "CHR_021_SPECIES": {
+    "ko": "전갈",
+    "en": ""
+  },
+  "CHR_021_DESC": {
+    "ko": "치명적인 독을 품고 있는 전갈 여왕",
+    "en": ""
+  },
+  "CHR_021_STORY": {
+    "ko": "최상위 포식자로 군림하고 있는 전갈 여왕, 수많은 탈피를 거쳐서 전갈에 특성을 유지한 채 인간형으로 진화했다 꼬리를 이용한 공격을 마무리에 이용하며, 극독에 중독되면 치명적이다 차가운 태도와 도도한 모습으로 다니며, 사냥감이 독에 중독되는 모습을 즐긴다.",
+    "en": ""
+  },
+  "SKL_1021_NAME": {
+    "ko": "유희",
+    "en": ""
+  },
+  "SKL_1021_DESC": {
+    "ko": "적 하나에게 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_2021_NAME": {
+    "ko": "독 뿌리기",
+    "en": ""
+  },
+  "SKL_2021_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_5021_NAME": {
+    "ko": "꿰뚫기",
+    "en": ""
+  },
+  "SKL_5021_DESC": {
+    "ko": "대상 방어력의 {e1_ratio:pct}를 무시하고 적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7021_NAME": {
+    "ko": "가학성",
+    "en": ""
+  },
+  "SKL_7021_DESC": {
+    "ko": "출혈이 걸린 적에게 가하는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_022_NAME": {
+    "ko": "시엘라",
+    "en": "Siella"
+  },
+  "CHR_022_SPECIES": {
+    "ko": "은상어 · 클리오네",
+    "en": ""
+  },
+  "CHR_022_DESC": {
+    "ko": "..................뻐....끔....",
+    "en": ""
+  },
+  "CHR_022_STORY": {
+    "ko": "어느날 갑자기 깊은 심해에서 나타난 신비로운 여자 아이 말수가 적은 편이다. 은상어 모티브",
+    "en": ""
+  },
+  "SKL_1022_NAME": {
+    "ko": "심해의 부름",
+    "en": ""
+  },
+  "SKL_1022_DESC": {
+    "ko": "대상 방어력의 {e1_ratio:pct}를 무시하고 적 하나에게 강한 피해를 입힌 뒤, 가한 피해의 {e2_ratio:pct}만큼 자신의 체력을 회복합니다. 그와 함께 자신에게 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e3_amount}의 고정 피해를 {e3_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_2022_NAME": {
+    "ko": "산제물",
+    "en": ""
+  },
+  "SKL_2022_DESC": {
+    "ko": "자신에게 출혈을 부여하고, {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_5022_NAME": {
+    "ko": "강림",
+    "en": ""
+  },
+  "SKL_5022_DESC": {
+    "ko": "자신에게 걸린 출혈 1점마다 피해량이 {e1_per:pct}씩 늘어난 뒤, 자신을 제외한 전장 전체에게 강한 피해를 입힙니다. 아군도 대상에 포함됩니다.",
+    "en": ""
+  },
+  "SKL_7022_NAME": {
+    "ko": "이형의 존재",
+    "en": ""
+  },
+  "SKL_7022_DESC": {
+    "ko": "자신이 받는 출혈 피해가 {e1_mult}배로 줄어들고, 자신에게 걸리는 출혈은 지속이 끝나지 않습니다.",
+    "en": ""
+  },
+  "CHR_023_NAME": {
+    "ko": "아우렐라 & 펠리아",
+    "en": "Aurela & Pellia"
+  },
+  "CHR_023_SPECIES": {
+    "ko": "해파리",
+    "en": ""
+  },
+  "CHR_023_DESC": {
+    "ko": "하나 처럼 움직이는 해파리 자매",
+    "en": ""
+  },
+  "CHR_023_STORY": {
+    "ko": "마비 능력을 이용해 깊은 바다로 내려가려하는 사람들을 해안가로 되돌려 놓거나 얕은 해안가에서 사람들의 다리에 마비를 거는 장난을 자주치는 사고뭉치 해파리 자매. 사람들을 마음대로 괴롭혀도 된다는 말에 혹해 재미를 찾아 로캣으로 오게 된다. 파란색이 동생 아우렐라, 분홍색이 언니 펠리아 이다.",
+    "en": ""
+  },
+  "SKL_1023_NAME": {
+    "ko": "찰싹 때리기",
+    "en": ""
+  },
+  "SKL_1023_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, {e1_turns}턴간 그 대상의 속도를 {e1_amount_abs} 감소시킵니다. 자신은 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_2023_NAME": {
+    "ko": "해류 감기",
+    "en": ""
+  },
+  "SKL_2023_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, {e1_turns}턴간 자신을 도발 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_5023_NAME": {
+    "ko": "마비 방출",
+    "en": ""
+  },
+  "SKL_5023_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 {e1_chance}% 확률로 1턴간 행동 불능 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_7023_NAME": {
+    "ko": "물컹거리는 몸",
+    "en": ""
+  },
+  "SKL_7023_DESC": {
+    "ko": "자신에게 날아온 공격이 {e1_when_element} 속성이면 받는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_024_NAME": {
+    "ko": "아젤리아",
+    "en": "Azalea"
+  },
+  "CHR_024_SPECIES": {
+    "ko": "백조",
+    "en": ""
+  },
+  "CHR_024_DESC": {
+    "ko": "타락한 힘에 몸을 맡긴 백조",
+    "en": ""
+  },
+  "CHR_024_STORY": {
+    "ko": "검게 물든 깃과 손목의 사슬은 빌려 쓴 힘이 남긴 자국이다. 그 힘은 오래가지 않아서, 일곱 라운드가 지나면 스스로 스러진다.",
+    "en": ""
+  },
+  "SKL_1024_NAME": {
+    "ko": "타락의 빛",
+    "en": ""
+  },
+  "SKL_1024_DESC": {
+    "ko": "대상 방어력의 {e1_ratio:pct}를 무시하고 적 하나에게 치명적인 피해를 입힌 뒤, {e2_turns}턴간 특수기 사용을 봉인합니다.",
+    "en": ""
+  },
+  "SKL_2024_NAME": {
+    "ko": "검은 깃",
+    "en": ""
+  },
+  "SKL_2024_DESC": {
+    "ko": "적 하나에게 피해를 입히고, 대상 최대 체력의 {e1_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다. 그 뒤 {e2_turns}턴간 행동 불능 상태로 만들고 투지를 {e3_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_5024_NAME": {
+    "ko": "심판의 창",
+    "en": ""
+  },
+  "SKL_5024_DESC": {
+    "ko": "적 전체에게 강한 피해를 입히고 {e1_turns}턴간 행동 불능 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_7024_NAME": {
+    "ko": "한정된 시간",
+    "en": ""
+  },
+  "SKL_7024_DESC": {
+    "ko": "{e1_when_round}라운드부터는 매 라운드 개시 시 스스로 물러나 전투불능이 됩니다.",
+    "en": ""
+  },
+  "CHR_025_NAME": {
+    "ko": "알코",
+    "en": "Alco"
+  },
+  "CHR_025_SPECIES": {
+    "ko": "범고래",
+    "en": ""
+  },
+  "CHR_025_DESC": {
+    "ko": "바다의 무법자",
+    "en": ""
+  },
+  "CHR_025_STORY": {
+    "ko": "내가 바로 대해적 알코! 나는 자비가 없지! 조심하라고!",
+    "en": ""
+  },
+  "SKL_1025_NAME": {
+    "ko": "범고래 슬래쉬",
+    "en": ""
+  },
+  "SKL_1025_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2025_NAME": {
+    "ko": "범고래 크래쉬",
+    "en": ""
+  },
+  "SKL_2025_DESC": {
+    "ko": "적 전체에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_5025_NAME": {
+    "ko": "범고래 스트라이크",
+    "en": ""
+  },
+  "SKL_5025_DESC": {
+    "ko": "대상이 잃은 체력에 비례해 최대 {e1_bonus:pct}까지 피해량이 증가한 뒤, 적 하나에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7025_NAME": {
+    "ko": "리커버리",
+    "en": ""
+  },
+  "SKL_7025_DESC": {
+    "ko": "전장에서 로캣몬이 전투불능이 될 때마다 자신의 체력을 최대치의 {e1_ratio:pct}만큼 회복합니다.",
+    "en": ""
+  },
+  "CHR_026_NAME": {
+    "ko": "암카라시",
+    "en": "amkalasi"
+  },
+  "CHR_026_SPECIES": {
+    "ko": "향유고래 · 범고래 · 백상아리",
+    "en": ""
+  },
+  "CHR_026_DESC": {
+    "ko": "고대 괴물 로캣몬",
+    "en": ""
+  },
+  "CHR_026_STORY": {
+    "ko": "잠드러있던 전설이 인간들에 의해서 깨어난다 고대 바다의 지배자인 암카라시는 강력한 갑피와 심해에서도 먹이를 찾아 헤메며 상어류 로캣몬 기가로돈을 포식했다고도 전해진다. 강력한 생멸력을 갖춘존재이며 어둠에서 갑자기 나타나 사냥한다고 전해진다 존재를 알아차렸다면 이미 늦은것",
+    "en": ""
+  },
+  "SKL_1026_NAME": {
+    "ko": "포식",
+    "en": ""
+  },
+  "SKL_1026_DESC": {
+    "ko": "적 하나에게 피해를 입히고, 가한 피해의 {e1_ratio:pct}만큼 자신의 체력을 회복합니다. 이어서 {e2_turns}턴간 그 대상이 받는 회복량을 {e2_ratio:pct}로 줄입니다.",
+    "en": ""
+  },
+  "SKL_2026_NAME": {
+    "ko": "심해의 압력",
+    "en": ""
+  },
+  "SKL_2026_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, {e1_turns}턴간 자신을 도발 상태로 만듭니다.",
+    "en": ""
+  },
+  "SKL_5026_NAME": {
+    "ko": "고대의 포효",
+    "en": ""
+  },
+  "SKL_5026_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, {e1_turns}턴간 공격력을 {e1_amount_abs} 감소시킵니다. 가한 피해의 {e2_ratio:pct}만큼 자신의 체력을 회복합니다.",
+    "en": ""
+  },
+  "SKL_7026_NAME": {
+    "ko": "원시의 포식",
+    "en": ""
+  },
+  "SKL_7026_DESC": {
+    "ko": "피해를 입을 때마다 전투가 끝날 때까지 자신의 공격력이 {e1_amount}, 방어력이 {e2_amount} 증가합니다. 각각 {e1_upto}까지 쌓입니다.",
+    "en": ""
+  },
+  "CHR_027_NAME": {
+    "ko": "연나연",
+    "en": ""
+  },
+  "CHR_027_SPECIES": {
+    "ko": "깡충거미",
+    "en": ""
+  },
+  "CHR_027_DESC": {
+    "ko": "목장을 운영하는 거미 소녀",
+    "en": ""
+  },
+  "CHR_027_STORY": {
+    "ko": "목장 운영비가 너무 많이 들어 로캣에서 우승해서 운영비를 충당할거야!",
+    "en": ""
+  },
+  "SKL_1027_NAME": {
+    "ko": "독니 찌르기",
+    "en": ""
+  },
+  "SKL_1027_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 그 대상의 속도를 {e1_amount_abs} 감소시킨 뒤 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e2_amount}의 고정 피해를 {e2_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_2027_NAME": {
+    "ko": "거미줄",
+    "en": ""
+  },
+  "SKL_2027_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고, {e1_turns}턴간 속도를 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_5027_NAME": {
+    "ko": "거미줄 속박",
+    "en": ""
+  },
+  "SKL_5027_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상의 속도를 {e1_amount_abs} 감소시킨 뒤 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e2_amount}의 고정 피해를 {e2_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_7027_NAME": {
+    "ko": "카우걸 소녀!!",
+    "en": ""
+  },
+  "SKL_7027_DESC": {
+    "ko": "대상이 해로운 상태를 하나라도 두르고 있으면 그 대상에게 가하는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_028_NAME": {
+    "ko": "연화",
+    "en": "Serenfin"
+  },
+  "CHR_028_SPECIES": {
+    "ko": "비단잉어",
+    "en": ""
+  },
+  "CHR_028_DESC": {
+    "ko": "온화하고 차분한 비단잉어 로캣몬",
+    "en": ""
+  },
+  "CHR_028_STORY": {
+    "ko": "아침 햇살이 비치는 시간, 유유히 수면 위로 올라와 햇빛을 받는 것을 좋아한다. 아름답고 신비로운 자태에 넋을 잃고 가까이서 보려 몸을 기울이다 물에 빠진 이들이 셀 수 없이 많다고 전해진다.",
+    "en": ""
+  },
+  "SKL_1028_NAME": {
+    "ko": "뺨때리기",
+    "en": ""
+  },
+  "SKL_1028_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, 체력이 가장 낮은 아군에게 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 부여합니다.",
+    "en": ""
+  },
+  "SKL_2028_NAME": {
+    "ko": "보듬는 물결",
+    "en": ""
+  },
+  "SKL_2028_DESC": {
+    "ko": "체력이 가장 낮은 아군의 체력을 최대치의 {e1_ratio:pct}만큼 회복시킵니다.",
+    "en": ""
+  },
+  "SKL_5028_NAME": {
+    "ko": "다정한 인사",
+    "en": ""
+  },
+  "SKL_5028_DESC": {
+    "ko": "{e1_turns}턴간 아군 전체의 공격력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_7028_NAME": {
+    "ko": "유영",
+    "en": ""
+  },
+  "SKL_7028_DESC": {
+    "ko": "매 라운드 개시 시 보호막을 두른 아군의 공격력을 {e1_turns}턴간 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "CHR_029_NAME": {
+    "ko": "오카미",
+    "en": ""
+  },
+  "CHR_029_SPECIES": {
+    "ko": "늑대",
+    "en": ""
+  },
+  "CHR_029_DESC": {
+    "ko": "동쪽 대륙의 늑대수인",
+    "en": ""
+  },
+  "CHR_029_STORY": {
+    "ko": "동쪽 대륙에는 달을 신성시 하는 일족이 있다. 운명의 상대를 찾기 위해 로캣의 소문을 듣고 찾아왔다.",
+    "en": ""
+  },
+  "SKL_1029_NAME": {
+    "ko": "칼등치기",
+    "en": ""
+  },
+  "SKL_1029_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 약한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2029_NAME": {
+    "ko": "달빛 벼리기",
+    "en": ""
+  },
+  "SKL_2029_DESC": {
+    "ko": "{e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5029_NAME": {
+    "ko": "한 순간의 달빛",
+    "en": ""
+  },
+  "SKL_5029_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상의 방어력을 {e1_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_7029_NAME": {
+    "ko": "달의 여전사",
+    "en": ""
+  },
+  "SKL_7029_DESC": {
+    "ko": "{e1_when_round}라운드부터는 가하는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_030_NAME": {
+    "ko": "울브",
+    "en": "wolve"
+  },
+  "CHR_030_SPECIES": {
+    "ko": "갈기늑대",
+    "en": ""
+  },
+  "CHR_030_DESC": {
+    "ko": "누구에게도 마음을 열지 않는 슬픈 늑대",
+    "en": ""
+  },
+  "CHR_030_STORY": {
+    "ko": "울브는 무리 생활을 하지 않는 개과 로캣몬이다. 설령 가족이라 하더라도 믿을 수 없다. 세상은 나 혼자 살아가는 것이니까. 배신의 아픔을 뼈저리게 알고 있던 울브는 늘 그렇게 다짐해왔다. 어느 날 마주친 인간이 말했다. \"달라지고 싶다면 로캣에서 만나자.\" 달라지고 싶지 않다. 난 세상을 아니까. 그럼에도 울브는 로캣으로 향했다. 그저 재밌는 스포츠에 참가하러 갈 뿐이라고 스스로를 속이면서.",
+    "en": ""
+  },
+  "SKL_1030_NAME": {
+    "ko": "발차기",
+    "en": ""
+  },
+  "SKL_1030_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입힌 뒤 투지를 {e1_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2030_NAME": {
+    "ko": "사냥 개시",
+    "en": ""
+  },
+  "SKL_2030_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시키며 {e2_turns}턴간 간파를 얻습니다.",
+    "en": ""
+  },
+  "SKL_5030_NAME": {
+    "ko": "먹잇감 발견",
+    "en": ""
+  },
+  "SKL_5030_DESC": {
+    "ko": "대상 방어력의 {e2_ratio:pct}를 무시하고, 대상이 잃은 체력에 비례해 최대 {e3_bonus:pct}까지 강한 피해량이 증가한 뒤 적 하나에게 피해를 입힙니다. 그 뒤 투지를 {e1_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_7030_NAME": {
+    "ko": "위기 감지",
+    "en": ""
+  },
+  "SKL_7030_DESC": {
+    "ko": "자신의 공격력이 각성으로 올라 있으면, 적을 때릴 때마다 가한 피해의 {e1_ratio:pct}만큼 체력을 회복하고 그 대상에게 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e2_amount}의 고정 피해를 {e2_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "CHR_031_NAME": {
+    "ko": "울피",
+    "en": "Wolfie"
+  },
+  "CHR_031_SPECIES": {
+    "ko": "늑대",
+    "en": ""
+  },
+  "CHR_031_DESC": {
+    "ko": "과거 지하 결투장의 괴물이라 불렸던 야생의 늑대 수인, 이제는 자신이 지키고 싶은 동료와 함께 싸우기 위해 경기장에 선다.",
+    "en": ""
+  },
+  "CHR_031_STORY": {
+    "ko": "어린 시절부터 지하 결투장에 갇혀 싸움만 하며 살아온 수인. 늑대의 뛰어난 후각과 청각, 폭발적인 신체능력을 지닌 인간형이다. 지하 결투장이 폐지되면서 자유로워진 그, 이제 본인의 의지로 배틀에 참가한다.",
+    "en": ""
+  },
+  "SKL_1031_NAME": {
+    "ko": "전광석화",
+    "en": ""
+  },
+  "SKL_1031_DESC": {
+    "ko": "적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2031_NAME": {
+    "ko": "몰아치기",
+    "en": ""
+  },
+  "SKL_2031_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, {e1_turns}턴간 특수기 사용을 봉인한 뒤 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e2_amount}의 고정 피해를 {e2_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_5031_NAME": {
+    "ko": "마구 찌르기",
+    "en": ""
+  },
+  "SKL_5031_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 피해를 입힙니다. 그 뒤 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e2_amount}의 고정 피해를 {e2_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_7031_NAME": {
+    "ko": "불굴의 투지",
+    "en": ""
+  },
+  "SKL_7031_DESC": {
+    "ko": "자신이 전투불능이 되면 적 전체에게 약한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "CHR_032_NAME": {
+    "ko": "카라",
+    "en": "Kara"
+  },
+  "CHR_032_SPECIES": {
+    "ko": "까마귀",
+    "en": ""
+  },
+  "CHR_032_DESC": {
+    "ko": "절대로 용서하지 않겠어... 복수하겠어...!",
+    "en": ""
+  },
+  "CHR_032_STORY": {
+    "ko": "인간과 동물 사이에서 태어난 새로운 종족, 로캣몬. 그들은 인간의 특징을 강하게 물려받은 '인간형 로캣몬'과 동물의 특징을 강하게 물려받은 '동물형 로캣몬'으로 나뉘었습니다. 두 종족은 서로의 존재를 인정하지 않았고, 결국 돌이킬 수 없는 전쟁으로 번지고 말았으며 카라는 자기가 살던 고향의 유일한 생존자가 되었습니다. 동물형 로캣몬에게 복수의 칼날을 갈기 위해 카라는 닌자 암살부대에 들어갑니다. 그녀의 유일한 목표는 하나입니다. 자신의 모든 것을 빼앗아간 동물형 로캣몬에게 복수하는 것.",
+    "en": ""
+  },
+  "SKL_1032_NAME": {
+    "ko": "3연속 찌르기",
+    "en": ""
+  },
+  "SKL_1032_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 약한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2032_NAME": {
+    "ko": "벼린 칼날",
+    "en": ""
+  },
+  "SKL_2032_DESC": {
+    "ko": "{e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5032_NAME": {
+    "ko": "연막 투척",
+    "en": ""
+  },
+  "SKL_5032_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 {e1_turns}턴간 공격이 빗나가게 만듭니다.",
+    "en": ""
+  },
+  "SKL_7032_NAME": {
+    "ko": "복수의 칼날",
+    "en": ""
+  },
+  "SKL_7032_DESC": {
+    "ko": "매 라운드 개시 시 상대 진영 선두에 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "CHR_033_NAME": {
+    "ko": "카르노가디안",
+    "en": "Carnoguardian"
+  },
+  "CHR_033_SPECIES": {
+    "ko": "알비노 도마뱀",
+    "en": ""
+  },
+  "CHR_033_DESC": {
+    "ko": "공룡 카르노타우루스",
+    "en": ""
+  },
+  "CHR_033_STORY": {
+    "ko": "남아메리카 대륙에서 서식하다 강자를 찾아 찾아왔다.",
+    "en": ""
+  },
+  "SKL_1033_NAME": {
+    "ko": "방어",
+    "en": ""
+  },
+  "SKL_1033_DESC": {
+    "ko": "적 하나에게 피해를 입히고 {e1_turns}턴간 그 대상이 받는 회복량을 {e1_ratio:pct}로 줄입니다. 이어서 {e2_turns}턴간 그 대상이 받는 피해량을 {e2_ratio:pct} 증가시키고, {e3_turns}턴간 자신의 방어력을 {e3_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_2033_NAME": {
+    "ko": "방벽",
+    "en": ""
+  },
+  "SKL_2033_DESC": {
+    "ko": "아군 하나를 {e1_turns}턴간 수호합니다. 수호받는 아군을 겨눈 단일 공격은 자신이 대신 받고, 자신은 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_5033_NAME": {
+    "ko": "총공세",
+    "en": ""
+  },
+  "SKL_5033_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, 대상 최대 체력의 {e1_ratio:pct}만큼을 방어와 무관한 고정 피해로 더합니다. 이어서 {e2_turns}턴간 그 대상이 받는 피해량을 {e2_ratio:pct} 증가시키고, 전투가 끝날 때까지 자신의 방어력을 {e3_amount}, 체력을 {e4_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_7033_NAME": {
+    "ko": "불굴",
+    "en": ""
+  },
+  "SKL_7033_DESC": {
+    "ko": "피해를 입으면 전투 중 한 번 버팀을 얻습니다. 버팀으로 견뎌 내면 자신의 체력을 최대치의 {e2_ratio:pct}만큼 회복합니다.",
+    "en": ""
+  },
+  "CHR_034_NAME": {
+    "ko": "카이론",
+    "en": "Cairon"
+  },
+  "CHR_034_SPECIES": {
+    "ko": "사자",
+    "en": ""
+  },
+  "CHR_034_DESC": {
+    "ko": "사자와 염소, 뱀의 본능을 한 몸에 지닌 이형의 수인",
+    "en": ""
+  },
+  "CHR_034_STORY": {
+    "ko": "여러 동물의 특징을 지녀 '괴물'이라 불리던 그. \n그의 괴물 같은 모습과 특별한 능력으로 로캣배틀을 지배하려 한다.",
+    "en": ""
+  },
+  "SKL_1034_NAME": {
+    "ko": "발굽 찍기",
+    "en": ""
+  },
+  "SKL_1034_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 그 대상이 받는 피해량을 {e1_ratio:pct} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_2034_NAME": {
+    "ko": "사냥의 시간",
+    "en": ""
+  },
+  "SKL_2034_DESC": {
+    "ko": "대상이 잃은 체력에 비례해 최대 {e1_bonus:pct}까지 강한 피해량이 증가한 뒤, 체력이 가장 낮은 적에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_5034_NAME": {
+    "ko": "맹수 참격",
+    "en": ""
+  },
+  "SKL_5034_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 출혈을 부여합니다. 출혈은 매 라운드 종료 시 {e1_amount}의 고정 피해를 {e1_turns}턴간 입힙니다.",
+    "en": ""
+  },
+  "SKL_7034_NAME": {
+    "ko": "거대한 위협",
+    "en": ""
+  },
+  "SKL_7034_DESC": {
+    "ko": "대상의 체력이 자신보다 낮을 때는 그 대상에게 가하는 피해량이 {e1_mult}배가 됩니다.",
+    "en": ""
+  },
+  "CHR_035_NAME": {
+    "ko": "코스모 도리스",
+    "en": "Cosmo Doris"
+  },
+  "CHR_035_SPECIES": {
+    "ko": "갯민숭달팽이",
+    "en": ""
+  },
+  "CHR_035_DESC": {
+    "ko": "선수 대기줄이었다고? 관중석 예매 아니었어...?",
+    "en": ""
+  },
+  "CHR_035_STORY": {
+    "ko": "만타가오리 수인과 크로모도리스 수인의 혼혈. 호기심 많은 덜렁이. 로캣 대회를 동경하던 코스모는 가진 돈을 탈탈 털어 예매에 성공했다! 그러나 관중석이 아닌 선수 등록을 했다는 사실을 경기 당일에 알게 되는데...",
+    "en": ""
+  },
+  "SKL_1035_NAME": {
+    "ko": "쟤가 나 괴롭혀!",
+    "en": ""
+  },
+  "SKL_1035_DESC": {
+    "ko": "적 하나가 {e1_turns}턴간 받는 피해량을 {e1_ratio:pct} 증가시키고, 공격력을 {e2_amount_abs}, 속도를 {e3_amount_abs} 감소시킵니다. 같은 기간 동안 그 대상이 받는 회복량을 {e4_ratio:pct}로 줄입니다.",
+    "en": ""
+  },
+  "SKL_2035_NAME": {
+    "ko": "집에 갈래!",
+    "en": ""
+  },
+  "SKL_2035_DESC": {
+    "ko": "적 전체가 {e1_turns}턴간 받는 피해량을 {e1_ratio:pct} 증가시키고, 공격력을 {e2_amount_abs}, 속도를 {e3_amount_abs} 감소시킵니다. 같은 기간 동안 받는 회복량은 {e4_ratio:pct}로 줄어듭니다.",
+    "en": ""
+  },
+  "SKL_5035_NAME": {
+    "ko": "엄마한테 이를 거야!",
+    "en": ""
+  },
+  "SKL_5035_DESC": {
+    "ko": "적 전체에게 피해를 입히고 {e1_turns}턴간 행동 불능 상태로 만듭니다. 아군 전체는 {e2_turns}턴간 최대 체력의 {e2_ratio:pct}만큼 흡수하는 보호막을 얻습니다.",
+    "en": ""
+  },
+  "SKL_7035_NAME": {
+    "ko": "NG!",
+    "en": ""
+  },
+  "SKL_7035_DESC": {
+    "ko": "전투 개시 시 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻습니다. 자신이 전투불능이 되면 적 전체를 {e2_turns}턴간 행동 불능 상태로 만듭니다.",
+    "en": ""
+  },
+  "CHR_036_NAME": {
+    "ko": "키르유",
+    "en": "kirryou"
+  },
+  "CHR_036_SPECIES": {
+    "ko": "파리지옥",
+    "en": ""
+  },
+  "CHR_036_DESC": {
+    "ko": "사랑하기에 먹었을 뿐이야!",
+    "en": ""
+  },
+  "CHR_036_STORY": {
+    "ko": "키르유를 너무나 사랑한 남자가 있었다. 그는 자신의 모든 것을 키르유에게 양보했고, 언제나 자신의 모든 사랑과 애정을 쏟아부었다. 곧 얼마 지나지 않아 남자는 실종되었다. 뒤늦게 남자를 찾고자 집 안에 들어선 사람들은, 키르유를 마주치고 나서야 사건의 전말을 이해하고 말았다. 그들이 본 키르유는 어느 누구보다 황홀해보이는 표정을 짓고 있었다.",
+    "en": ""
+  },
+  "SKL_1036_NAME": {
+    "ko": "나도 널 사랑해",
+    "en": ""
+  },
+  "SKL_1036_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고 자신의 체력을 최대치의 {e1_ratio:pct}만큼 회복합니다. {e2_turns}턴간 그 대상의 공격력을 {e2_amount_abs} 감소시킵니다.",
+    "en": ""
+  },
+  "SKL_2036_NAME": {
+    "ko": "너도 날 사랑해?",
+    "en": ""
+  },
+  "SKL_2036_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, 그 대상의 이로운 상태를 모두 흡수합니다. 흡수한 하나마다 자신의 체력을 최대치의 {e1_ratio:pct}만큼 회복합니다.",
+    "en": ""
+  },
+  "SKL_5036_NAME": {
+    "ko": "그럼 잘 먹겠습니다!",
+    "en": ""
+  },
+  "SKL_5036_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고 가한 피해의 {e1_ratio:pct}만큼 자신의 체력을 회복합니다. 이어서 그 대상의 이로운 상태를 모두 흡수하고, 흡수한 하나마다 최대치의 {e2_ratio:pct}만큼 더 회복합니다.",
+    "en": ""
+  },
+  "SKL_7036_NAME": {
+    "ko": "거짓말쟁이!",
+    "en": ""
+  },
+  "SKL_7036_DESC": {
+    "ko": "자신에게 걸린 해로운 상태 하나마다 자신이 입히는 피해량이 {e1_per:pct}씩 증가합니다.",
+    "en": ""
+  },
+  "CHR_037_NAME": {
+    "ko": "파르바",
+    "en": "Parva"
+  },
+  "CHR_037_SPECIES": {
+    "ko": "꼬마비로드갯민숭달팽이",
+    "en": ""
+  },
+  "CHR_037_DESC": {
+    "ko": "천진한 미소 뒤에 맹독과 계산을 숨긴 채, 물을 응축해 전장을 지배하는 해 타입 수인.",
+    "en": ""
+  },
+  "CHR_037_STORY": {
+    "ko": "암살이 주특기였던 갯민숭달팽이 종족은 평화와 화합의 시대가 도래하면서 한동안 조용히 살았다. 갯민숭달팽이 종족의 파르바는 자신의 주특기인 독 활용과 암살능력을 활용하여 로캣 배틀에 참가하고자 한다 이 종족은 외견과는 다르게 매우 사나운 성격이라는 것을 알아야 한다",
+    "en": ""
+  },
+  "SKL_1037_NAME": {
+    "ko": "잭 더 리퍼",
+    "en": ""
+  },
+  "SKL_1037_DESC": {
+    "ko": "적 하나에게 강한 피해를 입히고, {e1_turns}턴간 그 대상의 마력을 {e1_amount_abs} 감소시킵니다. 같은 기간 동안 자신의 마력은 {e2_amount} 증가합니다.",
+    "en": ""
+  },
+  "SKL_2037_NAME": {
+    "ko": "응축",
+    "en": ""
+  },
+  "SKL_2037_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 자신의 마력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5037_NAME": {
+    "ko": "샤를로트 코르데",
+    "en": ""
+  },
+  "SKL_5037_DESC": {
+    "ko": "자신의 마력이 대상보다 앞선 1점마다 피해량이 {e1_per:pct}씩 늘어난 뒤, 적 하나에게 강한 피해를 입힙니다. 그 뒤 {e2_turns}턴간 간파를 얻습니다.",
+    "en": ""
+  },
+  "SKL_7037_NAME": {
+    "ko": "마타 하리",
+    "en": ""
+  },
+  "SKL_7037_DESC": {
+    "ko": "매 라운드 개시 시 전투가 끝날 때까지 자신의 마력이 {e1_amount} 증가하며, {e1_upto}까지 쌓입니다.",
+    "en": ""
+  },
+  "CHR_038_NAME": {
+    "ko": "피코",
+    "en": "Picko"
+  },
+  "CHR_038_SPECIES": {
+    "ko": "공작 · 물총새",
+    "en": ""
+  },
+  "CHR_038_DESC": {
+    "ko": "아...안녕하세요....자..잘 부탁드려요...푸드덕(부끄러운 톤으로 날개를 퍼덕이며)",
+    "en": ""
+  },
+  "CHR_038_STORY": {
+    "ko": "새를 사랑한 누군가의 집념이 담겨 있습니다. 공작+물총새를 모티브로 제작. 물고기를 좋아합니다. 부끄럼이 많지만 물고기가 있으면 환장해 버립니다. 자신의 아름다운 날개를 자랑스러워 하지만 부끄럼이 많아서 뽐내지는 않습니다. 은근히 칭찬 받으면 기뻐한다는 설정",
+    "en": ""
+  },
+  "SKL_1038_NAME": {
+    "ko": "다이빙 어택",
+    "en": ""
+  },
+  "SKL_1038_DESC": {
+    "ko": "적 하나에게 치명적인 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2038_NAME": {
+    "ko": "급락",
+    "en": ""
+  },
+  "SKL_2038_DESC": {
+    "ko": "적 하나에게 피해를 입히고, {e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5038_NAME": {
+    "ko": "일격필살",
+    "en": ""
+  },
+  "SKL_5038_DESC": {
+    "ko": "대상 방어력의 {e1_ratio:pct}를 무시하고 적 하나에게 치명적인 피해를 입힌 뒤, {e2_turns}턴간 간파를 얻습니다.",
+    "en": ""
+  },
+  "SKL_7038_NAME": {
+    "ko": "보석 깃털",
+    "en": ""
+  },
+  "SKL_7038_DESC": {
+    "ko": "전투 개시 시 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 얻고, 적을 쓰러뜨릴 때마다 같은 보호막을 다시 얻습니다.",
+    "en": ""
+  },
+  "CHR_039_NAME": {
+    "ko": "하따",
+    "en": ""
+  },
+  "CHR_039_SPECIES": {
+    "ko": "하늘다람쥐",
+    "en": ""
+  },
+  "CHR_039_DESC": {
+    "ko": "낙하산을 메고 뛰어내리는 하늘다람쥐가 있다는 소문이 있다..",
+    "en": ""
+  },
+  "CHR_039_STORY": {
+    "ko": "원래 피막을 통해 하늘을 날던 하늘다람쥐 종족은, 본성의 여신 '디벨로'로 부터 인간화와 문명을 수여받게 되면서 복장 통일을 위해 피막이 없어지게 되었다. 그러나 여전히 하따는 새로 받은 문명을 이용해 다시 하늘을 날려는 꿈을 꾸고 있다.",
+    "en": ""
+  },
+  "SKL_1039_NAME": {
+    "ko": "가방으로 때리기",
+    "en": ""
+  },
+  "SKL_1039_DESC": {
+    "ko": "적 하나에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2039_NAME": {
+    "ko": "낙하 준비",
+    "en": ""
+  },
+  "SKL_2039_DESC": {
+    "ko": "{e1_turns}턴간 자신의 공격력을 {e1_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_5039_NAME": {
+    "ko": "람쥐썬더",
+    "en": ""
+  },
+  "SKL_5039_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 약한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7039_NAME": {
+    "ko": "꺾이지 않는 마음",
+    "en": ""
+  },
+  "SKL_7039_DESC": {
+    "ko": "자신의 체력이 {e1_when_ratio:pct} 미만이면 매 라운드 개시 시 {e1_turns}턴간 공격력이 {e1_amount} 증가합니다.",
+    "en": ""
+  },
+  "CHR_040_NAME": {
+    "ko": "호루스",
+    "en": "Horus"
+  },
+  "CHR_040_SPECIES": {
+    "ko": "매",
+    "en": ""
+  },
+  "CHR_040_DESC": {
+    "ko": "고고하고 든든한 방어자",
+    "en": ""
+  },
+  "CHR_040_STORY": {
+    "ko": "시비르기에서 꽤나 긴 혈통을 가지고 있는 로캣몬. 로켓 배틀이 화합의 상징이 되기 전부터 지하 결투장 폐쇄를 위해 힘써왔으나 화합의 장이 된 지금은 로켓배틀에 우호적이게 바뀌었다고 한다.",
+    "en": ""
+  },
+  "SKL_1040_NAME": {
+    "ko": "태세정비",
+    "en": ""
+  },
+  "SKL_1040_DESC": {
+    "ko": "아군 전체에게 {e1_turns}턴간 최대 체력의 {e1_ratio:pct}만큼 흡수하는 보호막을 부여하고, {e2_turns}턴간 방어력을 {e2_amount} 증가시킵니다.",
+    "en": ""
+  },
+  "SKL_2040_NAME": {
+    "ko": "결속",
+    "en": ""
+  },
+  "SKL_2040_DESC": {
+    "ko": "{e1_turns}턴간 아군 전체의 공격력을 {e1_amount} 증가시키고, 투지를 {e2_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_5040_NAME": {
+    "ko": "최후의 호령",
+    "en": ""
+  },
+  "SKL_5040_DESC": {
+    "ko": "적 전체에게 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_7040_NAME": {
+    "ko": "고고함",
+    "en": ""
+  },
+  "SKL_7040_DESC": {
+    "ko": "매 라운드 개시 시 전투가 끝날 때까지 자신의 마력이 {e1_amount} 증가하며, {e1_upto}까지 쌓입니다.",
+    "en": ""
+  },
+  "CHR_041_NAME": {
+    "ko": "호퍼",
+    "en": "Hopper"
+  },
+  "CHR_041_SPECIES": {
+    "ko": "펭귄",
+    "en": ""
+  },
+  "CHR_041_DESC": {
+    "ko": "가정을 지키기 위해 무술을 극한으로 단련한 로캣몬",
+    "en": ""
+  },
+  "CHR_041_STORY": {
+    "ko": "호프의 진화형 로캣몬. 대개 천적의 위협으로부터 자신과 가족을 지키기 위한 일념으로 수련을 거듭하여 진화한다. 날개 당수 한 번으로 돌보다 단단한 빙하도 반으로 쪼갤 수 있다. 평소에는 유순하지만 호프에게 위협을 가하는 이가 있으면 그 무엇보다도 흉폭해질 수 있다.",
+    "en": ""
+  },
+  "SKL_1041_NAME": {
+    "ko": "강철날개",
+    "en": ""
+  },
+  "SKL_1041_DESC": {
+    "ko": "적 하나에게 강한 피해를 입힙니다.",
+    "en": ""
+  },
+  "SKL_2041_NAME": {
+    "ko": "연격",
+    "en": ""
+  },
+  "SKL_2041_DESC": {
+    "ko": "적 하나를 {e1_hits}회 연속으로 타격하며, 타격마다 피해를 입힙니다. 그 뒤 가한 피해의 {e2_ratio:pct}만큼 자신도 피해를 입습니다.",
+    "en": ""
+  },
+  "SKL_5041_NAME": {
+    "ko": "푸른 칼날",
+    "en": ""
+  },
+  "SKL_5041_DESC": {
+    "ko": "자신이 잃은 체력에 비례해 최대 {e3_bonus:pct}까지 피해량이 증가한 뒤, 적 하나를 {e2_hits}회 연속으로 타격합니다. 이와 함께 {e1_turns}턴간 속도와 무관하게 먼저 행동합니다.",
+    "en": ""
+  },
+  "SKL_7041_NAME": {
+    "ko": "불굴",
+    "en": ""
+  },
+  "SKL_7041_DESC": {
+    "ko": "매 라운드 개시 시 버팀을 얻습니다.",
+    "en": ""
+  },
+  "CHR_042_NAME": {
+    "ko": "루나",
+    "en": "Luna"
+  },
+  "CHR_042_SPECIES": {
+    "ko": "나비",
+    "en": ""
+  },
+  "CHR_042_DESC": {
+    "ko": "마음은 착하지만 날개가 검은색 이라는 이유로 무리에서 쫒겨났다. \n직접적인 공격보다 버프,디버프, 힐들로 아군을 돕는 것을 좋아한다.",
+    "en": ""
+  },
+  "CHR_042_STORY": {
+    "ko": "마음은 착하지만 날개가 검은색 이라는 이유로 무리에서 쫒겨났다. \n직접적인 공격보다 버프,디버프, 힐들로 아군을 돕는 것을 좋아한다.",
+    "en": ""
+  },
+  "SKL_1042_NAME": {
+    "ko": "고요한 날개",
+    "en": ""
+  },
+  "SKL_1042_DESC": {
+    "ko": "적 하나에게 약한 피해를 입히고, 체력이 가장 낮은 아군의 체력을 최대치의 {e1_ratio:pct}만큼 회복시킵니다. 자신의 투지를 {e2_amount} 획득합니다.",
+    "en": ""
+  },
+  "SKL_2042_NAME": {
+    "ko": "정화의 날개",
+    "en": ""
+  },
+  "SKL_2042_DESC": {
+    "ko": "아군 하나의 해로운 상태를 모두 해제한 뒤, 그 대상의 체력을 최대치의 {e2_ratio:pct}만큼 회복시킵니다.",
+    "en": ""
+  },
+  "SKL_5042_NAME": {
+    "ko": "침묵의 날개",
+    "en": ""
+  },
+  "SKL_5042_DESC": {
+    "ko": "적 전체에게 약한 피해를 입히고 {e1_turns}턴간 특수기 사용을 봉인합니다.",
+    "en": ""
+  },
+  "SKL_7042_NAME": {
+    "ko": "치유의 힘",
+    "en": ""
+  },
+  "SKL_7042_DESC": {
+    "ko": "매 라운드 개시 시 체력이 가장 낮은 아군의 체력을 최대치의 {e1_ratio:pct}만큼 회복시킵니다.",
+    "en": ""
+  }
+}

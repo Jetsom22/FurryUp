@@ -1,0 +1,187 @@
+스킬 ID,기술 이름,기술 설명,기술 종류,속성,대상,위력,속도 보정,투지 소모,허용 초과,효과 그룹,(이름),(초안),(캐릭터),(원안),(살펴볼 것)
+skill_key,name,desc,slot,element,target,tier,speed,sp_cost,waive,effect_group,_name,_draft,_owner,_source,_hint
+string,string_key,string_key,enum,enum,enum,int,int,int,int,string,,,,,
+SKL_1001,SKL_1001_NAME,SKL_1001_DESC,basic,DIVINE,enemy_one,2,-3,,,EFG_1001,"=IFERROR(VLOOKUP($B4,string!$A:$B,2,FALSE),"""")",초안,CHR_001,최대 체력의 45프로를 회복한다,
+SKL_5001,SKL_5001_NAME,SKL_5001_DESC,ultimate,DIVINE,enemy_all,9,0,3,19,EFG_5001,"=IFERROR(VLOOKUP($B5,string!$A:$B,2,FALSE),"""")",초안,CHR_001,잃은 체력에 비례한 데미지를 적 전원에게 분배하여 가한 뒤 사망,
+SKL_7001,SKL_7001_NAME,SKL_7001_DESC,passive,,self,0,-3,,,EFG_7001,"=IFERROR(VLOOKUP($B6,string!$A:$B,2,FALSE),"""")",초안,CHR_001,상대 '육' 타입 로켓몬의 공격을 대신 맞는다,
+SKL_1002,SKL_1002_NAME,SKL_1002_DESC,basic,WILD,enemy_one,6,0,,,EFG_1002,"=IFERROR(VLOOKUP($B7,string!$A:$B,2,FALSE),"""")",초안,CHR_002,"적 1명에게 공격, 투지 획득",
+SKL_5002,SKL_5002_NAME,SKL_5002_DESC,ultimate,DIVINE,enemy_weakest,6,1,3,,EFG_5002,"=IFERROR(VLOOKUP($B8,string!$A:$B,2,FALSE),"""")",초안,CHR_002,가장 약한 적 1명에게 흡혈 (우선도 + 1),우선 · 예산 밖 drain
+SKL_7002,SKL_7002_NAME,SKL_7002_DESC,passive,,self,0,,,,EFG_7002,"=IFERROR(VLOOKUP($B9,string!$A:$B,2,FALSE),"""")",초안,CHR_002,체력이 100% 이상이라면 공격에 우선도 + 1,우선 · 조건 hp_full
+SKL_1003,SKL_1003_NAME,SKL_1003_DESC,basic,WILD,enemy_one,6,0,,,EFG_1003,"=IFERROR(VLOOKUP($B10,string!$A:$B,2,FALSE),"""")",초안,CHR_003,강력한 양손 타격으로 상대방 스턴 2초,초 단위 — 턴제라 버린다 · 예산 밖 stun
+SKL_5003,SKL_5003_NAME,SKL_5003_DESC,ultimate,ARCANE,enemy_all,3,0,4,,EFG_5003,"=IFERROR(VLOOKUP($B11,string!$A:$B,2,FALSE),"""")",초안,CHR_003,독성 먹물구름을뿜어 연막을 칠수 있다.,중독 → 출혈 · 예산 밖 blind
+SKL_7003,SKL_7003_NAME,SKL_7003_DESC,passive,,self,0,,,,EFG_7003,"=IFERROR(VLOOKUP($B12,string!$A:$B,2,FALSE),"""")",초안,CHR_003,몸의 점액이 날카로운 날붙이 공격으로부터 몸을 보호한다.,
+SKL_1004,SKL_1004_NAME,SKL_1004_DESC,basic,ARCANE,enemy_one,4,-3,,,EFG_1004,"=IFERROR(VLOOKUP($B13,string!$A:$B,2,FALSE),"""")",초안,CHR_004,아군 로캣몬 1기를 치유한다,
+SKL_5004,SKL_5004_NAME,SKL_5004_DESC,ultimate,DIVINE,ally_all,0,-3,3,,EFG_5004,"=IFERROR(VLOOKUP($B14,string!$A:$B,2,FALSE),"""")",초안,CHR_004,"아군 로캣몬 전체 회복 및 물리 방어력, 마법 방어력 1랭크 증가",예산 밖 boost
+SKL_7004,SKL_7004_NAME,SKL_7004_DESC,passive,,self,0,-3,,,EFG_7004,"=IFERROR(VLOOKUP($B15,string!$A:$B,2,FALSE),"""")",초안,CHR_004,기절을 제외한 모든 디버프를 무시한다,면역
+SKL_1005,SKL_1005_NAME,SKL_1005_DESC,basic,WILD,enemy_one,9,0,,,EFG_1005,"=IFERROR(VLOOKUP($B16,string!$A:$B,2,FALSE),"""")",,CHR_005,"적 1명에게 높은 피해, 자신의 공격 1 증가",
+SKL_5005,SKL_5005_NAME,SKL_5005_DESC,ultimate,WILD,enemy_one,9,0,3,,EFG_5005,"=IFERROR(VLOOKUP($B17,string!$A:$B,2,FALSE),"""")",초안,CHR_005,적 1명에게 지금까지 받은 대미지 만큼 공격,
+SKL_7005,SKL_7005_NAME,SKL_7005_DESC,passive,,self,0,,,,EFG_7005,"=IFERROR(VLOOKUP($B18,string!$A:$B,2,FALSE),"""")",초안,CHR_005,적이 기술을 사용하기 전에 공격하면 침묵을 부여한다,
+SKL_1006,SKL_1006_NAME,SKL_1006_DESC,basic,ARCANE,enemy_one,8,0,,,EFG_1006,"=IFERROR(VLOOKUP($B19,string!$A:$B,2,FALSE),"""")",초안,CHR_006,"적 1명에게 피해, 받는 피해 증가 부여",
+SKL_5006,SKL_5006_NAME,SKL_5006_DESC,ultimate,WILD,enemy_all,5,0,4,,EFG_5006,"=IFERROR(VLOOKUP($B20,string!$A:$B,2,FALSE),"""")",초안,CHR_006,아군 로캣몬 모든 스텟 증가 + 2,예산 밖 boost boost boost
+SKL_7006,SKL_7006_NAME,SKL_7006_DESC,passive,,self,0,,,,EFG_7006,"=IFERROR(VLOOKUP($B21,string!$A:$B,2,FALSE),"""")",초안,CHR_006,혼자 남으면 모든 스테이터스가 3턴간 2배 증가,예산 밖 boost boost
+SKL_1007,SKL_1007_NAME,SKL_1007_DESC,basic,WILD,enemy_one,6,0,,,EFG_1007,"=IFERROR(VLOOKUP($B22,string!$A:$B,2,FALSE),"""")",초안,CHR_007,적 1명 대상으로 공격,
+SKL_5007,SKL_5007_NAME,SKL_5007_DESC,ultimate,WILD,enemy_one,7,0,2,,EFG_5007,"=IFERROR(VLOOKUP($B23,string!$A:$B,2,FALSE),"""")",초안,CHR_007,"적 1명에게 높은 피해, 대상의 물리 방어 -2",
+SKL_7007,SKL_7007_NAME,SKL_7007_DESC,passive,,self,0,,,,EFG_7007,"=IFERROR(VLOOKUP($B24,string!$A:$B,2,FALSE),"""")",초안,CHR_007,전투 시작 시 물리 방어 +2,전투 시작 시 — 8단계 필요
+SKL_1008,SKL_1008_NAME,SKL_1008_DESC,basic,DIVINE,enemy_one,5,0,,9,EFG_1008,"=IFERROR(VLOOKUP($B25,string!$A:$B,2,FALSE),"""")",초안,CHR_008,물을 뿜어 데미지를 주고 적의 물리 및 마법 방어를 1씩 낮춘다,
+SKL_5008,SKL_5008_NAME,SKL_5008_DESC,ultimate,DIVINE,enemy_all,5,0,4,,EFG_5008,"=IFERROR(VLOOKUP($B26,string!$A:$B,2,FALSE),"""")",초안,CHR_008,5턴 동안 상태 이상 면역,면역
+SKL_7008,SKL_7008_NAME,SKL_7008_DESC,passive,,self,0,,,,EFG_7008,"=IFERROR(VLOOKUP($B27,string!$A:$B,2,FALSE),"""")",초안,CHR_008,체력이 50% 이하 일 때 자신의 공격력이 1감소하고 물리 및 마법 방어가 2씩 상승한다,예산 밖 boost
+SKL_1009,SKL_1009_NAME,SKL_1009_DESC,basic,DIVINE,enemy_one,1,-3,,,EFG_1009,"=IFERROR(VLOOKUP($B28,string!$A:$B,2,FALSE),"""")",초안,CHR_009,"적 지정 기본 공격, 투지 흡수",
+SKL_5009,SKL_5009_NAME,SKL_5009_DESC,ultimate,DIVINE,ally_all,0,3,3,,EFG_5009,"=IFERROR(VLOOKUP($B29,string!$A:$B,2,FALSE),"""")",초안,CHR_009,"아군이 1명 쓰러진 후 사용 가능하다. (우선도+1)
+지정한 아군을 각성시키고, 보유한 투지를 나눠준다.(자신 지정 시 변동X)",우선 · 조건 ally_fallen
+SKL_7009,SKL_7009_NAME,SKL_7009_DESC,passive,,self,0,-3,,,EFG_7009,"=IFERROR(VLOOKUP($B30,string!$A:$B,2,FALSE),"""")",초안,CHR_009,"마노가 존재하는 전투에서, 투지를 회복하는 로캣몬은 회복한 투지만큼 체력 회복.(1당 5%)",
+SKL_1010,SKL_1010_NAME,SKL_1010_DESC,basic,ARCANE,enemy_one,4,0,,,EFG_1010,"=IFERROR(VLOOKUP($B31,string!$A:$B,2,FALSE),"""")",초안,CHR_010,방어력 2 자신에게 부여 1턴,
+SKL_5010,SKL_5010_NAME,SKL_5010_DESC,ultimate,ARCANE,enemy_one,5,0,4,31,EFG_5010,"=IFERROR(VLOOKUP($B32,string!$A:$B,2,FALSE),"""")",초안,CHR_010,2턴간 적 전체 공격력 1 방어력 1 저하,예산 밖 boost boost
+SKL_7010,SKL_7010_NAME,SKL_7010_DESC,passive,,self,0,,,,EFG_7010,"=IFERROR(VLOOKUP($B33,string!$A:$B,2,FALSE),"""")",초안,CHR_010,체력 50%이하시 공격력 1 방어력 2 부여,
+SKL_1011,SKL_1011_NAME,SKL_1011_DESC,basic,WILD,enemy_one,7,0,,,EFG_1011,"=IFERROR(VLOOKUP($B34,string!$A:$B,2,FALSE),"""")",,CHR_011,자신의 이동속도를 2 올려 적을 공격한다,
+SKL_5011,SKL_5011_NAME,SKL_5011_DESC,ultimate,DIVINE,enemy_one,5,0,3,,EFG_5011,"=IFERROR(VLOOKUP($B35,string!$A:$B,2,FALSE),"""")",초안,CHR_011,높이 뛰어올라 적에게 높은 데미지를 주고 한 턴 기절시킨다,
+SKL_7011,SKL_7011_NAME,SKL_7011_DESC,passive,,self,0,,,,EFG_7011,"=IFERROR(VLOOKUP($B36,string!$A:$B,2,FALSE),"""")",초안,CHR_011,전투 시작 시 높은 확률로 적의 방어력을 2 낮춘다,전투 시작 시 — 8단계 필요
+SKL_1012,SKL_1012_NAME,SKL_1012_DESC,basic,ARCANE,enemy_weakest,5,0,,,EFG_1012,"=IFERROR(VLOOKUP($B37,string!$A:$B,2,FALSE),"""")",초안,CHR_012,"가장 약한 적에게 공격, 이 공격으로 체력이 15% 아래가 되면 처형",
+SKL_5012,SKL_5012_NAME,SKL_5012_DESC,ultimate,ARCANE,enemy_one,6,0,5,,EFG_5012,"=IFERROR(VLOOKUP($B38,string!$A:$B,2,FALSE),"""")",초안,CHR_012,"물리 방어가 약간 감소하는 대신, 공격력이 크게 증가한다.",
+SKL_7012,SKL_7012_NAME,SKL_7012_DESC,passive,,enemy_one,0,,,,EFG_7012,"=IFERROR(VLOOKUP($B39,string!$A:$B,2,FALSE),"""")",초안,CHR_012,전투 시작 시 모든 적에게 침묵 2 부여,전투 시작 시 — 8단계 필요 · 예산 밖 silence
+SKL_1013,SKL_1013_NAME,SKL_1013_DESC,basic,WILD,enemy_one,6,0,,,EFG_1013,"=IFERROR(VLOOKUP($B40,string!$A:$B,2,FALSE),"""")",,CHR_013,"적을 흡혈하여 공격력 디버프-1
+자신 속도 -1 자신 힐",예산 밖 drain
+SKL_5013,SKL_5013_NAME,SKL_5013_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5013,"=IFERROR(VLOOKUP($B41,string!$A:$B,2,FALSE),"""")",초안,CHR_013,"딸피 적 강력한 딜
+처치 시 체력 회복 (빠름 +2)",조건 target_hp_below · 단계 ON_KILL
+SKL_7013,SKL_7013_NAME,SKL_7013_DESC,passive,,enemy_one,0,,,,EFG_7013,"=IFERROR(VLOOKUP($B42,string!$A:$B,2,FALSE),"""")",초안,CHR_013,최대체력 이상 회복 시 공격력 증가,
+SKL_1014,SKL_1014_NAME,SKL_1014_DESC,basic,ARCANE,enemy_one,7,0,,,EFG_1014,"=IFERROR(VLOOKUP($B43,string!$A:$B,2,FALSE),"""")",초안,CHR_014,적 한명을 지정하여 3턴간 일반기를 사용할 수 없게 만든다. 상대 로켓몬 중 속박 중인 로켓몬이 1기 이상 존재한다면 사용 불가,
+SKL_5014,SKL_5014_NAME,SKL_5014_DESC,ultimate,ARCANE,enemy_all,6,0,4,,EFG_5014,"=IFERROR(VLOOKUP($B44,string!$A:$B,2,FALSE),"""")",초안,CHR_014,속박' 기술의 사용 제한이 3턴간 '1기 이상' 에서 '2기 이상'으로 완화된다.,
+SKL_7014,SKL_7014_NAME,SKL_7014_DESC,passive,,self,0,,,,EFG_7014,"=IFERROR(VLOOKUP($B45,string!$A:$B,2,FALSE),"""")",초안,CHR_014,주변의 누군가가 체력을 회복할 때마다 그 회복량의 20%만큼 자신의 체력을 회복합니다.,
+SKL_1015,SKL_1015_NAME,SKL_1015_DESC,basic,WILD,enemy_one,7,0,,,EFG_1015,"=IFERROR(VLOOKUP($B46,string!$A:$B,2,FALSE),"""")",초안,CHR_015,"적 1명에게 물리피해를준다, 30%의 확률로 출혈을 부여한다",확률 30%
+SKL_5015,SKL_5015_NAME,SKL_5015_DESC,ultimate,WILD,enemy_one,8,0,3,1,EFG_5015,"=IFERROR(VLOOKUP($B47,string!$A:$B,2,FALSE),"""")",초안,CHR_015,상대방의 속도와 무관하게 선제공격권을 가진다 (투지3),우선
+SKL_7015,SKL_7015_NAME,SKL_7015_DESC,passive,,self,0,,,,EFG_7015,"=IFERROR(VLOOKUP($B48,string!$A:$B,2,FALSE),"""")",초안,CHR_015,나와 같은 SEA속성에 입히는 데미지가 30%증가한다,조건 same_type
+SKL_1016,SKL_1016_NAME,SKL_1016_DESC,basic,DIVINE,enemy_one,4,-3,,,EFG_1016,"=IFERROR(VLOOKUP($B49,string!$A:$B,2,FALSE),"""")",초안,CHR_016,주먹으로 때려 적1기 에게 (??)의피해를 준다,
+SKL_5016,SKL_5016_NAME,SKL_5016_DESC,ultimate,DIVINE,ally_all,0,-3,3,,EFG_5016,"=IFERROR(VLOOKUP($B50,string!$A:$B,2,FALSE),"""")",,CHR_016,2턴간 자신이 받는 피해 30% 감소,예산 밖 amplify
+SKL_7016,SKL_7016_NAME,SKL_7016_DESC,passive,,self,0,-3,,,EFG_7016,"=IFERROR(VLOOKUP($B51,string!$A:$B,2,FALSE),"""")",초안,CHR_016,턴마다 잃은 체력의 5% 회복,
+SKL_1017,SKL_1017_NAME,SKL_1017_DESC,basic,ARCANE,enemy_one,4,0,,1,EFG_1017,"=IFERROR(VLOOKUP($B52,string!$A:$B,2,FALSE),"""")",초안,CHR_017,적중당한 상대의 공격력을 1 깍는다,
+SKL_5017,SKL_5017_NAME,SKL_5017_DESC,ultimate,ARCANE,ally_all,0,0,3,,EFG_5017,"=IFERROR(VLOOKUP($B53,string!$A:$B,2,FALSE),"""")",초안,CHR_017,이번턴에 공격당하면 데미지를 받는 대신 데미지의 절반만큼 회복한다,
+SKL_7017,SKL_7017_NAME,SKL_7017_DESC,passive,,self,0,,,,EFG_7017,"=IFERROR(VLOOKUP($B54,string!$A:$B,2,FALSE),"""")",초안,CHR_017,상성 배율을 절반만 받는다. 유리도 불리도 덜 탄다,
+SKL_1018,SKL_1018_NAME,SKL_1018_DESC,basic,WILD,enemy_one,9,0,,1,EFG_1018,"=IFERROR(VLOOKUP($B55,string!$A:$B,2,FALSE),"""")",초안,CHR_018,적 1명 대상으로 공격,
+SKL_5018,SKL_5018_NAME,SKL_5018_DESC,ultimate,ARCANE,enemy_one,8,0,4,,EFG_5018,"=IFERROR(VLOOKUP($B56,string!$A:$B,2,FALSE),"""")",초안,CHR_018,"적 1명 대상으로 공격, '대상 체력 낮음' 일 경우 매우 높은 피해",조건 target_hp_below
+SKL_7018,SKL_7018_NAME,SKL_7018_DESC,passive,,self,0,,,,EFG_7018,"=IFERROR(VLOOKUP($B57,string!$A:$B,2,FALSE),"""")",초안,CHR_018,자신보다 속도가 낮은 적에게 공격 받을 시 받는 피해량 0.8배,조건 faster_than_target
+SKL_1019,SKL_1019_NAME,SKL_1019_DESC,basic,WILD,enemy_one,6,0,,,EFG_1019,"=IFERROR(VLOOKUP($B58,string!$A:$B,2,FALSE),"""")",초안,CHR_019,5초간 공격속도 두배 증가,초 단위 — 턴제라 버린다
+SKL_5019,SKL_5019_NAME,SKL_5019_DESC,ultimate,WILD,enemy_all,3,0,3,,EFG_5019,"=IFERROR(VLOOKUP($B59,string!$A:$B,2,FALSE),"""")",초안,CHR_019,5초간 좁은 틈을 통과할수있다.,초 단위 — 턴제라 버린다
+SKL_7019,SKL_7019_NAME,SKL_7019_DESC,passive,,self,0,,,,EFG_7019,"=IFERROR(VLOOKUP($B60,string!$A:$B,2,FALSE),"""")",초안,CHR_019,공격속도가 느린 공격은 몸을 이루는 벌레가 흩어져서 피한다.,조건 faster_than_target
+SKL_1020,SKL_1020_NAME,SKL_1020_DESC,basic,WILD,enemy_one,7,0,,,EFG_1020,"=IFERROR(VLOOKUP($B61,string!$A:$B,2,FALSE),"""")",초안,CHR_020,적 1명에게 단일 관통공격,
+SKL_5020,SKL_5020_NAME,SKL_5020_DESC,ultimate,DIVINE,enemy_one,8,0,3,,EFG_5020,"=IFERROR(VLOOKUP($B62,string!$A:$B,2,FALSE),"""")",초안,CHR_020,"""내 체력 낮음"" 상태일 경우 다음 턴 무적 (오마카세)",조건 hp_below
+SKL_7020,SKL_7020_NAME,SKL_7020_DESC,passive,,enemy_one,0,,,,EFG_7020,"=IFERROR(VLOOKUP($B63,string!$A:$B,2,FALSE),"""")",초안,CHR_020,속도 차이에 의한 데미지 배율 증 가감(주는 데미지 -30%~+30%)(적 속도-스위피 속도 3 ~ -3),
+SKL_1021,SKL_1021_NAME,SKL_1021_DESC,basic,WILD,enemy_one,5,0,,,EFG_1021,"=IFERROR(VLOOKUP($B64,string!$A:$B,2,FALSE),"""")",초안,CHR_021,중독 데미지,중독 → 출혈
+SKL_5021,SKL_5021_NAME,SKL_5021_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5021,"=IFERROR(VLOOKUP($B65,string!$A:$B,2,FALSE),"""")",초안,CHR_021,단일 강력한 데미지,
+SKL_7021,SKL_7021_NAME,SKL_7021_DESC,passive,,enemy_one,0,,,,EFG_7021,"=IFERROR(VLOOKUP($B66,string!$A:$B,2,FALSE),"""")",초안,CHR_021,중독된 적 추가 데미지,중독 → 출혈
+SKL_1022,SKL_1022_NAME,SKL_1022_DESC,basic,WILD,enemy_one,8,0,,,EFG_1022,"=IFERROR(VLOOKUP($B67,string!$A:$B,2,FALSE),"""")",초안,CHR_022,시엘라가 지느러미에 숨겨진 독니를 꺼낸다. 대상 한명에게 공격력의 50% 만큼 데미지를 주고 턴당 공격력의 25% 만큼의 데미지를 3턴 동안 준다.,중독 → 출혈
+SKL_5022,SKL_5022_NAME,SKL_5022_DESC,ultimate,ARCANE,field_others,7,0,4,,EFG_5022,"=IFERROR(VLOOKUP($B68,string!$A:$B,2,FALSE),"""")",초안,CHR_022,전장에 강력한 용오름을 불러 일으켜 전장을 뒤집는다. 시엘라를 제외한 필드의 모두에게 공격력의 250% 만큼의 데미지를 준다.,
+SKL_7022,SKL_7022_NAME,SKL_7022_DESC,passive,,self,0,,,,EFG_7022,"=IFERROR(VLOOKUP($B69,string!$A:$B,2,FALSE),"""")",초안,CHR_022,시엘라에게 가해진 마법데미지의 10%를 대상에게 반사한다.,
+SKL_1023,SKL_1023_NAME,SKL_1023_DESC,basic,WILD,enemy_one,3,0,,1,EFG_1023,"=IFERROR(VLOOKUP($B70,string!$A:$B,2,FALSE),"""")",초안,CHR_023,적을 공격하고 적중한 상대의 스피드를 감소시킨다.,
+SKL_5023,SKL_5023_NAME,SKL_5023_DESC,ultimate,ARCANE,enemy_all,2,0,4,,EFG_5023,"=IFERROR(VLOOKUP($B71,string!$A:$B,2,FALSE),"""")",초안,CHR_023,"적 전체에게 기절, 아군 전체에게 쇠약",예산 밖 stun
+SKL_7023,SKL_7023_NAME,SKL_7023_DESC,passive,,self,0,,,,EFG_7023,"=IFERROR(VLOOKUP($B72,string!$A:$B,2,FALSE),"""")",초안,CHR_023,야성 타입 공격은 0.7배로 신비 타입 공격은 1.3배로 받는다.,
+SKL_1024,SKL_1024_NAME,SKL_1024_DESC,basic,ARCANE,enemy_one,9,0,,7,EFG_1024,"=IFERROR(VLOOKUP($B73,string!$A:$B,2,FALSE),"""")",초안,CHR_024,기본 공격이며 30%의 확률로 침묵을 부여한다,확률 30%
+SKL_5024,SKL_5024_NAME,SKL_5024_DESC,ultimate,ARCANE,enemy_all,8,0,6,5,EFG_5024,"=IFERROR(VLOOKUP($B74,string!$A:$B,2,FALSE),"""")",초안,CHR_024,"상대방의 방어력,속성 등에 무관하게 고정 피해량 (투지5소모)",
+SKL_7024,SKL_7024_NAME,SKL_7024_DESC,passive,,self,0,,,,EFG_7024,"=IFERROR(VLOOKUP($B75,string!$A:$B,2,FALSE),"""")",초안,CHR_024,게임 시작후 7턴이 지나면 자멸한다,퇴장 · 조건 round_after · 전투 시작 시 — 8단계 필요
+SKL_1025,SKL_1025_NAME,SKL_1025_DESC,basic,WILD,enemy_one,9,0,,,EFG_1025,"=IFERROR(VLOOKUP($B76,string!$A:$B,2,FALSE),"""")",초안,CHR_025,기본 공격력의 2배의 피해를 준다,
+SKL_5025,SKL_5025_NAME,SKL_5025_DESC,ultimate,WILD,enemy_one,6,0,3,,EFG_5025,"=IFERROR(VLOOKUP($B77,string!$A:$B,2,FALSE),"""")",초안,CHR_025,기본 공격력의 3배의 피해를 준다,
+SKL_7025,SKL_7025_NAME,SKL_7025_DESC,passive,,self,0,,,,EFG_7025,"=IFERROR(VLOOKUP($B78,string!$A:$B,2,FALSE),"""")",초안,CHR_025,적이 하나 없어질 시 체력의 15% 회복,
+SKL_1026,SKL_1026_NAME,SKL_1026_DESC,basic,WILD,enemy_one,5,0,,,EFG_1026,"=IFERROR(VLOOKUP($B79,string!$A:$B,2,FALSE),"""")",초안,CHR_026,대상 기본 공격후 10% 피해 흡혈,
+SKL_5026,SKL_5026_NAME,SKL_5026_DESC,ultimate,WILD,enemy_all,4,0,4,,EFG_5026,"=IFERROR(VLOOKUP($B80,string!$A:$B,2,FALSE),"""")",초안,CHR_026,적 단일에게 100% 피해,
+SKL_7026,SKL_7026_NAME,SKL_7026_DESC,passive,,self,0,,,,EFG_7026,"=IFERROR(VLOOKUP($B81,string!$A:$B,2,FALSE),"""")",초안,CHR_026,적 사살시 자신에게 체력 10%회복 공격력 1 방어력 1 속도 1 부여,단계 ON_KILL · 예산 밖 boost boost
+SKL_1027,SKL_1027_NAME,SKL_1027_DESC,basic,WILD,enemy_one,6,0,,,EFG_1027,"=IFERROR(VLOOKUP($B82,string!$A:$B,2,FALSE),"""")",초안,CHR_027,기본 공격력에 비례한 피해를 주고 30% 확률로 중독시킨다,확률 30% · 중독 → 출혈
+SKL_5027,SKL_5027_NAME,SKL_5027_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5027,"=IFERROR(VLOOKUP($B83,string!$A:$B,2,FALSE),"""")",초안,CHR_027,거미줄을 발사하여 적에게 피해를 주고 속도를 2 감소시킨다,
+SKL_7027,SKL_7027_NAME,SKL_7027_DESC,passive,,self,0,,,,EFG_7027,"=IFERROR(VLOOKUP($B84,string!$A:$B,2,FALSE),"""")",초안,CHR_027,자신보다 속도가 낮은 적에게 받는 데미지 40% 감소,조건 faster_than_target
+SKL_1028,SKL_1028_NAME,SKL_1028_DESC,basic,ARCANE,enemy_one,7,0,,5,EFG_1028,"=IFERROR(VLOOKUP($B85,string!$A:$B,2,FALSE),"""")",초안,CHR_028,대상에 피해를 주고 기절시킨다,예산 밖 stun
+SKL_5028,SKL_5028_NAME,SKL_5028_DESC,ultimate,ARCANE,ally_all,0,0,2,,EFG_5028,"=IFERROR(VLOOKUP($B86,string!$A:$B,2,FALSE),"""")",초안,CHR_028,아군 하나를 지정하여 회복시킨다,
+SKL_7028,SKL_7028_NAME,SKL_7028_DESC,passive,,ally_weakest,0,,,,EFG_7028,"=IFERROR(VLOOKUP($B87,string!$A:$B,2,FALSE),"""")",초안,CHR_028,해 속성인 아군의 공격력 크게 증가,
+SKL_1029,SKL_1029_NAME,SKL_1029_DESC,basic,WILD,enemy_one,6,0,,,EFG_1029,"=IFERROR(VLOOKUP($B88,string!$A:$B,2,FALSE),"""")",초안,CHR_029,대상을 칼등으로 쳐서 피해를 준다,
+SKL_5029,SKL_5029_NAME,SKL_5029_DESC,ultimate,WILD,enemy_one,7,0,2,,EFG_5029,"=IFERROR(VLOOKUP($B89,string!$A:$B,2,FALSE),"""")",초안,CHR_029,검을 발도하여 피해를 주고 방어력을 감소 시킨다.,
+SKL_7029,SKL_7029_NAME,SKL_7029_DESC,passive,,self,0,,,,EFG_7029,"=IFERROR(VLOOKUP($B90,string!$A:$B,2,FALSE),"""")",초안,CHR_029,밤에 전투하는 경우 모든 능력치가 +1 상승,예산 밖 boost boost
+SKL_1030,SKL_1030_NAME,SKL_1030_DESC,basic,WILD,enemy_one,9,0,,1,EFG_1030,"=IFERROR(VLOOKUP($B91,string!$A:$B,2,FALSE),"""")",초안,CHR_030,적 1기에게 기본 공격력의 1.15배 피해를 준다,
+SKL_5030,SKL_5030_NAME,SKL_5030_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5030,"=IFERROR(VLOOKUP($B92,string!$A:$B,2,FALSE),"""")",초안,CHR_030,적의 목덜미를 정확히 관통시켜 1.6배의 피해를 준다(투지 5 소모),
+SKL_7030,SKL_7030_NAME,SKL_7030_DESC,passive,,self,0,,,,EFG_7030,"=IFERROR(VLOOKUP($B93,string!$A:$B,2,FALSE),"""")",초안,CHR_030,"자신의 체력이 30% 이하일 때, 속도 +1 빠름",조건 hp_below
+SKL_1031,SKL_1031_NAME,SKL_1031_DESC,basic,WILD,enemy_one,8,0,,,EFG_1031,"=IFERROR(VLOOKUP($B94,string!$A:$B,2,FALSE),"""")",초안,CHR_031,적 1명에게 물리 피해를 입힌다.,
+SKL_5031,SKL_5031_NAME,SKL_5031_DESC,ultimate,WILD,enemy_one,6,0,3,,EFG_5031,"=IFERROR(VLOOKUP($B95,string!$A:$B,2,FALSE),"""")",초안,CHR_031,"적 1명을 1~3회 연속으로 찔러 물리 피해를 입힌다. 
+20%의 확률로 출혈을 부여한다.",확률 20% · 연타
+SKL_7031,SKL_7031_NAME,SKL_7031_DESC,passive,WILD,enemy_all,3,,,,EFG_7031,"=IFERROR(VLOOKUP($B96,string!$A:$B,2,FALSE),"""")",초안,CHR_031,"총 체력의 10% 이하로 내려갈 때, 모든 능력치 1.5배 상승",예산 밖 boost boost
+SKL_1032,SKL_1032_NAME,SKL_1032_DESC,basic,WILD,enemy_one,3,0,,,EFG_1032,"=IFERROR(VLOOKUP($B97,string!$A:$B,2,FALSE),"""")",초안,CHR_032,하나의 적을 3번 공격한다,연타 · 예산 밖 multihit
+SKL_5032,SKL_5032_NAME,SKL_5032_DESC,ultimate,ARCANE,enemy_all,4,0,4,,EFG_5032,"=IFERROR(VLOOKUP($B98,string!$A:$B,2,FALSE),"""")",초안,CHR_032,모든 적에게 1턴의 실명을 준다,실명 · 예산 밖 blind
+SKL_7032,SKL_7032_NAME,SKL_7032_DESC,passive,,enemy_one,0,,,,EFG_7032,"=IFERROR(VLOOKUP($B99,string!$A:$B,2,FALSE),"""")",초안,CHR_032,40% 확률로 체력의 5% 피해를 주는 출혈을 입힘,확률 40%
+SKL_1033,SKL_1033_NAME,SKL_1033_DESC,basic,WILD,enemy_one,6,0,,,EFG_1033,"=IFERROR(VLOOKUP($B100,string!$A:$B,2,FALSE),"""")",초안,CHR_033,아군 전체의 물리 방어력 1랭크 증가,
+SKL_5033,SKL_5033_NAME,SKL_5033_DESC,ultimate,WILD,enemy_one,4,0,2,,EFG_5033,"=IFERROR(VLOOKUP($B101,string!$A:$B,2,FALSE),"""")",,CHR_033,일시적으로 자신의 방어력과 공격력을 전환해 공격한다,전환
+SKL_7033,SKL_7033_NAME,SKL_7033_DESC,passive,,self,0,,,,EFG_7033,"=IFERROR(VLOOKUP($B102,string!$A:$B,2,FALSE),"""")",초안,CHR_033,기절에 달하는 피해를 입을 경우 1회는 버틴다,버팀
+SKL_1034,SKL_1034_NAME,SKL_1034_DESC,basic,WILD,enemy_one,6,0,,1,EFG_1034,"=IFERROR(VLOOKUP($B103,string!$A:$B,2,FALSE),"""")",초안,CHR_034,적 1명에게 물리 피해를 입힌다. 적에게 표식 2를 부여한다.,
+SKL_5034,SKL_5034_NAME,SKL_5034_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5034,"=IFERROR(VLOOKUP($B104,string!$A:$B,2,FALSE),"""")",초안,CHR_034,적 1명에게 물리 피해를 입힌다. 50%의 확률로 출혈을 부여한다.,확률 50%
+SKL_7034,SKL_7034_NAME,SKL_7034_DESC,passive,,self,0,,,,EFG_7034,"=IFERROR(VLOOKUP($B105,string!$A:$B,2,FALSE),"""")",초안,CHR_034,본인 체력보다 상대 체력이 낮으면 공격력 1.2배 상승,조건 hp_below · 조건 target_hp_below
+SKL_1035,SKL_1035_NAME,SKL_1035_DESC,basic,ARCANE,enemy_one,0,0,,12,EFG_1035,"=IFERROR(VLOOKUP($B106,string!$A:$B,2,FALSE),"""")",초안,CHR_035,"기본 공격력 x0.5. 적 1명 지정 표식, 허약, 침묵 중 랜덤 부여",무작위 — 확률로 옮긴다
+SKL_5035,SKL_5035_NAME,SKL_5035_DESC,ultimate,ARCANE,enemy_all,6,0,6,,EFG_5035,"=IFERROR(VLOOKUP($B107,string!$A:$B,2,FALSE),"""")",초안,CHR_035,"자신의 체력이 낮을 때 사용. 사용 시 코스모 도리스는 리타이어.
+적 전체 대상: 기절, (HP를 제외한)랜덤한 능력치 2개를 1씩 감소.",무작위 — 확률로 옮긴다 · 퇴장 · 조건 hp_below · 예산 밖 stun
+SKL_7035,SKL_7035_NAME,SKL_7035_DESC,passive,,enemy_all,0,,,,EFG_7035,"=IFERROR(VLOOKUP($B108,string!$A:$B,2,FALSE),"""")",초안,CHR_035,처음 맞은 공격의 대미지를 50%로 감소,
+SKL_1036,SKL_1036_NAME,SKL_1036_DESC,basic,WILD,enemy_one,4,0,,,EFG_1036,"=IFERROR(VLOOKUP($B109,string!$A:$B,2,FALSE),"""")",초안,CHR_036,대상에게 기본 공격력이 0.9배 피해를 주고 현재 체력의 5% 회복한다,
+SKL_5036,SKL_5036_NAME,SKL_5036_DESC,ultimate,WILD,enemy_one,7,0,3,,EFG_5036,"=IFERROR(VLOOKUP($B110,string!$A:$B,2,FALSE),"""")",초안,CHR_036,적을 삼켜 1.3배의 피해를 주고 현재 체력의 10% 회복한다(투지 6 소모),
+SKL_7036,SKL_7036_NAME,SKL_7036_DESC,passive,,self,0,,,,EFG_7036,"=IFERROR(VLOOKUP($B111,string!$A:$B,2,FALSE),"""")",초안,CHR_036,배틀 시작 시 자신이 받는 피해를 1회만 무효,전투 시작 시 — 8단계 필요
+SKL_1037,SKL_1037_NAME,SKL_1037_DESC,basic,ARCANE,enemy_one,8,0,,,EFG_1037,"=IFERROR(VLOOKUP($B112,string!$A:$B,2,FALSE),"""")",초안,CHR_037,적 1명 데미지+ 출혈,
+SKL_5037,SKL_5037_NAME,SKL_5037_DESC,ultimate,ARCANE,enemy_one,8,0,4,,EFG_5037,"=IFERROR(VLOOKUP($B113,string!$A:$B,2,FALSE),"""")",초안,CHR_037,가장 약한 적 처형,예산 밖 execute
+SKL_7037,SKL_7037_NAME,SKL_7037_DESC,passive,,self,0,,,,EFG_7037,"=IFERROR(VLOOKUP($B114,string!$A:$B,2,FALSE),"""")",초안,CHR_037,적 사망 시 남은 적 방어력 감소(수치 오마카세),
+SKL_1038,SKL_1038_NAME,SKL_1038_DESC,basic,WILD,enemy_one,9,0,,,EFG_1038,"=IFERROR(VLOOKUP($B115,string!$A:$B,2,FALSE),"""")",,CHR_038,하늘에서 내리찍는다. 상대에게 공격력의 1.2 배의 데미지를 주고 해당 데미지의 15% 만큼 본인도 데미지를 입는다.,예산 밖 recoil
+SKL_5038,SKL_5038_NAME,SKL_5038_DESC,ultimate,WILD,enemy_one,10,0,3,,EFG_5038,"=IFERROR(VLOOKUP($B116,string!$A:$B,2,FALSE),"""")",초안,CHR_038,자신의 체력이 30%보다 낮을때만 사용 가능. 적 모두에게 강력한 공격을 하고 스스로 기절한다.,조건 hp_below · 예산 밖 stun
+SKL_7038,SKL_7038_NAME,SKL_7038_DESC,passive,,self,0,,,,EFG_7038,"=IFERROR(VLOOKUP($B117,string!$A:$B,2,FALSE),"""")",초안,CHR_038,적들은 피코의 아름다운 깃털에 현혹된다. 전투 시작 시 적 모두를 2턴 동안 쇠약 상태로 만든다.,전투 시작 시 — 8단계 필요 · 예산 밖 blind
+SKL_1039,SKL_1039_NAME,SKL_1039_DESC,basic,WILD,enemy_one,7,0,,,EFG_1039,"=IFERROR(VLOOKUP($B118,string!$A:$B,2,FALSE),"""")",,CHR_039,적 1기에게 기본 공격력의 100프로 피해를 주고 대상과 자신의 랜덤 능력치 각 1랭크 하락,무작위 — 확률로 옮긴다
+SKL_5039,SKL_5039_NAME,SKL_5039_DESC,ultimate,DIVINE,enemy_one,4,0,3,,EFG_5039,"=IFERROR(VLOOKUP($B119,string!$A:$B,2,FALSE),"""")",,CHR_039,자신의 랜덤 능력치 1랭크 다운 후 랜덤 단일 적에게 공격력의 65%만큼의 피해'를 랜덤 1~4회 반복(못 멈춤),무작위 — 확률로 옮긴다
+SKL_7039,SKL_7039_NAME,SKL_7039_DESC,passive,,self,0,,,,EFG_7039,"=IFERROR(VLOOKUP($B120,string!$A:$B,2,FALSE),"""")",초안,CHR_039,자신이 받은 랭크 변동을 반대로 적용한다,
+SKL_1040,SKL_1040_NAME,SKL_1040_DESC,basic,DIVINE,ally_all,0,0,,2,EFG_1040,"=IFERROR(VLOOKUP($B121,string!$A:$B,2,FALSE),"""")",초안,CHR_040,50% 확률로 방어하고 자신의 투지를 올린다,확률 50%
+SKL_5040,SKL_5040_NAME,SKL_5040_DESC,ultimate,ARCANE,enemy_all,6,0,4,,EFG_5040,"=IFERROR(VLOOKUP($B122,string!$A:$B,2,FALSE),"""")",,CHR_040,일시적으로 자신의 방어력과 공격력을 전환해 공격한다,전환
+SKL_7040,SKL_7040_NAME,SKL_7040_DESC,passive,,self,0,,,,EFG_7040,"=IFERROR(VLOOKUP($B123,string!$A:$B,2,FALSE),"""")",초안,CHR_040,체력이 50% 이하로 떨어질 시 방어력이 상승한다 (최대 3),
+SKL_1041,SKL_1041_NAME,SKL_1041_DESC,basic,WILD,enemy_one,7,0,,,EFG_1041,"=IFERROR(VLOOKUP($B124,string!$A:$B,2,FALSE),"""")",초안,CHR_041,적 로캣몬 1기에게 강한 공격을 준다,
+SKL_5041,SKL_5041_NAME,SKL_5041_DESC,ultimate,WILD,enemy_one,5,0,3,,EFG_5041,"=IFERROR(VLOOKUP($B125,string!$A:$B,2,FALSE),"""")",초안,CHR_041,속도에 관계없이 반드시 선공한다. 2회 연속으로 공격한다,연타
+SKL_7041,SKL_7041_NAME,SKL_7041_DESC,passive,,self,0,,,,EFG_7041,"=IFERROR(VLOOKUP($B126,string!$A:$B,2,FALSE),"""")",초안,CHR_041,기절에 달하는 피해를 입을 경우 1회는 버틴다,버팀
+SKL_1042,SKL_1042_NAME,SKL_1042_DESC,basic,ARCANE,enemy_one,4,-3,,,EFG_1042,"=IFERROR(VLOOKUP($B127,string!$A:$B,2,FALSE),"""")",초안,CHR_042,아군 1명 대상의 상태이상을 정화한다,
+SKL_5042,SKL_5042_NAME,SKL_5042_DESC,ultimate,ARCANE,enemy_all,1,3,4,,EFG_5042,"=IFERROR(VLOOKUP($B128,string!$A:$B,2,FALSE),"""")",초안,CHR_042,적 모두에게 침묵을 2턴동안 준다 (투지5 소모),
+SKL_7042,SKL_7042_NAME,SKL_7042_DESC,passive,,ally_weakest,0,-3,,,EFG_7042,"=IFERROR(VLOOKUP($B129,string!$A:$B,2,FALSE),"""")",초안,CHR_042,내 체력이 50%이하 도달시 가장 체력이 낮은 아군체력30%를 즉시 회복,조건 hp_below
+SKL_2901,SKL_2901_NAME,SKL_2901_DESC,basic,WILD,enemy_one,8,0,2,,EFG_2901,"=IFERROR(VLOOKUP($B130,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2902,SKL_2902_NAME,SKL_2902_DESC,basic,ARCANE,enemy_all,4,0,2,,EFG_2902,"=IFERROR(VLOOKUP($B131,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2903,SKL_2903_NAME,SKL_2903_DESC,basic,ARCANE,enemy_weakest,7,0,2,,EFG_2903,"=IFERROR(VLOOKUP($B132,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2904,SKL_2904_NAME,SKL_2904_DESC,basic,ARCANE,enemy_one,8,0,2,,EFG_2904,"=IFERROR(VLOOKUP($B133,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2905,SKL_2905_NAME,SKL_2905_DESC,basic,ARCANE,enemy_all,4,0,2,,EFG_2905,"=IFERROR(VLOOKUP($B134,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2906,SKL_2906_NAME,SKL_2906_DESC,basic,ARCANE,enemy_weakest,7,0,2,,EFG_2906,"=IFERROR(VLOOKUP($B135,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2907,SKL_2907_NAME,SKL_2907_DESC,basic,DIVINE,enemy_one,8,0,2,,EFG_2907,"=IFERROR(VLOOKUP($B136,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2908,SKL_2908_NAME,SKL_2908_DESC,basic,DIVINE,enemy_all,4,0,2,,EFG_2908,"=IFERROR(VLOOKUP($B137,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2909,SKL_2909_NAME,SKL_2909_DESC,basic,DIVINE,enemy_weakest,7,0,2,,EFG_2909,"=IFERROR(VLOOKUP($B138,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2910,SKL_2910_NAME,SKL_2910_DESC,basic,DIVINE,ally_all,0,0,2,,EFG_2910,"=IFERROR(VLOOKUP($B139,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2911,SKL_2911_NAME,SKL_2911_DESC,basic,ARCANE,ally_all,0,0,2,,EFG_2911,"=IFERROR(VLOOKUP($B140,string!$A:$B,2,FALSE),"""")",공용,(공용),강사가 만든 공용 일반기. 여러 캐릭터가 함께 쓴다,
+SKL_2025,SKL_2025_NAME,SKL_2025_DESC,basic,WILD,enemy_all,5,0,1,,EFG_2025,,역할군 개편,CHR_025,돌격자 · 값싼 광역,
+SKL_2002,SKL_2002_NAME,SKL_2002_DESC,basic,WILD,enemy_one,7,0,1,,EFG_2002,,역할군 개편,CHR_002,돌격자 · 공격력을 깎는 한 방,
+SKL_2019,SKL_2019_NAME,SKL_2019_DESC,basic,ARCANE,self,0,0,1,,EFG_2019,,역할군 개편,CHR_019,돌격자 · 버티고 되받는다,
+SKL_2029,SKL_2029_NAME,SKL_2029_DESC,basic,WILD,self,0,0,1,,EFG_2029,,역할군 개편,CHR_029,돌격자 · 값싼 자기 강화,
+SKL_2015,SKL_2015_NAME,SKL_2015_DESC,basic,WILD,enemy_one,7,0,2,,EFG_2015,,역할군 개편,CHR_015,돌격자 · 출혈을 겹친다,
+SKL_2011,SKL_2011_NAME,SKL_2011_DESC,basic,WILD,enemy_one,7,0,1,,EFG_2011,,역할군 개편,CHR_011,돌격자 · 방어를 내주고 밀어붙인다,
+SKL_2033,SKL_2033_NAME,SKL_2033_DESC,basic,WILD,ally_one,0,0,1,,EFG_2033,,역할군 개편,CHR_033,보호자 · 아군 하나를 대신 맞는다,
+SKL_2023,SKL_2023_NAME,SKL_2023_DESC,basic,WILD,enemy_one,3,0,2,,EFG_2023,,역할군 개편,CHR_023,보호자 · 때리고 겨눔을 끈다,
+SKL_2026,SKL_2026_NAME,SKL_2026_DESC,basic,ARCANE,enemy_all,3,0,2,,EFG_2026,,역할군 개편,CHR_026,보호자 · 전체를 훑고 겨눔을 끈다,
+SKL_2003,SKL_2003_NAME,SKL_2003_DESC,basic,WILD,ally_all,0,0,1,,EFG_2003,,역할군 개편,CHR_003,보호자 · 아군 전체에 보호막,
+SKL_2007,SKL_2007_NAME,SKL_2007_DESC,basic,WILD,self,0,0,1,,EFG_2007,,역할군 개편,CHR_007,보호자 · 보호막을 두르고 겨눔을 끈다,
+SKL_2012,SKL_2012_NAME,SKL_2012_DESC,basic,ARCANE,self,0,0,1,,EFG_2012,,역할군 개편,CHR_012,보호자 · 겨눔을 끌고 방어를 세운다,
+SKL_2004,SKL_2004_NAME,SKL_2004_DESC,basic,DIVINE,ally_one,0,0,2,,EFG_2004,,역할군 개편,CHR_004,치유자 · 크게 회복시키고 정화한다,
+SKL_2009,SKL_2009_NAME,SKL_2009_DESC,basic,DIVINE,ally_one,0,0,1,,EFG_2009,,역할군 개편,CHR_009,치유자 · 투지와 체력을 함께 나눈다,
+SKL_2016,SKL_2016_NAME,SKL_2016_DESC,basic,DIVINE,enemy_all,2,0,2,,EFG_2016,,역할군 개편,CHR_016,치유자 · 신성 광역,
+SKL_2017,SKL_2017_NAME,SKL_2017_DESC,basic,ARCANE,ally_all,0,0,1,,EFG_2017,,역할군 개편,CHR_017,치유자 · 아군 전체에 보호막,
+SKL_2028,SKL_2028_NAME,SKL_2028_DESC,basic,ARCANE,ally_weakest,0,0,1,,EFG_2028,,역할군 개편,CHR_028,치유자 · 가장 다친 아군에게 집중,
+SKL_2042,SKL_2042_NAME,SKL_2042_DESC,basic,ARCANE,ally_one,0,0,2,,EFG_2042,,역할군 개편,CHR_042,치유자 · 아군 전체 회복,
+SKL_2039,SKL_2039_NAME,SKL_2039_DESC,basic,WILD,self,0,0,1,,EFG_2039,,역할군 개편,CHR_039,암살자 · 다음 한 방을 준비한다,
+SKL_2020,SKL_2020_NAME,SKL_2020_DESC,basic,WILD,enemy_one,8,0,2,,EFG_2020,,역할군 개편,CHR_020,암살자 · 먼저 닿고 도발을 지나친다,
+SKL_2038,SKL_2038_NAME,SKL_2038_DESC,basic,WILD,enemy_one,6,0,1,,EFG_2038,,역할군 개편,CHR_038,암살자 · 몸을 태워 한 방을 만든다,
+SKL_2018,SKL_2018_NAME,SKL_2018_DESC,basic,WILD,enemy_one,8,3,2,,EFG_2018,,역할군 개편,CHR_018,암살자 · 먼저 나가는 한 방,
+SKL_2030,SKL_2030_NAME,SKL_2030_DESC,basic,WILD,enemy_one,5,0,1,,EFG_2030,,역할군 개편,CHR_030,암살자 · 벼르고 도발을 지나친다,
+SKL_2037,SKL_2037_NAME,SKL_2037_DESC,basic,ARCANE,self,6,0,1,,EFG_2037,,역할군 개편,CHR_037,암살자 · 마력을 응축한다,
+SKL_2005,SKL_2005_NAME,SKL_2005_DESC,basic,WILD,enemy_one,7,0,1,,EFG_2005,,역할군 개편,CHR_005,추격자 · 물고 늘어진다,
+SKL_2031,SKL_2031_NAME,SKL_2031_DESC,basic,WILD,enemy_one,4,0,1,,EFG_2031,,역할군 개편,CHR_031,추격자 · 입을 막고 상처를 남긴다,
+SKL_2027,SKL_2027_NAME,SKL_2027_DESC,basic,WILD,enemy_all,2,0,2,,EFG_2027,,역할군 개편,CHR_027,추격자 · 전장에 그물을 친다,
+SKL_2032,SKL_2032_NAME,SKL_2032_DESC,basic,WILD,self,0,0,1,,EFG_2032,,역할군 개편,CHR_032,추격자 · 벼려서 세 번에 싣는다,
+SKL_2021,SKL_2021_NAME,SKL_2021_DESC,basic,WILD,enemy_all,3,0,2,,EFG_2021,,역할군 개편,CHR_021,추격자 · 전체에 독을 깐다,
+SKL_2041,SKL_2041_NAME,SKL_2041_DESC,basic,WILD,enemy_one,6,0,1,,EFG_2041,,역할군 개편,CHR_041,추격자 · 제 몸을 갈아 두 번 친다,
+SKL_2001,SKL_2001_NAME,SKL_2001_DESC,basic,DIVINE,ally_others,0,0,1,,EFG_2001,,역할군 개편,CHR_001,교란자 · 제 몸을 깎아 남을 지킨다,
+SKL_2022,SKL_2022_NAME,SKL_2022_DESC,basic,WILD,self,0,0,1,,EFG_2022,,역할군 개편,CHR_022,교란자 · 스스로 피를 흘려 밑천을 만든다,
+SKL_2036,SKL_2036_NAME,SKL_2036_DESC,basic,WILD,enemy_one,4,0,1,,EFG_2036,,역할군 개편,CHR_036,교란자 · 남의 강화를 먹는다,
+SKL_2024,SKL_2024_NAME,SKL_2024_DESC,basic,ARCANE,enemy_one,5,0,3,,EFG_2024,,역할군 개편,CHR_024,교란자 · 한 라운드를 통째로 지운다,
+SKL_2035,SKL_2035_NAME,SKL_2035_DESC,basic,ARCANE,enemy_all,0,0,2,,EFG_2035,,역할군 개편,CHR_035,교란자 · 아군을 북돋는다,
+SKL_2014,SKL_2014_NAME,SKL_2014_DESC,basic,ARCANE,enemy_all,3,0,2,,EFG_2014,,역할군 개편,CHR_014,교란자 · 전장을 늦춘다,
+SKL_2040,SKL_2040_NAME,SKL_2040_DESC,basic,DIVINE,ally_all,0,0,1,,EFG_2040,,역할군 개편,CHR_040,결전자 · 아군을 세운다,
+SKL_2010,SKL_2010_NAME,SKL_2010_DESC,basic,ARCANE,enemy_one,8,0,2,,EFG_2010,,역할군 개편,CHR_010,결전자 · 표식을 박는다,
+SKL_2008,SKL_2008_NAME,SKL_2008_DESC,basic,ARCANE,enemy_all,3,0,2,,EFG_2008,,역할군 개편,CHR_008,결전자 · 전장을 썩힌다,
+SKL_2034,SKL_2034_NAME,SKL_2034_DESC,basic,WILD,enemy_weakest,7,0,2,,EFG_2034,,역할군 개편,CHR_034,결전자 · 다친 것을 끝낸다,
+SKL_2006,SKL_2006_NAME,SKL_2006_DESC,basic,WILD,enemy_one,8,0,1,,EFG_2006,,역할군 개편,CHR_006,결전자 · 혼자일수록 세다,
+SKL_2013,SKL_2013_NAME,SKL_2013_DESC,basic,WILD,enemy_one,5,0,1,,EFG_2013,,역할군 개편,CHR_013,결전자 · 목을 노린다,

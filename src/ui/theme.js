@@ -93,8 +93,8 @@
     return c;
   };
 
-  // 캐릭터 얼굴 텍스처 키 (BootScene에서 생성)
-  T.faceKey = function (id) { return id + '_face'; };
+  // 캐릭터 얼굴 텍스처 키 (원본 PT 초상, BootScene에서 로드)
+  T.faceKey = function (id) { return id + '_PT'; };
 
   // 정사각 초상화 카드: 컨테이너 { img, frame, setDim() }
   T.portrait = function (scene, x, y, size, id, opts) {

@@ -1,0 +1,4906 @@
+[
+  {
+    "id": "CHR_001",
+    "name_key": "CHR_001_NAME",
+    "species_key": "CHR_001_SPECIES",
+    "desc_key": "CHR_001_DESC",
+    "story_key": "CHR_001_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_001",
+    "stats": {
+      "hp": 9,
+      "atk": 3,
+      "def": 7,
+      "mag": 8,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1001_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 2,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 2,
+            "side": "self",
+            "args": {
+              "ratio": 0.1
+            }
+          }
+        ],
+        "desc_key": "SKL_1001_DESC"
+      },
+      {
+        "name_key": "SKL_2001_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "ally_others",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "toll",
+            "grade": 2,
+            "side": "self",
+            "args": {
+              "ratio": 0.1
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2001_DESC"
+      },
+      {
+        "name_key": "SKL_5001_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 9,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "retire",
+            "grade": 1,
+            "args": {}
+          },
+          {
+            "kw": "swell",
+            "grade": 3,
+            "args": {
+              "bonus": 0.8
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5001_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7001_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": -3,
+      "effects": [
+        {
+          "kw": "shield",
+          "grade": 3,
+          "trigger": "on_hurt",
+          "when": {
+            "if": "attacker_type",
+            "type": "AIR"
+          },
+          "args": {
+            "ratio": 0.15,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7001_DESC"
+    }
+  },
+  {
+    "id": "CHR_002",
+    "name_key": "CHR_002_NAME",
+    "species_key": "CHR_002_SPECIES",
+    "desc_key": "CHR_002_DESC",
+    "story_key": "CHR_002_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "CHARGER",
+    "res": "RES_CHR_002",
+    "stats": {
+      "hp": 7,
+      "atk": 8,
+      "def": 4,
+      "mag": 4,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1002_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1002_DESC"
+      },
+      {
+        "name_key": "SKL_2002_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2002_DESC"
+      },
+      {
+        "name_key": "SKL_5002_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_weakest",
+        "tier": 6,
+        "speed": 1,
+        "effects": [
+          {
+            "kw": "drain",
+            "grade": 2,
+            "args": {
+              "ratio": 0.3
+            }
+          },
+          {
+            "kw": "execute",
+            "grade": 2,
+            "args": {
+              "bonus": 0.6
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5002_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7002_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "haste",
+          "grade": 2,
+          "trigger": "battle_start",
+          "args": {
+            "turns": 2
+          }
+        },
+        {
+          "kw": "zeal",
+          "grade": 2,
+          "trigger": "always",
+          "args": {
+            "bonus": 0.75
+          }
+        }
+      ],
+      "desc_key": "SKL_7002_DESC"
+    }
+  },
+  {
+    "id": "CHR_003",
+    "name_key": "CHR_003_NAME",
+    "species_key": "CHR_003_SPECIES",
+    "desc_key": "CHR_003_DESC",
+    "story_key": "CHR_003_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_003",
+    "stats": {
+      "hp": 9,
+      "atk": 3,
+      "def": 9,
+      "mag": 6,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1003_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1003_DESC"
+      },
+      {
+        "name_key": "SKL_2003_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2003_DESC"
+      },
+      {
+        "name_key": "SKL_5003_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 2,
+            "args": {
+              "amount": 9,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 4,
+            "side": "self",
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5003_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7003_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "immune",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "turns": 1
+          }
+        }
+      ],
+      "desc_key": "SKL_7003_DESC"
+    }
+  },
+  {
+    "id": "CHR_004",
+    "name_key": "CHR_004_NAME",
+    "species_key": "CHR_004_SPECIES",
+    "desc_key": "CHR_004_DESC",
+    "story_key": "CHR_004_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "HEALER",
+    "res": "RES_CHR_004",
+    "stats": {
+      "hp": 9,
+      "atk": 5,
+      "def": 4,
+      "mag": 7,
+      "spd": 5
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1004_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 3,
+            "side": "ally_weakest",
+            "args": {
+              "ratio": 0.2
+            }
+          }
+        ],
+        "desc_key": "SKL_1004_DESC"
+      },
+      {
+        "name_key": "SKL_2004_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "ally_one",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 4,
+            "args": {
+              "ratio": 0.3
+            }
+          },
+          {
+            "kw": "cleanse",
+            "grade": 1,
+            "args": {}
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2004_DESC"
+      },
+      {
+        "name_key": "SKL_5004_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 4,
+            "args": {
+              "ratio": 0.3
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 3,
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5004_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7004_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": -3,
+      "effects": [
+        {
+          "kw": "immune",
+          "grade": 1,
+          "except": "stun",
+          "trigger": "round_start",
+          "when": {
+            "if": "hp_below",
+            "ratio": 0.5
+          },
+          "args": {
+            "turns": 1,
+            "except": "stun"
+          }
+        }
+      ],
+      "desc_key": "SKL_7004_DESC"
+    }
+  },
+  {
+    "id": "CHR_005",
+    "name_key": "CHR_005_NAME",
+    "species_key": "CHR_005_SPECIES",
+    "desc_key": "CHR_005_DESC",
+    "story_key": "CHR_005_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HUNTER",
+    "res": "RES_CHR_005",
+    "stats": {
+      "hp": 4,
+      "atk": 9,
+      "def": 5,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1005_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "stat": "atk",
+            "side": "self",
+            "args": {
+              "amount": 1,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "silence",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1005_DESC"
+      },
+      {
+        "name_key": "SKL_2005_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2005_DESC"
+      },
+      {
+        "name_key": "SKL_5005_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "amplify",
+            "grade": 2,
+            "when": {
+              "if": "hp_below",
+              "ratio": 0.5
+            },
+            "args": {
+              "mult": 1.75
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5005_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7005_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "charge",
+          "grade": 1,
+          "trigger": "on_kill",
+          "args": {
+            "amount": 1
+          }
+        },
+        {
+          "kw": "haste",
+          "grade": 1,
+          "trigger": "on_kill",
+          "args": {
+            "turns": 1
+          }
+        }
+      ],
+      "desc_key": "SKL_7005_DESC"
+    }
+  },
+  {
+    "id": "CHR_006",
+    "name_key": "CHR_006_NAME",
+    "species_key": "CHR_006_SPECIES",
+    "desc_key": "CHR_006_DESC",
+    "story_key": "CHR_006_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "CLOSER",
+    "res": "RES_CHR_006",
+    "stats": {
+      "hp": 7,
+      "atk": 5,
+      "def": 6,
+      "mag": 6,
+      "spd": 6
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1006_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "mark",
+            "grade": 1,
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1006_DESC"
+      },
+      {
+        "name_key": "SKL_2006_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "avenge",
+            "grade": 3,
+            "args": {
+              "per": 0.5
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2006_DESC"
+      },
+      {
+        "name_key": "SKL_5006_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "siege",
+            "grade": 2,
+            "args": {
+              "ratio": 0.12
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5006_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7006_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "boost",
+          "grade": 10,
+          "stat": "hp",
+          "trigger": "on_fall",
+          "when": {
+            "if": "ally_fell"
+          },
+          "args": {
+            "amount": 5,
+            "lasting": true,
+            "stat": "hp"
+          }
+        },
+        {
+          "kw": "boost",
+          "grade": 10,
+          "stat": "atk",
+          "trigger": "on_fall",
+          "when": {
+            "if": "ally_fell"
+          },
+          "args": {
+            "amount": 5,
+            "lasting": true,
+            "stat": "atk"
+          }
+        },
+        {
+          "kw": "boost",
+          "grade": 10,
+          "stat": "def",
+          "trigger": "on_fall",
+          "when": {
+            "if": "ally_fell"
+          },
+          "args": {
+            "amount": 5,
+            "lasting": true,
+            "stat": "def"
+          }
+        }
+      ],
+      "desc_key": "SKL_7006_DESC"
+    }
+  },
+  {
+    "id": "CHR_007",
+    "name_key": "CHR_007_NAME",
+    "species_key": "CHR_007_SPECIES",
+    "desc_key": "CHR_007_DESC",
+    "story_key": "CHR_007_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_007",
+    "stats": {
+      "hp": 8,
+      "atk": 7,
+      "def": 6,
+      "mag": 6,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1007_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "def",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "desc_key": "SKL_1007_DESC"
+      },
+      {
+        "name_key": "SKL_2007_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "taunt",
+            "grade": 2,
+            "args": {
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2007_DESC"
+      },
+      {
+        "name_key": "SKL_5007_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 4,
+            "down": true,
+            "stat": "def",
+            "args": {
+              "amount": -3,
+              "turns": 3,
+              "stat": "def"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_5007_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7007_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "shield",
+          "grade": 2,
+          "trigger": "on_hurt",
+          "args": {
+            "ratio": 0.1,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7007_DESC"
+    }
+  },
+  {
+    "id": "CHR_008",
+    "name_key": "CHR_008_NAME",
+    "species_key": "CHR_008_SPECIES",
+    "desc_key": "CHR_008_DESC",
+    "story_key": "CHR_008_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "CLOSER",
+    "res": "RES_CHR_008",
+    "stats": {
+      "hp": 6,
+      "atk": 4,
+      "def": 8,
+      "mag": 8,
+      "spd": 4
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1008_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "def",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "desc_key": "SKL_1008_DESC"
+      },
+      {
+        "name_key": "SKL_2008_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "blight",
+            "grade": 2,
+            "args": {
+              "ratio": 0.35,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2008_DESC"
+      },
+      {
+        "name_key": "SKL_5008_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "blight",
+            "grade": 3,
+            "args": {
+              "ratio": 0.2,
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5008_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7008_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "hp_full"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7008_DESC"
+    }
+  },
+  {
+    "id": "CHR_009",
+    "name_key": "CHR_009_NAME",
+    "species_key": "CHR_009_SPECIES",
+    "desc_key": "CHR_009_DESC",
+    "story_key": "CHR_009_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "HEALER",
+    "res": "RES_CHR_009",
+    "stats": {
+      "hp": 7,
+      "atk": 4,
+      "def": 7,
+      "mag": 9,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1009_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 1,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "siphon",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          },
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1009_DESC"
+      },
+      {
+        "name_key": "SKL_2009_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "ally_one",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "gift",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          },
+          {
+            "kw": "heal",
+            "grade": 4,
+            "args": {
+              "ratio": 0.3
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2009_DESC"
+      },
+      {
+        "name_key": "SKL_5009_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 3,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 3,
+            "stat": "atk",
+            "when": {
+              "if": "ally_fallen"
+            },
+            "args": {
+              "amount": 2,
+              "turns": 3,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "gift",
+            "grade": 2,
+            "when": {
+              "if": "ally_fallen"
+            },
+            "args": {
+              "amount": 2
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5009_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7009_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": -3,
+      "effects": [
+        {
+          "kw": "charge",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "amount": 1
+          }
+        },
+        {
+          "kw": "heal",
+          "grade": 3,
+          "trigger": "round_start",
+          "when": {
+            "if": "sp_above",
+            "amount": 4
+          },
+          "args": {
+            "ratio": 0.2
+          }
+        }
+      ],
+      "desc_key": "SKL_7009_DESC"
+    }
+  },
+  {
+    "id": "CHR_010",
+    "name_key": "CHR_010_NAME",
+    "species_key": "CHR_010_SPECIES",
+    "desc_key": "CHR_010_DESC",
+    "story_key": "CHR_010_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "CLOSER",
+    "res": "RES_CHR_010",
+    "stats": {
+      "hp": 8,
+      "atk": 3,
+      "def": 7,
+      "mag": 6,
+      "spd": 6
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1010_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 1,
+            "args": {
+              "hits": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "def",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "desc_key": "SKL_1010_DESC"
+      },
+      {
+        "name_key": "SKL_2010_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "mark",
+            "grade": 1,
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "bypass",
+            "grade": 1,
+            "args": {}
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2010_DESC"
+      },
+      {
+        "name_key": "SKL_5010_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 2,
+            "args": {
+              "hits": 3
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5010_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7010_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "rally",
+          "grade": 1,
+          "trigger": "always",
+          "args": {
+            "per": 0.1
+          }
+        }
+      ],
+      "desc_key": "SKL_7010_DESC"
+    }
+  },
+  {
+    "id": "CHR_011",
+    "name_key": "CHR_011_NAME",
+    "species_key": "CHR_011_SPECIES",
+    "desc_key": "CHR_011_DESC",
+    "story_key": "CHR_011_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "CHARGER",
+    "res": "RES_CHR_011",
+    "stats": {
+      "hp": 8,
+      "atk": 8,
+      "def": 5,
+      "mag": 3,
+      "spd": 6
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1011_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1011_DESC"
+      },
+      {
+        "name_key": "SKL_2011_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "def",
+            "side": "self",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2011_DESC"
+      },
+      {
+        "name_key": "SKL_5011_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "stun",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5011_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7011_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "endure",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "turns": 2
+          }
+        },
+        {
+          "kw": "shield",
+          "grade": 1,
+          "trigger": "on_endure",
+          "args": {
+            "ratio": 0.05,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7011_DESC"
+    }
+  },
+  {
+    "id": "CHR_012",
+    "name_key": "CHR_012_NAME",
+    "species_key": "CHR_012_SPECIES",
+    "desc_key": "CHR_012_DESC",
+    "story_key": "CHR_012_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_012",
+    "stats": {
+      "hp": 9,
+      "atk": 4,
+      "def": 8,
+      "mag": 6,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1012_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_weakest",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "execute",
+            "grade": 1,
+            "args": {
+              "bonus": 0.4
+            }
+          }
+        ],
+        "desc_key": "SKL_1012_DESC"
+      },
+      {
+        "name_key": "SKL_2012_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "taunt",
+            "grade": 2,
+            "args": {
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 4,
+            "stat": "def",
+            "args": {
+              "amount": 3,
+              "turns": 3,
+              "stat": "def"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2012_DESC"
+      },
+      {
+        "name_key": "SKL_5012_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 6,
+            "stat": "mag",
+            "side": "self",
+            "args": {
+              "amount": 5,
+              "turns": 3,
+              "stat": "mag"
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 7,
+            "side": "self",
+            "args": {
+              "ratio": 0.6,
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 5,
+        "desc_key": "SKL_5012_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7012_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_one",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "silence",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "turns": 1
+          }
+        }
+      ],
+      "desc_key": "SKL_7012_DESC"
+    }
+  },
+  {
+    "id": "CHR_013",
+    "name_key": "CHR_013_NAME",
+    "species_key": "CHR_013_SPECIES",
+    "desc_key": "CHR_013_DESC",
+    "story_key": "CHR_013_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "CLOSER",
+    "res": "RES_CHR_013",
+    "stats": {
+      "hp": 7,
+      "atk": 5,
+      "def": 6,
+      "mag": 5,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1013_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "drain",
+            "grade": 1,
+            "args": {
+              "ratio": 0.2
+            }
+          },
+          {
+            "kw": "siege",
+            "grade": 1,
+            "args": {
+              "ratio": 0.08
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "side": "self",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          }
+        ],
+        "desc_key": "SKL_1013_DESC"
+      },
+      {
+        "name_key": "SKL_2013_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "drain",
+            "grade": 3,
+            "args": {
+              "ratio": 0.4
+            }
+          },
+          {
+            "kw": "siege",
+            "grade": 1,
+            "args": {
+              "ratio": 0.08
+            }
+          },
+          {
+            "kw": "unbind",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2013_DESC"
+      },
+      {
+        "name_key": "SKL_5013_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "siege",
+            "grade": 2,
+            "args": {
+              "ratio": 0.12
+            }
+          },
+          {
+            "kw": "bypass",
+            "grade": 1,
+            "args": {}
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5013_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7013_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_one",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "boost",
+          "grade": 2,
+          "down": true,
+          "stat": "atk",
+          "trigger": "on_strike",
+          "args": {
+            "amount": -2,
+            "turns": 2,
+            "stat": "atk"
+          }
+        }
+      ],
+      "desc_key": "SKL_7013_DESC"
+    }
+  },
+  {
+    "id": "CHR_014",
+    "name_key": "CHR_014_NAME",
+    "species_key": "CHR_014_SPECIES",
+    "desc_key": "CHR_014_DESC",
+    "story_key": "CHR_014_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_014",
+    "stats": {
+      "hp": 8,
+      "atk": 3,
+      "def": 3,
+      "mag": 9,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1014_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "silence",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1014_DESC"
+      },
+      {
+        "name_key": "SKL_2014_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2014_DESC"
+      },
+      {
+        "name_key": "SKL_5014_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "silence",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5014_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7014_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "bypass",
+          "grade": 1,
+          "trigger": "always",
+          "args": {}
+        }
+      ],
+      "desc_key": "SKL_7014_DESC"
+    }
+  },
+  {
+    "id": "CHR_015",
+    "name_key": "CHR_015_NAME",
+    "species_key": "CHR_015_SPECIES",
+    "desc_key": "CHR_015_DESC",
+    "story_key": "CHR_015_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "CHARGER",
+    "res": "RES_CHR_015",
+    "stats": {
+      "hp": 7,
+      "atk": 9,
+      "def": 4,
+      "mag": 3,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1015_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1015_DESC"
+      },
+      {
+        "name_key": "SKL_2015_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 2,
+            "args": {
+              "amount": 9,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2015_DESC"
+      },
+      {
+        "name_key": "SKL_5015_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "amplify",
+            "grade": 2,
+            "when": {
+              "if": "target_bleeding"
+            },
+            "args": {
+              "mult": 1.75
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5015_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7015_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "target_bleeding"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        },
+        {
+          "kw": "renew",
+          "grade": 1,
+          "trigger": "always",
+          "args": {}
+        }
+      ],
+      "desc_key": "SKL_7015_DESC"
+    }
+  },
+  {
+    "id": "CHR_016",
+    "name_key": "CHR_016_NAME",
+    "species_key": "CHR_016_SPECIES",
+    "desc_key": "CHR_016_DESC",
+    "story_key": "CHR_016_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HEALER",
+    "res": "RES_CHR_016",
+    "stats": {
+      "hp": 8,
+      "atk": 4,
+      "def": 5,
+      "mag": 7,
+      "spd": 6
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1016_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "ratio": 0.05,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1016_DESC"
+      },
+      {
+        "name_key": "SKL_2016_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 2,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 3,
+            "side": "ally",
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2016_DESC"
+      },
+      {
+        "name_key": "SKL_5016_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 1,
+            "stat": "atk",
+            "args": {
+              "amount": 1,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5016_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7016_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": -3,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "self_shielded"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7016_DESC"
+    }
+  },
+  {
+    "id": "CHR_017",
+    "name_key": "CHR_017_NAME",
+    "species_key": "CHR_017_SPECIES",
+    "desc_key": "CHR_017_DESC",
+    "story_key": "CHR_017_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HEALER",
+    "res": "RES_CHR_017",
+    "stats": {
+      "hp": 9,
+      "atk": 3,
+      "def": 7,
+      "mag": 8,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1017_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1017_DESC"
+      },
+      {
+        "name_key": "SKL_2017_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2017_DESC"
+      },
+      {
+        "name_key": "SKL_5017_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 3,
+            "args": {
+              "ratio": 0.2
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 6,
+            "args": {
+              "ratio": 0.35,
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5017_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7017_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "temper",
+          "grade": 2,
+          "trigger": "always",
+          "args": {
+            "ratio": 0.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7017_DESC"
+    }
+  },
+  {
+    "id": "CHR_018",
+    "name_key": "CHR_018_NAME",
+    "species_key": "CHR_018_SPECIES",
+    "desc_key": "CHR_018_DESC",
+    "story_key": "CHR_018_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_018",
+    "stats": {
+      "hp": 5,
+      "atk": 9,
+      "def": 4,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1018_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1018_DESC"
+      },
+      {
+        "name_key": "SKL_2018_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 3,
+        "effects": [],
+        "sp_cost": 2,
+        "desc_key": "SKL_2018_DESC"
+      },
+      {
+        "name_key": "SKL_5018_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "amplify",
+            "grade": 2,
+            "when": {
+              "if": "target_hp_below",
+              "ratio": 0.5
+            },
+            "args": {
+              "mult": 1.75
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5018_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7018_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "unbind",
+          "grade": 4,
+          "side": "self",
+          "trigger": "battle_start",
+          "args": {
+            "turns": 1,
+            "lasting": true
+          }
+        },
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "faster_than_target"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        },
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "down": true,
+          "trigger": "always",
+          "when": {
+            "if": "faster_than_target"
+          },
+          "args": {
+            "mult": 0.8
+          }
+        }
+      ],
+      "desc_key": "SKL_7018_DESC"
+    }
+  },
+  {
+    "id": "CHR_019",
+    "name_key": "CHR_019_NAME",
+    "species_key": "CHR_019_SPECIES",
+    "desc_key": "CHR_019_DESC",
+    "story_key": "CHR_019_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "CHARGER",
+    "res": "RES_CHR_019",
+    "stats": {
+      "hp": 7,
+      "atk": 8,
+      "def": 5,
+      "mag": 3,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1019_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1019_DESC"
+      },
+      {
+        "name_key": "SKL_2019_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 4,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2019_DESC"
+      },
+      {
+        "name_key": "SKL_5019_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 3,
+            "args": {
+              "amount": 9,
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5019_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7019_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 2,
+          "down": true,
+          "trigger": "always",
+          "when": {
+            "if": "faster_than_target"
+          },
+          "args": {
+            "mult": 0.7
+          }
+        },
+        {
+          "kw": "drain",
+          "grade": 2,
+          "trigger": "on_strike",
+          "when": {
+            "if": "target_bleeding"
+          },
+          "args": {
+            "ratio": 0.3
+          }
+        }
+      ],
+      "desc_key": "SKL_7019_DESC"
+    }
+  },
+  {
+    "id": "CHR_020",
+    "name_key": "CHR_020_NAME",
+    "species_key": "CHR_020_SPECIES",
+    "desc_key": "CHR_020_DESC",
+    "story_key": "CHR_020_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_020",
+    "stats": {
+      "hp": 4,
+      "atk": 9,
+      "def": 5,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1020_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "pierce",
+            "grade": 2,
+            "args": {
+              "ratio": 0.4
+            }
+          }
+        ],
+        "desc_key": "SKL_1020_DESC"
+      },
+      {
+        "name_key": "SKL_2020_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "haste",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "unbind",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2020_DESC"
+      },
+      {
+        "name_key": "SKL_5020_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [],
+        "sp_cost": 3,
+        "desc_key": "SKL_5020_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7020_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_one",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "boost",
+          "grade": 2,
+          "down": true,
+          "stat": "spd",
+          "trigger": "round_start",
+          "args": {
+            "amount": -2,
+            "turns": 2,
+            "stat": "spd"
+          }
+        }
+      ],
+      "desc_key": "SKL_7020_DESC"
+    }
+  },
+  {
+    "id": "CHR_021",
+    "name_key": "CHR_021_NAME",
+    "species_key": "CHR_021_SPECIES",
+    "desc_key": "CHR_021_DESC",
+    "story_key": "CHR_021_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HUNTER",
+    "res": "RES_CHR_021",
+    "stats": {
+      "hp": 5,
+      "atk": 9,
+      "def": 5,
+      "mag": 4,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1021_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 2,
+            "args": {
+              "amount": 9,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1021_DESC"
+      },
+      {
+        "name_key": "SKL_2021_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2021_DESC"
+      },
+      {
+        "name_key": "SKL_5021_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "pierce",
+            "grade": 2,
+            "args": {
+              "ratio": 0.4
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5021_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7021_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_one",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "target_has",
+            "status": "bleed"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7021_DESC"
+    }
+  },
+  {
+    "id": "CHR_022",
+    "name_key": "CHR_022_NAME",
+    "species_key": "CHR_022_SPECIES",
+    "desc_key": "CHR_022_DESC",
+    "story_key": "CHR_022_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_022",
+    "stats": {
+      "hp": 7,
+      "atk": 5,
+      "def": 5,
+      "mag": 8,
+      "spd": 5
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1022_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "pierce",
+            "grade": 2,
+            "args": {
+              "ratio": 0.4
+            }
+          },
+          {
+            "kw": "drain",
+            "grade": 2,
+            "args": {
+              "ratio": 0.3
+            }
+          },
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1022_DESC"
+      },
+      {
+        "name_key": "SKL_2022_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 2,
+            "side": "self",
+            "args": {
+              "amount": 9,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 6,
+            "args": {
+              "ratio": 0.35,
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2022_DESC"
+      },
+      {
+        "name_key": "SKL_5022_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "field_others",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "offering",
+            "grade": 1,
+            "args": {
+              "per": 0.05
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5022_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7022_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "clot",
+          "grade": 2,
+          "trigger": "always",
+          "args": {
+            "mult": 0.5
+          }
+        },
+        {
+          "kw": "linger",
+          "grade": 1,
+          "trigger": "always",
+          "args": {}
+        }
+      ],
+      "desc_key": "SKL_7022_DESC"
+    }
+  },
+  {
+    "id": "CHR_023",
+    "name_key": "CHR_023_NAME",
+    "species_key": "CHR_023_SPECIES",
+    "desc_key": "CHR_023_DESC",
+    "story_key": "CHR_023_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_023",
+    "stats": {
+      "hp": 9,
+      "atk": 3,
+      "def": 9,
+      "mag": 5,
+      "spd": 4
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1023_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 4,
+            "side": "self",
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1023_DESC"
+      },
+      {
+        "name_key": "SKL_2023_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "taunt",
+            "grade": 2,
+            "side": "self",
+            "args": {
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2023_DESC"
+      },
+      {
+        "name_key": "SKL_5023_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 2,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "stun",
+            "grade": 1,
+            "chance": 50,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5023_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7023_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "down": true,
+          "trigger": "always",
+          "when": {
+            "if": "skill_element",
+            "element": "WILD"
+          },
+          "args": {
+            "mult": 0.8
+          }
+        }
+      ],
+      "desc_key": "SKL_7023_DESC"
+    }
+  },
+  {
+    "id": "CHR_024",
+    "name_key": "CHR_024_NAME",
+    "species_key": "CHR_024_SPECIES",
+    "desc_key": "CHR_024_DESC",
+    "story_key": "CHR_024_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_024",
+    "stats": {
+      "hp": 6,
+      "atk": 3,
+      "def": 8,
+      "mag": 9,
+      "spd": 4
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1024_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "pierce",
+            "grade": 3,
+            "args": {
+              "ratio": 0.55
+            }
+          },
+          {
+            "kw": "silence",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1024_DESC"
+      },
+      {
+        "name_key": "SKL_2024_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "siege",
+            "grade": 2,
+            "args": {
+              "ratio": 0.12
+            }
+          },
+          {
+            "kw": "stun",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "charge",
+            "grade": 4,
+            "args": {
+              "amount": 4
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_2024_DESC"
+      },
+      {
+        "name_key": "SKL_5024_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "stun",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 6,
+        "desc_key": "SKL_5024_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7024_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "retire",
+          "grade": 1,
+          "trigger": "round_start",
+          "when": {
+            "if": "round_after",
+            "round": 8
+          },
+          "args": {}
+        }
+      ],
+      "desc_key": "SKL_7024_DESC"
+    }
+  },
+  {
+    "id": "CHR_025",
+    "name_key": "CHR_025_NAME",
+    "species_key": "CHR_025_SPECIES",
+    "desc_key": "CHR_025_DESC",
+    "story_key": "CHR_025_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "CHARGER",
+    "res": "RES_CHR_025",
+    "stats": {
+      "hp": 8,
+      "atk": 8,
+      "def": 5,
+      "mag": 4,
+      "spd": 5
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1025_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1025_DESC"
+      },
+      {
+        "name_key": "SKL_2025_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 5,
+        "speed": 0,
+        "effects": [],
+        "sp_cost": 1,
+        "desc_key": "SKL_2025_DESC"
+      },
+      {
+        "name_key": "SKL_5025_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "execute",
+            "grade": 3,
+            "args": {
+              "bonus": 0.8
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5025_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7025_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "heal",
+          "grade": 3,
+          "trigger": "on_fall",
+          "args": {
+            "ratio": 0.2
+          }
+        }
+      ],
+      "desc_key": "SKL_7025_DESC"
+    }
+  },
+  {
+    "id": "CHR_026",
+    "name_key": "CHR_026_NAME",
+    "species_key": "CHR_026_SPECIES",
+    "desc_key": "CHR_026_DESC",
+    "story_key": "CHR_026_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_026",
+    "stats": {
+      "hp": 9,
+      "atk": 4,
+      "def": 8,
+      "mag": 6,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1026_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "drain",
+            "grade": 1,
+            "args": {
+              "ratio": 0.2
+            }
+          },
+          {
+            "kw": "blight",
+            "grade": 1,
+            "args": {
+              "ratio": 0.5,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1026_DESC"
+      },
+      {
+        "name_key": "SKL_2026_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "taunt",
+            "grade": 2,
+            "side": "self",
+            "args": {
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2026_DESC"
+      },
+      {
+        "name_key": "SKL_5026_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "drain",
+            "grade": 1,
+            "args": {
+              "ratio": 0.2
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5026_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7026_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "whet",
+          "grade": 5,
+          "stat": "atk",
+          "side": "self",
+          "trigger": "on_hurt",
+          "args": {
+            "amount": 1,
+            "upto": 10,
+            "stat": "atk"
+          }
+        },
+        {
+          "kw": "whet",
+          "grade": 5,
+          "stat": "def",
+          "side": "self",
+          "trigger": "on_hurt",
+          "args": {
+            "amount": 1,
+            "upto": 10,
+            "stat": "def"
+          }
+        }
+      ],
+      "desc_key": "SKL_7026_DESC"
+    }
+  },
+  {
+    "id": "CHR_027",
+    "name_key": "CHR_027_NAME",
+    "species_key": "CHR_027_SPECIES",
+    "desc_key": "CHR_027_DESC",
+    "story_key": "CHR_027_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HUNTER",
+    "res": "RES_CHR_027",
+    "stats": {
+      "hp": 7,
+      "atk": 7,
+      "def": 4,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1027_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          },
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1027_DESC"
+      },
+      {
+        "name_key": "SKL_2027_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 2,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "spd"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2027_DESC"
+      },
+      {
+        "name_key": "SKL_5027_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "spd"
+            }
+          },
+          {
+            "kw": "bleed",
+            "grade": 2,
+            "args": {
+              "amount": 9,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5027_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7027_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "target_hexed"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7027_DESC"
+    }
+  },
+  {
+    "id": "CHR_028",
+    "name_key": "CHR_028_NAME",
+    "species_key": "CHR_028_SPECIES",
+    "desc_key": "CHR_028_DESC",
+    "story_key": "CHR_028_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "HEALER",
+    "res": "RES_CHR_028",
+    "stats": {
+      "hp": 6,
+      "atk": 6,
+      "def": 6,
+      "mag": 9,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1028_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 3,
+            "side": "ally_weakest",
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1028_DESC"
+      },
+      {
+        "name_key": "SKL_2028_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "ally_weakest",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 5,
+            "args": {
+              "ratio": 0.4
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2028_DESC"
+      },
+      {
+        "name_key": "SKL_5028_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 4,
+            "stat": "atk",
+            "args": {
+              "amount": 3,
+              "turns": 3,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_5028_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7028_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "ally_weakest",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "boost",
+          "grade": 2,
+          "stat": "atk",
+          "side": "ally",
+          "trigger": "round_start",
+          "when": {
+            "if": "target_has",
+            "status": "shield"
+          },
+          "args": {
+            "amount": 2,
+            "turns": 2,
+            "stat": "atk"
+          }
+        }
+      ],
+      "desc_key": "SKL_7028_DESC"
+    }
+  },
+  {
+    "id": "CHR_029",
+    "name_key": "CHR_029_NAME",
+    "species_key": "CHR_029_SPECIES",
+    "desc_key": "CHR_029_DESC",
+    "story_key": "CHR_029_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "CHARGER",
+    "res": "RES_CHR_029",
+    "stats": {
+      "hp": 5,
+      "atk": 6,
+      "def": 5,
+      "mag": 6,
+      "spd": 8
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1029_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 1,
+            "args": {
+              "hits": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1029_DESC"
+      },
+      {
+        "name_key": "SKL_2029_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2029_DESC"
+      },
+      {
+        "name_key": "SKL_5029_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "def",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_5029_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7029_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "round_after",
+            "round": 5
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7029_DESC"
+    }
+  },
+  {
+    "id": "CHR_030",
+    "name_key": "CHR_030_NAME",
+    "species_key": "CHR_030_SPECIES",
+    "desc_key": "CHR_030_DESC",
+    "story_key": "CHR_030_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_030",
+    "stats": {
+      "hp": 6,
+      "atk": 8,
+      "def": 4,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1030_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1030_DESC"
+      },
+      {
+        "name_key": "SKL_2030_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "unbind",
+            "grade": 3,
+            "side": "self",
+            "args": {
+              "turns": 3
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2030_DESC"
+      },
+      {
+        "name_key": "SKL_5030_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          },
+          {
+            "kw": "pierce",
+            "grade": 1,
+            "args": {
+              "ratio": 0.25
+            }
+          },
+          {
+            "kw": "execute",
+            "grade": 2,
+            "args": {
+              "bonus": 0.6
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5030_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7030_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "drain",
+          "grade": 2,
+          "trigger": "on_strike",
+          "when": {
+            "if": "self_boosted"
+          },
+          "args": {
+            "ratio": 0.3
+          }
+        },
+        {
+          "kw": "bleed",
+          "grade": 2,
+          "trigger": "on_strike",
+          "when": {
+            "if": "self_boosted"
+          },
+          "args": {
+            "amount": 9,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7030_DESC"
+    }
+  },
+  {
+    "id": "CHR_031",
+    "name_key": "CHR_031_NAME",
+    "species_key": "CHR_031_SPECIES",
+    "desc_key": "CHR_031_DESC",
+    "story_key": "CHR_031_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "HUNTER",
+    "res": "RES_CHR_031",
+    "stats": {
+      "hp": 7,
+      "atk": 8,
+      "def": 3,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1031_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1031_DESC"
+      },
+      {
+        "name_key": "SKL_2031_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "silence",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2031_DESC"
+      },
+      {
+        "name_key": "SKL_5031_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 2,
+            "args": {
+              "hits": 3
+            }
+          },
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5031_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7031_NAME",
+      "element": "WILD",
+      "kind": "passive",
+      "target": "enemy_all",
+      "tier": 3,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "bleed",
+          "grade": 1,
+          "trigger": "on_death",
+          "args": {
+            "amount": 6,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7031_DESC"
+    }
+  },
+  {
+    "id": "CHR_032",
+    "name_key": "CHR_032_NAME",
+    "species_key": "CHR_032_SPECIES",
+    "desc_key": "CHR_032_DESC",
+    "story_key": "CHR_032_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "HUNTER",
+    "res": "RES_CHR_032",
+    "stats": {
+      "hp": 6,
+      "atk": 9,
+      "def": 3,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1032_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 3,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 2,
+            "args": {
+              "hits": 3
+            }
+          }
+        ],
+        "desc_key": "SKL_1032_DESC"
+      },
+      {
+        "name_key": "SKL_2032_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2032_DESC"
+      },
+      {
+        "name_key": "SKL_5032_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "blind",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5032_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7032_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_one",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "bleed",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "amount": 6,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7032_DESC"
+    }
+  },
+  {
+    "id": "CHR_033",
+    "name_key": "CHR_033_NAME",
+    "species_key": "CHR_033_SPECIES",
+    "desc_key": "CHR_033_DESC",
+    "story_key": "CHR_033_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "GUARDIAN",
+    "res": "RES_CHR_033",
+    "stats": {
+      "hp": 9,
+      "atk": 5,
+      "def": 9,
+      "mag": 3,
+      "spd": 4
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1033_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "blight",
+            "grade": 1,
+            "args": {
+              "ratio": 0.5,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "mark",
+            "grade": 1,
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 3,
+            "stat": "def",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "turns": 3,
+              "stat": "def"
+            }
+          }
+        ],
+        "desc_key": "SKL_1033_DESC"
+      },
+      {
+        "name_key": "SKL_2033_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "ally_one",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shelter",
+            "grade": 2,
+            "args": {
+              "turns": 2
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 4,
+            "side": "self",
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2033_DESC"
+      },
+      {
+        "name_key": "SKL_5033_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "siege",
+            "grade": 3,
+            "args": {
+              "ratio": 0.16
+            }
+          },
+          {
+            "kw": "mark",
+            "grade": 2,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 8,
+            "stat": "def",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "lasting": true,
+              "stat": "def"
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 8,
+            "stat": "hp",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "lasting": true,
+              "stat": "hp"
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_5033_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7033_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "endure",
+          "grade": 1,
+          "trigger": "on_hurt",
+          "once": true,
+          "args": {
+            "turns": 2
+          }
+        },
+        {
+          "kw": "heal",
+          "grade": 5,
+          "trigger": "on_endure",
+          "args": {
+            "ratio": 0.4
+          }
+        }
+      ],
+      "desc_key": "SKL_7033_DESC"
+    }
+  },
+  {
+    "id": "CHR_034",
+    "name_key": "CHR_034_NAME",
+    "species_key": "CHR_034_SPECIES",
+    "desc_key": "CHR_034_DESC",
+    "story_key": "CHR_034_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "CLOSER",
+    "res": "RES_CHR_034",
+    "stats": {
+      "hp": 9,
+      "atk": 8,
+      "def": 7,
+      "mag": 3,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1034_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "mark",
+            "grade": 2,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1034_DESC"
+      },
+      {
+        "name_key": "SKL_2034_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_weakest",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "execute",
+            "grade": 1,
+            "args": {
+              "bonus": 0.4
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2034_DESC"
+      },
+      {
+        "name_key": "SKL_5034_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "bleed",
+            "grade": 1,
+            "args": {
+              "amount": 6,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5034_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7034_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "amplify",
+          "grade": 1,
+          "trigger": "always",
+          "when": {
+            "if": "target_weaker"
+          },
+          "args": {
+            "mult": 1.5
+          }
+        }
+      ],
+      "desc_key": "SKL_7034_DESC"
+    }
+  },
+  {
+    "id": "CHR_035",
+    "name_key": "CHR_035_NAME",
+    "species_key": "CHR_035_SPECIES",
+    "desc_key": "CHR_035_DESC",
+    "story_key": "CHR_035_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_035",
+    "stats": {
+      "hp": 5,
+      "atk": 6,
+      "def": 4,
+      "mag": 6,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1035_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "mark",
+            "grade": 2,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "spd"
+            }
+          },
+          {
+            "kw": "blight",
+            "grade": 2,
+            "args": {
+              "ratio": 0.35,
+              "turns": 2
+            }
+          }
+        ],
+        "desc_key": "SKL_1035_DESC"
+      },
+      {
+        "name_key": "SKL_2035_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "mark",
+            "grade": 2,
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "spd",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "spd"
+            }
+          },
+          {
+            "kw": "blight",
+            "grade": 2,
+            "args": {
+              "ratio": 0.35,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2035_DESC"
+      },
+      {
+        "name_key": "SKL_5035_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "stun",
+            "grade": 1,
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "shield",
+            "grade": 4,
+            "side": "ally",
+            "args": {
+              "ratio": 0.25,
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 6,
+        "desc_key": "SKL_5035_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7035_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "enemy_all",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "shield",
+          "grade": 6,
+          "side": "self",
+          "trigger": "battle_start",
+          "args": {
+            "ratio": 0.35,
+            "turns": 3
+          }
+        },
+        {
+          "kw": "stun",
+          "grade": 1,
+          "trigger": "on_death",
+          "args": {
+            "turns": 1
+          }
+        }
+      ],
+      "desc_key": "SKL_7035_DESC"
+    }
+  },
+  {
+    "id": "CHR_036",
+    "name_key": "CHR_036_NAME",
+    "species_key": "CHR_036_SPECIES",
+    "desc_key": "CHR_036_DESC",
+    "story_key": "CHR_036_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "TRICKSTER",
+    "res": "RES_CHR_036",
+    "stats": {
+      "hp": 8,
+      "atk": 5,
+      "def": 6,
+      "mag": 7,
+      "spd": 4
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1036_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 3,
+            "side": "self",
+            "args": {
+              "ratio": 0.2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 2,
+            "down": true,
+            "stat": "atk",
+            "args": {
+              "amount": -2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "desc_key": "SKL_1036_DESC"
+      },
+      {
+        "name_key": "SKL_2036_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "devour",
+            "grade": 2,
+            "args": {
+              "ratio": 0.15
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2036_DESC"
+      },
+      {
+        "name_key": "SKL_5036_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "drain",
+            "grade": 3,
+            "args": {
+              "ratio": 0.4
+            }
+          },
+          {
+            "kw": "devour",
+            "grade": 2,
+            "args": {
+              "ratio": 0.15
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5036_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7036_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "spite",
+          "grade": 2,
+          "trigger": "always",
+          "args": {
+            "per": 0.2
+          }
+        }
+      ],
+      "desc_key": "SKL_7036_DESC"
+    }
+  },
+  {
+    "id": "CHR_037",
+    "name_key": "CHR_037_NAME",
+    "species_key": "CHR_037_SPECIES",
+    "desc_key": "CHR_037_DESC",
+    "story_key": "CHR_037_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_037",
+    "stats": {
+      "hp": 6,
+      "atk": 3,
+      "def": 4,
+      "mag": 8,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1037_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 1,
+            "down": true,
+            "stat": "mag",
+            "args": {
+              "amount": -1,
+              "turns": 2,
+              "stat": "mag"
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 1,
+            "stat": "mag",
+            "side": "self",
+            "args": {
+              "amount": 1,
+              "turns": 2,
+              "stat": "mag"
+            }
+          }
+        ],
+        "desc_key": "SKL_1037_DESC"
+      },
+      {
+        "name_key": "SKL_2037_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "self",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 3,
+            "stat": "mag",
+            "args": {
+              "amount": 2,
+              "turns": 3,
+              "stat": "mag"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2037_DESC"
+      },
+      {
+        "name_key": "SKL_5037_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 8,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "gap",
+            "grade": 2,
+            "args": {
+              "per": 0.15
+            }
+          },
+          {
+            "kw": "unbind",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5037_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7037_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "whet",
+          "grade": 2,
+          "stat": "mag",
+          "side": "self",
+          "trigger": "round_start",
+          "args": {
+            "amount": 1,
+            "upto": 4,
+            "stat": "mag"
+          }
+        }
+      ],
+      "desc_key": "SKL_7037_DESC"
+    }
+  },
+  {
+    "id": "CHR_038",
+    "name_key": "CHR_038_NAME",
+    "species_key": "CHR_038_SPECIES",
+    "desc_key": "CHR_038_DESC",
+    "story_key": "CHR_038_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_038",
+    "stats": {
+      "hp": 3,
+      "atk": 9,
+      "def": 5,
+      "mag": 4,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1038_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 9,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1038_DESC"
+      },
+      {
+        "name_key": "SKL_2038_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 3,
+            "stat": "atk",
+            "side": "self",
+            "args": {
+              "amount": 2,
+              "turns": 3,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2038_DESC"
+      },
+      {
+        "name_key": "SKL_5038_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 10,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "pierce",
+            "grade": 2,
+            "args": {
+              "ratio": 0.4
+            }
+          },
+          {
+            "kw": "unbind",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5038_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7038_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "shield",
+          "grade": 5,
+          "side": "self",
+          "trigger": "battle_start",
+          "args": {
+            "ratio": 0.3,
+            "turns": 2
+          }
+        },
+        {
+          "kw": "shield",
+          "grade": 5,
+          "side": "self",
+          "trigger": "on_kill",
+          "args": {
+            "ratio": 0.3,
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7038_DESC"
+    }
+  },
+  {
+    "id": "CHR_039",
+    "name_key": "CHR_039_NAME",
+    "species_key": "CHR_039_SPECIES",
+    "desc_key": "CHR_039_DESC",
+    "story_key": "CHR_039_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "ASSASSIN",
+    "res": "RES_CHR_039",
+    "stats": {
+      "hp": 6,
+      "atk": 9,
+      "def": 3,
+      "mag": 3,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1039_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1039_DESC"
+      },
+      {
+        "name_key": "SKL_2039_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "self",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2039_DESC"
+      },
+      {
+        "name_key": "SKL_5039_NAME",
+        "element": "DIVINE",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 2,
+            "args": {
+              "hits": 3
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5039_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7039_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "boost",
+          "grade": 1,
+          "stat": "atk",
+          "trigger": "round_start",
+          "when": {
+            "if": "hp_below",
+            "ratio": 0.5
+          },
+          "args": {
+            "amount": 1,
+            "turns": 2,
+            "stat": "atk"
+          }
+        }
+      ],
+      "desc_key": "SKL_7039_DESC"
+    }
+  },
+  {
+    "id": "CHR_040",
+    "name_key": "CHR_040_NAME",
+    "species_key": "CHR_040_SPECIES",
+    "desc_key": "CHR_040_DESC",
+    "story_key": "CHR_040_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "LAND",
+    "role": "CLOSER",
+    "res": "RES_CHR_040",
+    "stats": {
+      "hp": 9,
+      "atk": 4,
+      "def": 7,
+      "mag": 7,
+      "spd": 3
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1040_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "shield",
+            "grade": 3,
+            "args": {
+              "ratio": 0.15,
+              "turns": 2
+            }
+          },
+          {
+            "kw": "boost",
+            "grade": 1,
+            "stat": "def",
+            "args": {
+              "amount": 1,
+              "turns": 2,
+              "stat": "def"
+            }
+          }
+        ],
+        "desc_key": "SKL_1040_DESC"
+      },
+      {
+        "name_key": "SKL_2040_NAME",
+        "element": "DIVINE",
+        "kind": "basic",
+        "target": "ally_all",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "boost",
+            "grade": 2,
+            "stat": "atk",
+            "args": {
+              "amount": 2,
+              "turns": 2,
+              "stat": "atk"
+            }
+          },
+          {
+            "kw": "charge",
+            "grade": 2,
+            "args": {
+              "amount": 2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2040_DESC"
+      },
+      {
+        "name_key": "SKL_5040_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 6,
+        "speed": 0,
+        "effects": [],
+        "sp_cost": 4,
+        "desc_key": "SKL_5040_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7040_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "whet",
+          "grade": 5,
+          "stat": "mag",
+          "side": "self",
+          "trigger": "round_start",
+          "args": {
+            "amount": 1,
+            "upto": 10,
+            "stat": "mag"
+          }
+        }
+      ],
+      "desc_key": "SKL_7040_DESC"
+    }
+  },
+  {
+    "id": "CHR_041",
+    "name_key": "CHR_041_NAME",
+    "species_key": "CHR_041_SPECIES",
+    "desc_key": "CHR_041_DESC",
+    "story_key": "CHR_041_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "SEA",
+    "role": "HUNTER",
+    "res": "RES_CHR_041",
+    "stats": {
+      "hp": 5,
+      "atk": 9,
+      "def": 5,
+      "mag": 4,
+      "spd": 7
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1041_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 7,
+        "speed": 0,
+        "effects": [],
+        "desc_key": "SKL_1041_DESC"
+      },
+      {
+        "name_key": "SKL_2041_NAME",
+        "element": "WILD",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 6,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "multihit",
+            "grade": 1,
+            "args": {
+              "hits": 2
+            }
+          },
+          {
+            "kw": "recoil",
+            "grade": 3,
+            "args": {
+              "ratio": 0.2
+            }
+          }
+        ],
+        "sp_cost": 1,
+        "desc_key": "SKL_2041_DESC"
+      },
+      {
+        "name_key": "SKL_5041_NAME",
+        "element": "WILD",
+        "kind": "ultimate",
+        "target": "enemy_one",
+        "tier": 5,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "haste",
+            "grade": 1,
+            "side": "self",
+            "args": {
+              "turns": 1
+            }
+          },
+          {
+            "kw": "multihit",
+            "grade": 1,
+            "args": {
+              "hits": 2
+            }
+          },
+          {
+            "kw": "desperate",
+            "grade": 2,
+            "args": {
+              "bonus": 0.6
+            }
+          }
+        ],
+        "sp_cost": 3,
+        "desc_key": "SKL_5041_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7041_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "self",
+      "tier": 0,
+      "speed": 0,
+      "effects": [
+        {
+          "kw": "endure",
+          "grade": 1,
+          "trigger": "round_start",
+          "args": {
+            "turns": 2
+          }
+        }
+      ],
+      "desc_key": "SKL_7041_DESC"
+    }
+  },
+  {
+    "id": "CHR_042",
+    "name_key": "CHR_042_NAME",
+    "species_key": "CHR_042_SPECIES",
+    "desc_key": "CHR_042_DESC",
+    "story_key": "CHR_042_STORY",
+    "rarity": "common",
+    "designer": null,
+    "type": "AIR",
+    "role": "HEALER",
+    "res": "RES_CHR_042",
+    "stats": {
+      "hp": 5,
+      "atk": 3,
+      "def": 4,
+      "mag": 9,
+      "spd": 9
+    },
+    "skills": [
+      {
+        "name_key": "SKL_1042_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "enemy_one",
+        "tier": 4,
+        "speed": -3,
+        "effects": [
+          {
+            "kw": "heal",
+            "grade": 2,
+            "side": "ally_weakest",
+            "args": {
+              "ratio": 0.1
+            }
+          },
+          {
+            "kw": "charge",
+            "grade": 1,
+            "args": {
+              "amount": 1
+            }
+          }
+        ],
+        "desc_key": "SKL_1042_DESC"
+      },
+      {
+        "name_key": "SKL_2042_NAME",
+        "element": "ARCANE",
+        "kind": "basic",
+        "target": "ally_one",
+        "tier": 0,
+        "speed": 0,
+        "effects": [
+          {
+            "kw": "cleanse",
+            "grade": 1,
+            "args": {}
+          },
+          {
+            "kw": "heal",
+            "grade": 3,
+            "args": {
+              "ratio": 0.2
+            }
+          }
+        ],
+        "sp_cost": 2,
+        "desc_key": "SKL_2042_DESC"
+      },
+      {
+        "name_key": "SKL_5042_NAME",
+        "element": "ARCANE",
+        "kind": "ultimate",
+        "target": "enemy_all",
+        "tier": 1,
+        "speed": 3,
+        "effects": [
+          {
+            "kw": "silence",
+            "grade": 2,
+            "args": {
+              "turns": 2
+            }
+          }
+        ],
+        "sp_cost": 4,
+        "desc_key": "SKL_5042_DESC"
+      }
+    ],
+    "passive": {
+      "name_key": "SKL_7042_NAME",
+      "element": null,
+      "kind": "passive",
+      "target": "ally_weakest",
+      "tier": 0,
+      "speed": -3,
+      "effects": [
+        {
+          "kw": "heal",
+          "grade": 2,
+          "trigger": "round_start",
+          "args": {
+            "ratio": 0.1
+          }
+        }
+      ],
+      "desc_key": "SKL_7042_DESC"
+    }
+  }
+]

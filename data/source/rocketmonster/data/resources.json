@@ -1,0 +1,170 @@
+{
+  "RES_CHR_001": {
+    "ST_F": "img/character/CHR_001_ST_F.png",
+    "PT": "img/character/CHR_001_PT.png"
+  },
+  "RES_CHR_002": {
+    "ST_F": "img/character/CHR_002_ST_F.png",
+    "PT": "img/character/CHR_002_PT.png"
+  },
+  "RES_CHR_003": {
+    "ST_F": "img/character/CHR_003_ST_F.png",
+    "PT": "img/character/CHR_003_PT.png"
+  },
+  "RES_CHR_004": {
+    "ST_F": "img/character/CHR_004_ST_F.png",
+    "PT": "img/character/CHR_004_PT.png"
+  },
+  "RES_CHR_005": {
+    "ST_F": "img/character/CHR_005_ST_F.png",
+    "PT": "img/character/CHR_005_PT.png"
+  },
+  "RES_CHR_006": {
+    "ST_F": "img/character/CHR_006_ST_F.png",
+    "PT": "img/character/CHR_006_PT.png"
+  },
+  "RES_CHR_007": {
+    "ST_F": "img/character/CHR_007_ST_F.png",
+    "PT": "img/character/CHR_007_PT.png"
+  },
+  "RES_CHR_008": {
+    "ST_F": "img/character/CHR_008_ST_F.png",
+    "PT": "img/character/CHR_008_PT.png"
+  },
+  "RES_CHR_009": {
+    "ST_F": "img/character/CHR_009_ST_F.png",
+    "PT": "img/character/CHR_009_PT.png"
+  },
+  "RES_CHR_010": {
+    "ST_F": "img/character/CHR_010_ST_F.png",
+    "PT": "img/character/CHR_010_PT.png"
+  },
+  "RES_CHR_011": {
+    "ST_F": "img/character/CHR_011_ST_F.png",
+    "PT": "img/character/CHR_011_PT.png"
+  },
+  "RES_CHR_012": {
+    "ST_F": "img/character/CHR_012_ST_F.png",
+    "PT": "img/character/CHR_012_PT.png"
+  },
+  "RES_CHR_013": {
+    "ST_F": "img/character/CHR_013_ST_F.png",
+    "PT": "img/character/CHR_013_PT.png"
+  },
+  "RES_CHR_014": {
+    "ST_F": "img/character/CHR_014_ST_F.png",
+    "PT": "img/character/CHR_014_PT.png"
+  },
+  "RES_CHR_015": {
+    "ST_F": "img/character/CHR_015_ST_F.png",
+    "PT": "img/character/CHR_015_PT.png"
+  },
+  "RES_CHR_016": {
+    "ST_F": "img/character/CHR_016_ST_F.png",
+    "PT": "img/character/CHR_016_PT.png"
+  },
+  "RES_CHR_017": {
+    "ST_F": "img/character/CHR_017_ST_F.png",
+    "PT": "img/character/CHR_017_PT.png"
+  },
+  "RES_CHR_018": {
+    "ST_F": "img/character/CHR_018_ST_F.png",
+    "PT": "img/character/CHR_018_PT.png"
+  },
+  "RES_CHR_019": {
+    "ST_F": "img/character/CHR_019_ST_F.png",
+    "PT": "img/character/CHR_019_PT.png"
+  },
+  "RES_CHR_020": {
+    "ST_F": "img/character/CHR_020_ST_F.png",
+    "PT": "img/character/CHR_020_PT.png"
+  },
+  "RES_CHR_021": {
+    "ST_F": "img/character/CHR_021_ST_F.png",
+    "PT": "img/character/CHR_021_PT.png"
+  },
+  "RES_CHR_022": {
+    "ST_F": "img/character/CHR_022_ST_F.png",
+    "PT": "img/character/CHR_022_PT.png"
+  },
+  "RES_CHR_023": {
+    "ST_F": "img/character/CHR_023_ST_F.png",
+    "PT": "img/character/CHR_023_PT.png"
+  },
+  "RES_CHR_024": {
+    "ST_F": "img/character/CHR_024_ST_F.png",
+    "PT": "img/character/CHR_024_PT.png"
+  },
+  "RES_CHR_025": {
+    "ST_F": "img/character/CHR_025_ST_F.png",
+    "PT": "img/character/CHR_025_PT.png"
+  },
+  "RES_CHR_026": {
+    "ST_F": "img/character/CHR_026_ST_F.png",
+    "PT": "img/character/CHR_026_PT.png"
+  },
+  "RES_CHR_027": {
+    "ST_F": "img/character/CHR_027_ST_F.png",
+    "PT": "img/character/CHR_027_PT.png"
+  },
+  "RES_CHR_028": {
+    "ST_F": "img/character/CHR_028_ST_F.png",
+    "PT": "img/character/CHR_028_PT.png"
+  },
+  "RES_CHR_029": {
+    "ST_F": "img/character/CHR_029_ST_F.png",
+    "PT": "img/character/CHR_029_PT.png"
+  },
+  "RES_CHR_030": {
+    "ST_F": "img/character/CHR_030_ST_F.png",
+    "PT": "img/character/CHR_030_PT.png"
+  },
+  "RES_CHR_031": {
+    "ST_F": "img/character/CHR_031_ST_F.png",
+    "PT": "img/character/CHR_031_PT.png"
+  },
+  "RES_CHR_032": {
+    "ST_F": "img/character/CHR_032_ST_F.png",
+    "PT": "img/character/CHR_032_PT.png"
+  },
+  "RES_CHR_033": {
+    "ST_F": "img/character/CHR_033_ST_F.png",
+    "PT": "img/character/CHR_033_PT.png"
+  },
+  "RES_CHR_034": {
+    "ST_F": "img/character/CHR_034_ST_F.png",
+    "PT": "img/character/CHR_034_PT.png"
+  },
+  "RES_CHR_035": {
+    "ST_F": "img/character/CHR_035_ST_F.png",
+    "PT": "img/character/CHR_035_PT.png"
+  },
+  "RES_CHR_036": {
+    "ST_F": "img/character/CHR_036_ST_F.png",
+    "PT": "img/character/CHR_036_PT.png"
+  },
+  "RES_CHR_037": {
+    "ST_F": "img/character/CHR_037_ST_F.png",
+    "PT": "img/character/CHR_037_PT.png"
+  },
+  "RES_CHR_038": {
+    "ST_F": "img/character/CHR_038_ST_F.png",
+    "PT": "img/character/CHR_038_PT.png"
+  },
+  "RES_CHR_039": {
+    "ST_F": "img/character/CHR_039_ST_F.png",
+    "PT": "img/character/CHR_039_PT.png"
+  },
+  "RES_CHR_040": {
+    "ST_F": "img/character/CHR_040_ST_F.png",
+    "PT": "img/character/CHR_040_PT.png"
+  },
+  "RES_CHR_041": {
+    "ST_F": "img/character/CHR_041_ST_F.png",
+    "PT": "img/character/CHR_041_PT.png"
+  },
+  "RES_CHR_042": {
+    "ST_F": "img/character/CHR_042_ST_F.png",
+    "PT": "img/character/CHR_042_PT.png"
+  }
+}

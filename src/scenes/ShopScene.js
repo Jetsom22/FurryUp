@@ -74,8 +74,8 @@ var ShopScene = new Phaser.Class({
             var rb = T.button(self, x + size + 12, y + size / 2 - 22, 150, 44, '부활 : ' + BALANCE.GOLD.revive + 'G', function () { if (run.revive(id)) self.render(); }, { fontSize: 18, enabled: run.canRevive(id) });
             self.dyn.push(rb);
           } else {
-            self.dyn.push(self.add.text(x + size + 12, y + 14, c.name, T.style(18, T.text, { fontStyle: 'bold' })));
-            self.dyn.push(self.add.text(x + size + 12, y + 40, c.role + '  HP ' + r.hp + '/' + c.hp, T.style(14, T.ROLE_COLOR[c.role])));
+            self.dyn.push(self.add.text(x + size + 12, y + 14, c.name, T.style(c.name.length > 7 ? 14 : 18, T.text, { fontStyle: 'bold' })));
+            self.dyn.push(self.add.text(x + size + 12, y + 40, c.role + '·' + c.typeName + '  HP ' + r.hp + '/' + c.hp, T.style(13, T.ROLE_COLOR[c.role])));
             var hb = self.add.rectangle(x + size + 12, y + 66, 150, 10, T.hpBack).setOrigin(0); self.dyn.push(hb);
             self.dyn.push(self.add.rectangle(x + size + 12, y + 66, 150 * r.hp / c.hp, 10, T.hpGreen).setOrigin(0));
           }
@@ -106,9 +106,10 @@ var ShopScene = new Phaser.Class({
     this.shopBar = { x: bx, y: by, w: bw, h: bh };
     T.panel(this, bx, by, bw, bh, { fill: 0x3a352c, radius: 4 });
     // 상인 (12)
-    var m = this.add.image(bx + 130, by + bh - 6, 'CHR_001').setOrigin(0.5, 1);
+    var mk = this.textures.exists(GUIDE_CHARACTER.id) ? GUIDE_CHARACTER.id : 'CHR_001';
+    var m = this.add.image(bx + 130, by + bh - 6, mk).setOrigin(0.5, 1);
     m.setScale(225 / m.height);
-    this.add.text(bx + 130, by + 12, '상인', T.style(16, T.muted)).setOrigin(0.5, 0);
+    this.add.text(bx + 130, by + 12, '상인 ' + GUIDE_CHARACTER.name, T.style(16, T.muted)).setOrigin(0.5, 0);
     // 상점 닫기 (15)
     this.add.rectangle(bx + bw - 26, by + 26, 32, 32, 0xd0302f).setInteractive({ useHandCursor: true }).on('pointerdown', function () { self.shopLayer.setVisible(!self.shopLayer.visible); });
     this.add.text(bx + bw - 26, by + 26, '✕', T.style(18, '#fff', { fontStyle: 'bold' })).setOrigin(0.5);
@@ -131,15 +132,16 @@ var ShopScene = new Phaser.Class({
       var p = T.portrait(self, x + 10, y + 10, 100, item.id); if (item.sold) p.setDim(true);
       self.shopLayer.add(p); self.shopItems.push(p);
       var t1 = self.add.text(x + 120, y + 14, '물품 ' + (i + 1), T.style(14, T.muted)); self.shopLayer.add(t1); self.shopItems.push(t1);
-      var t2 = self.add.text(x + 120, y + 36, c.name, T.style(18, T.text, { fontStyle: 'bold' })); self.shopLayer.add(t2); self.shopItems.push(t2);
-      var t3 = self.add.text(x + 120, y + 62, c.role, T.style(14, T.ROLE_COLOR[c.role])); self.shopLayer.add(t3); self.shopItems.push(t3);
-      var t4 = self.add.text(x + 120, y + 84, 'HP ' + c.hp + '\n공 ' + c.atk + ' 방 ' + c.def + ' 속 ' + c.spd, T.style(12, T.muted)); self.shopLayer.add(t4); self.shopItems.push(t4);
+      var t2 = self.add.text(x + 120, y + 36, c.name, T.style(c.name.length > 6 ? 12 : c.name.length > 4 ? 15 : 18, T.text, { fontStyle: 'bold' })); self.shopLayer.add(t2); self.shopItems.push(t2);
+      var t3 = self.add.text(x + 120, y + 62, c.role + ' · ' + c.typeName, T.style(13, T.ROLE_COLOR[c.role])); self.shopLayer.add(t3); self.shopItems.push(t3);
+      var t4 = self.add.text(x + 120, y + 84, 'HP ' + c.hp + '\n공 ' + c.atk + ' 방 ' + c.def + ' 마 ' + c.mag + ' 속 ' + c.spd, T.style(12, T.muted)); self.shopLayer.add(t4); self.shopItems.push(t4);
       var b = T.button(self, x + 10, y + 124, 180, 44, item.sold ? '구매 완료' : '가격 : ' + item.price + ' G', function () { if (run.buy(item)) { self.selectedId = item.id; self.render(); } }, { fontSize: 17, enabled: !item.sold && run.gold >= item.price, fill: item.sold ? 0x2a241c : T.accent });
       self.shopLayer.add(b); self.shopItems.push(b);
     });
     if (!stock.length) { var t = self.add.text(bx + 300, by + 100, '판매할 캐릭터가 없습니다. (해금된 캐릭터를 모두 보유 중)', T.style(20, T.muted)); self.shopLayer.add(t); self.shopItems.push(t); }
     // 리롤 (14)
-    var rr = T.button(self, bx + 1210, by + 180, 150, 44, '리롤 : ' + 10 + 'G', function () { if (run.gold >= 10) { run.gold -= 10; run.shopStock = null; self.render(); } }, { fontSize: 17, fill: T.panelDark, enabled: run.gold >= 10 });
+    var rc = BALANCE.GOLD.reroll;
+    var rr = T.button(self, bx + 1210, by + 180, 150, 44, '리롤 : ' + rc + 'G', function () { if (run.gold >= rc) { run.gold -= rc; run.shopStock = null; self.render(); } }, { fontSize: 17, fill: T.panelDark, enabled: run.gold >= rc });
     self.shopLayer.add(rr); self.shopItems.push(rr);
   },
 
@@ -149,19 +151,19 @@ var ShopScene = new Phaser.Class({
     if (this.popup) this.popup.destroy();
     var layer = this.popup = this.add.container(0, 0).setDepth(100);
     layer.add(T.overlay(this, 0.7));
-    var px = 1000, py = 130, pw = 860, ph = 720;
+    var px = 960, py = 60, pw = 900, ph = 960;
     layer.add(T.panel(this, px, py, pw, ph, { fill: T.panel, line: T.accent }));
-    layer.add(this.add.text(px + 24, py + 18, placing ? '캐릭터 배치 - 보유 중인 캐릭터를 클릭하세요' : '도감 - 전체 / 해금 / 보유 캐릭터', T.style(24, T.text, { fontStyle: 'bold' })));
-    var size = 120, gap = 14, cols = 6;
+    layer.add(this.add.text(px + 24, py + 16, placing ? '캐릭터 배치 - 보유 중인 캐릭터를 클릭하세요' : '도감 - 전체 / 해금 / 보유 캐릭터', T.style(24, T.text, { fontStyle: 'bold' })));
+    var size = 100, gap = 22, cols = 7;
     CHARACTERS.forEach(function (c, i) {
-      var x = px + 24 + (i % cols) * (size + gap), y = py + 70 + Math.floor(i / cols) * (size + gap + 22);
+      var x = px + 24 + (i % cols) * (size + gap), y = py + 60 + Math.floor(i / cols) * (size + gap + 20);
       var owned = run.owns(c.id);
       var p = T.portrait(self, x, y, size, c.id);
       if (!owned) p.setDim(true);
       layer.add(p);
       var status = c.locked ? '잠금' : (owned ? (run.roster[c.id].hp <= 0 ? '사망' : '보유') : '미보유');
       var color = c.locked ? T.dim : (owned ? (run.roster[c.id].hp <= 0 ? '#e06060' : '#6fbf5a') : T.muted);
-      layer.add(self.add.text(x + size / 2, y + size + 4, c.name + ' · ' + status, T.style(14, color)).setOrigin(0.5, 0));
+      layer.add(self.add.text(x + size / 2, y + size + 3, c.name + ' · ' + status, T.style(c.name.length > 6 ? 11 : 13, color)).setOrigin(0.5, 0));
       if (c.locked) layer.add(self.add.text(x + size / 2, y + size / 2, '🔒', T.style(30, T.muted)).setOrigin(0.5));
       if (placing && owned) {
         var z = self.add.zone(x, y, size, size).setOrigin(0).setInteractive({ useHandCursor: true });

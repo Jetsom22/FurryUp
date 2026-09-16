@@ -59,7 +59,6 @@
   Run.prototype.buildEnemies = function () {
     var stage = this.currentStage();
     var growth = (B.ENEMY.baseMult || 1) * (1 + B.ENEMY.stageGrowth * (stage.no - 1));
-    var mult = { hp: growth, atk: growth, def: growth };
     var typeMult = (stage.type === '중간보스') ? B.ENEMY.midbossMult : (stage.type === '보스') ? B.ENEMY.bossMult : null;
 
     var list = root.ENEMY_FORMATIONS[stage.no];
@@ -75,20 +74,23 @@
       list = picks;
     }
 
-    var self = this;
     return list.map(function (e, i) {
       var base = root.CHARACTER_BY_ID[e.id];
       var isHead = e.boss || (i === 0 && typeMult);
-      var m = isHead && typeMult ? typeMult : { hp: 1, atk: 1, def: 1 };
+      var m = (isHead && typeMult) ? typeMult : { hp: 1, atk: 1 };
+      var r1 = function (v) { return Math.round(v * 10) / 10; };
       var stats = {
         id: e.id,
         name: e.name || base.name,
-        role: e.role || base.role,
-        hp: Math.floor((e.hp || base.hp) * mult.hp * m.hp),
-        atk: Math.floor((e.atk || base.atk) * mult.atk * m.atk),
-        def: Math.floor((e.def || base.def) * mult.def * m.def),
+        role: e.role || base.role, roleCode: base.roleCode,
+        type: e.type || base.type, typeName: base.typeName,
+        hp: Math.floor((e.hp || base.hp) * growth * m.hp),
+        atk: r1((e.atk || base.atk) * growth * m.atk),
+        def: r1((e.def || base.def) * growth),
+        mag: r1((e.mag || base.mag) * growth * m.atk),
         spd: e.spd || base.spd,
         priority: e.priority || 0,
+        skills: base.skills,
         skill: base.skill,
         boss: !!e.boss,
       };

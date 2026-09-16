@@ -117,8 +117,8 @@ var BattleScene = new Phaser.Class({
 
     // 5. 캐릭터 명
     var nameBg = T.panel(this, side.nameX, top, side.nameW, side.nameH, { fill: T.panelDark });
-    var name = this.add.text(side.nameX + side.nameW / 2, top + 16, u.name, T.style(u.name.length > 6 ? 15 : 19, T.text, { fontStyle: 'bold' })).setOrigin(0.5);
-    var role = this.add.text(side.nameX + side.nameW / 2, top + 38, u.role + (u.boss ? ' · BOSS' : ''), T.style(13, T.ROLE_COLOR[u.role] || T.muted)).setOrigin(0.5);
+    var name = this.add.text(side.nameX + side.nameW / 2, top + 16, u.name, T.style(u.name.length > 8 ? 12 : u.name.length > 5 ? 15 : 19, T.text, { fontStyle: 'bold' })).setOrigin(0.5);
+    var role = this.add.text(side.nameX + side.nameW / 2, top + 38, u.role + ' · ' + u.typeName + (u.boss ? ' · BOSS' : ''), T.style(13, T.ROLE_COLOR[u.role] || T.muted)).setOrigin(0.5);
     c.add([nameBg, name, role]);
 
     // 6. 투지 수
@@ -127,7 +127,10 @@ var BattleScene = new Phaser.Class({
     c.fightText = this.add.text(fx + 38, top + side.fightY + 16, '투지 ' + u.fight, T.style(15, T.accentCss)).setOrigin(0.5);
     c.add([fightBg, c.fightText]);
     // 능력치 (참고용, 작게)
-    c.statText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 42, '공 ' + u.atk + ' 방 ' + u.def + ' 속 ' + u.spd, T.style(13, T.dim)).setOrigin(isAlly ? 1 : 0, 0);
+    var r1 = function (v) { return Math.round(v * 10) / 10; };
+    c.statText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 42, '공 ' + r1(u.atk) + ' 방 ' + r1(u.def) + ' 마 ' + r1(u.mag) + ' 속 ' + r1(u.spd), T.style(12, T.dim)).setOrigin(isAlly ? 1 : 0, 0);
+    c.statusText = this.add.text(isAlly ? side.nameX + side.nameW : side.nameX, top + side.fightY + 60, '', T.style(12, '#e0c080', { wordWrap: { width: side.nameW } })).setOrigin(isAlly ? 1 : 0, 0);
+    c.add(c.statusText);
     c.add(c.statText);
 
     // 7. 캐릭터 이미지
@@ -164,7 +167,12 @@ var BattleScene = new Phaser.Class({
     c.shieldFill.width = Math.min(P - 2, (P - 2) * (u.shield / u.maxHp));
     c.hpText.setText(u.hp + ' / ' + u.maxHp + (u.shield ? '  🛡' + u.shield : ''));
     c.fightText.setText('투지 ' + u.fight + '/' + BALANCE.FIGHT_MAX);
-    c.fightText.setColor(u.fight >= BALANCE.SKILL_COST ? '#ffd166' : T.accentCss);
+    var need = u.skills && u.skills.ultimate ? (u.skills.ultimate.spCost || BALANCE.SKILL_COST_DEFAULT) : BALANCE.SKILL_COST_DEFAULT;
+    c.fightText.setColor(u.fight >= need ? '#ffd166' : T.accentCss);
+    var KW = { boost: '각성', bleed: '출혈', mark: '표식', stun: '기절', silence: '침묵', taunt: '도발', haste: '우선' };
+    var labels = {};
+    (u.statuses || []).forEach(function (st) { var k = st.kw === 'boost' && st.amount < 0 ? '쇠약' : (KW[st.kw] || st.kw); labels[k] = (labels[k] || 0) + 1; });
+    c.statusText.setText(Object.keys(labels).map(function (k) { return k + (labels[k] > 1 ? '×' + labels[k] : ''); }).join(' '));
   },
 
   applyDeath: function (c, instant) {
@@ -247,66 +255,86 @@ var BattleScene = new Phaser.Class({
   playEvent: function (ev, next) {
     var T = Theme, A = BALANCE.ANIM, self = this, sp = this.speed;
     if (ev.log) this.pushLog(ev.log);
+    var card = ev.uid ? this.cards[ev.uid] : null;
     switch (ev.type) {
       case 'turnStart':
         this.turnText.setText('턴 ' + ev.turn);
         this.tweens.add({ targets: this.turnText, scale: { from: 1.3, to: 1 }, duration: 200 / sp });
+        Object.keys(this.cards).forEach(function (k) { self.refreshCard(self.cards[k]); });
         next(); break;
 
       case 'order':
         this.showOrder(ev.uids);
         this.time.delayedCall(A.orderShow / sp, next); break;
 
-      case 'shield': {
-        var c = this.cards[ev.uid];
-        this.refreshCard(c);
-        T.floatText(this, c.centerX, c.centerY - 40, '🛡 +' + ev.amount, '#9fd4f0', 26);
+      case 'shield':
+        this.refreshCard(card);
+        T.floatText(this, card.centerX, card.centerY - 40, '🛡 +' + ev.amount, '#9fd4f0', 26);
         this.time.delayedCall(A.hit / sp, next); break;
-      }
 
-      case 'attack': {
-        var actor = this.cards[ev.uid], target = this.cards[ev.targetUid];
+      case 'cast': {
+        var actor = card;
         this.highlightOrder(ev.uid);
         var dir = actor.unit.side === 'ally' ? 1 : -1;
         actor.setDepth(10);
-        if (ev.skill) T.floatText(this, actor.centerX, actor.centerY - 90, ev.skillName + '!', '#ffd166', 28);
+        T.floatText(this, actor.centerX, actor.centerY - 90, ev.skillName + (ev.isUltimate ? '!' : ''), ev.isUltimate ? '#ffd166' : '#f0e6d2', ev.isUltimate ? 30 : 22);
         this.tweens.add({
           targets: actor, x: 60 * dir, duration: (A.attack / 2) / sp, yoyo: true, ease: 'Quad.easeOut',
           onYoyo: function () {
             self.refreshCard(actor);
-            self.refreshCard(target);
-            if (ev.dodged) {
-              T.floatText(self, target.centerX, target.centerY - 30, 'MISS', '#9fd4f0', 30);
-              self.tweens.add({ targets: target, x: -20 * dir, duration: 90 / sp, yoyo: true });
-            } else {
-              T.floatText(self, target.centerX, target.centerY - 30, '-' + ev.damage + (ev.absorbed ? ' (🛡' + ev.absorbed + ')' : ''), ev.skill ? '#ffd166' : '#ff6b6b', ev.skill ? 40 : 34);
-              if (target.portrait.img) target.portrait.img.setTint(0xff6666);
-              self.tweens.killTweensOf(target); target.x = 0; // 이전 흔들림이 남아 있으면 초기화
-              self.tweens.add({ targets: target, x: 12 * dir, duration: 60 / sp, yoyo: true, repeat: 2, onComplete: function () { target.x = 0; if (target.portrait.img && target.unit.alive) target.portrait.img.clearTint(); } });
-            }
+            var seen = {};
+            ev.hits.forEach(function (h, i) {
+              var target = self.cards[h.targetUid];
+              self.refreshCard(target);
+              var oy = (seen[h.targetUid] || 0) * 28; seen[h.targetUid] = (seen[h.targetUid] || 0) + 1;
+              if (h.dodged) {
+                T.floatText(self, target.centerX, target.centerY - 30 - oy, 'MISS', '#9fd4f0', 30);
+              } else {
+                var txt = '-' + h.damage + (h.absorbed ? ' (🛡' + h.absorbed + ')' : '') + (h.adv === 'adv' ? ' ▲' : h.adv === 'dis' ? ' ▽' : '');
+                T.floatText(self, target.centerX, target.centerY - 30 - oy, txt, h.adv === 'adv' ? '#ff9f43' : ev.isUltimate ? '#ffd166' : '#ff6b6b', ev.isUltimate ? 38 : 32);
+                if (target.portrait.img) target.portrait.img.setTint(0xff6666);
+                self.tweens.killTweensOf(target); target.x = 0;
+                self.tweens.add({ targets: target, x: 12 * dir, duration: 60 / sp, yoyo: true, repeat: 2, onComplete: function () { target.x = 0; if (target.portrait.img && target.unit.alive) target.portrait.img.clearTint(); } });
+              }
+            });
           },
           onComplete: function () { actor.x = 0; actor.setDepth(0); self.time.delayedCall(A.hit / sp, next); },
         });
         break;
       }
 
-      case 'death': {
-        var dc = this.cards[ev.uid];
-        this.refreshCard(dc);
-        this.applyDeath(dc, false);
+      case 'skip':
+        this.highlightOrder(ev.uid);
+        T.floatText(this, card.centerX, card.centerY - 40, '기절', '#c0c0ff', 28);
+        this.time.delayedCall(A.hit / sp, next); break;
+
+      case 'death':
+        this.refreshCard(card);
+        this.applyDeath(card, false);
         this.updateRemain();
         this.time.delayedCall(A.death / sp, next); break;
-      }
 
-      case 'heal': {
-        var hc = this.cards[ev.uid];
-        this.refreshCard(hc);
-        T.floatText(this, hc.centerX, hc.centerY - 40, '+' + ev.amount, '#7fe07f', 28);
+      case 'heal':
+        this.refreshCard(card);
+        T.floatText(this, card.centerX, card.centerY - 40, (ev.amount >= 0 ? '+' : '') + ev.amount, ev.amount >= 0 ? '#7fe07f' : '#ff9f9f', 28);
         this.time.delayedCall(A.hit / sp, next); break;
-      }
+
+      case 'bleed':
+        this.refreshCard(card);
+        T.floatText(this, card.centerX, card.centerY - 40, '-' + ev.amount + ' 출혈', '#e06060', 26);
+        this.time.delayedCall(A.hit / sp, next); break;
+
+      case 'status':
+        this.refreshCard(card);
+        this.time.delayedCall(80 / sp, next); break;
+
+      case 'fight':
+        this.refreshCard(card);
+        next(); break;
 
       case 'turnEnd':
         this.orderHint.setText('턴 종료');
+        Object.keys(this.cards).forEach(function (k) { self.refreshCard(self.cards[k]); });
         next(); break;
 
       case 'end':
