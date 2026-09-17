@@ -389,7 +389,7 @@ var BattleScene = new Phaser.Class({
     var RR = BALANCE.RULES;
     layer.add(this.add.text(W / 2, H / 2 - 5, '규칙 세트 α-02 · 피해 = max(' + RR.minDamage + ', ⌊공격×' + RR.attackFactor + ' − 방어⌋) · HP×' + RR.hpMultiplier + ' · 투지 +' + RR.gritGain + '/행동 · 회피 ' + RR.dodgeRate + '%', T.style(14, T.muted)).setOrigin(0.5));
     layer.add(this.add.text(W / 2, H / 2 + 20, '시드 ' + this.run.seed + '  ·  스테이지 ' + this.run.currentStage().no + ' / ' + this.run.stages.length, T.style(14, T.dim)).setOrigin(0.5));
-    layer.add(T.button(this, W / 2 - 210, H / 2 + 50, 420, 56, '아웃게임으로 나가기 (런 포기)', function () { self.scene.start('TitleScene', { message: '런을 포기하고 아웃게임으로 돌아왔습니다.', cleared: false }); }, { fill: T.danger, fontSize: 20 }));
+    layer.add(T.button(this, W / 2 - 210, H / 2 + 50, 420, 56, '로비로 나가기 (런 포기)', function () { self.scene.start('LobbyScene', { message: '런을 포기하고 로비로 돌아왔습니다.', cleared: false }); }, { fill: T.danger, fontSize: 20 }));
     layer.add(T.button(this, W / 2 - 100, H / 2 + 125, 200, 56, '닫기', function () { layer.destroy(); self.settingsLayer = null; }, { fill: T.panelDark, fontSize: 22 }));
   },
 });

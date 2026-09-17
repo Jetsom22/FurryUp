@@ -1,8 +1,8 @@
 // =====================================================================
 // 씬 전환 흐름 (스테이지 기획서 2.3 플레이 루프)
-//   아웃게임 -> 플레이 -> 챕터 선택 -> 도전 -> 첫 캐릭터 선택 -> 팀 편성
+//   타이틀 -> 로비 -> 게임 시작 -> 캐릭터 선택(장착) -> 챕터 선택 -> 게임 시작 (장착 캐릭터가 편성 1번)
 //   -> [스테이지 진입: 스토리/이벤트/전투] -> 클리어 -> 정비(상점) -> 다음 -> ...
-//   -> 보스 클리어 -> 아웃게임 / 사망 -> 아웃게임
+//   -> 보스 클리어 -> 로비 / 사망 -> 로비
 // =====================================================================
 (function (root) {
   var Flow = {};
@@ -24,7 +24,7 @@
     var wasBoss = run.isBossStage();
     run.clearStage();
     if (wasBoss) {
-      scene.scene.start('TitleScene', { message: '챕터 ' + run.chapter + ' 클리어! 아웃게임으로 돌아왔습니다.', cleared: true });
+      scene.scene.start('LobbyScene', { message: '챕터 ' + run.chapter + ' 클리어! 로비로 돌아왔습니다.', cleared: true });
     } else {
       scene.scene.start('ShopScene');
     }
@@ -37,10 +37,10 @@
     Flow.enterStage(scene);
   };
 
-  // 사망(클리어 실패) -> 아웃게임
+  // 사망(클리어 실패) -> 로비
   Flow.runFailed = function (scene) {
     var run = Flow.run(scene);
-    scene.scene.start('TitleScene', { message: run.stageLabel() + ' 에서 전멸… 아웃게임으로 돌아왔습니다.', cleared: false });
+    scene.scene.start('LobbyScene', { message: run.stageLabel() + ' 에서 전멸… 로비로 돌아왔습니다.', cleared: false });
   };
 
   root.Flow = Flow;

@@ -8,7 +8,7 @@ window.addEventListener('load', function () {
     backgroundColor: Theme.bgCss,
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     render: { antialias: true, pixelArt: false },
-    scene: [BootScene, TitleScene, PickScene, FormationScene, BattleScene, StoryScene, EventScene, ShopScene],
+    scene: [BootScene, TitleScene, LobbyScene, CodexScene, CharacterSelectScene, ChapterSelectScene, BattleScene, StoryScene, EventScene, ShopScene],
   };
   window.game = new Phaser.Game(config);
 });
