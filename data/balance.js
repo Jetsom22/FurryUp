@@ -41,8 +41,19 @@ window.BALANCE = {
     revive: 50,
     reviveHpRate: 0.5,
     characterPrice: [100, 150, 200],
-    shopSlots: 4,
-    reroll: 10,
+  },
+
+  // ---- 상점 진열 (UI 개편: 상품 5칸 = 캐릭터 3 + 아이템 2, 리롤 없음) ----
+  SHOP: { slots: 5, characterSlots: 3, itemSlots: 2 },
+
+  // ---- 레벨 (임시 설계) : 레벨업마다 체·공·방·속 각 +1 (체력 +1 = 최대 HP +10) ----
+  LEVEL: { max: 10, expPerLevel: 10, statPerLevel: { hp: 1, atk: 1, def: 1, spd: 1 } },   // 다음 레벨 필요 EXP = expPerLevel × 현재 레벨
+
+  // ---- 아이템 (임시 설계) : 상점에서 구매 → 인벤토리 → 덱 구성에서 캐릭터를 골라 사용 ----
+  ITEMS: {
+    exp_s:  { id: 'exp_s',  name: '경험의 열매',     category: '경험치', exp: 10,       price: 60,  weight: 4, desc: '캐릭터 1명에게 EXP +10' },
+    exp_l:  { id: 'exp_l',  name: '황금 경험의 열매', category: '경험치', exp: 30,       price: 150, weight: 2, desc: '캐릭터 1명에게 EXP +30' },
+    potion: { id: 'potion', name: '들판의 약초',     category: '회복',   healRate: 0.5, price: 50,  weight: 3, desc: '캐릭터 1명의 HP를 최대 HP의 50% 회복 (전투불능은 부활로만)' },
   },
 
   // ---- 이벤트 하위 효과 (임시) ----

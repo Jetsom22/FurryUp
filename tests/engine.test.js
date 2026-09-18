@@ -224,14 +224,50 @@ test('런: 첫 선택 -> 편성 -> 전투 -> 클리어 보상 -> 상점 구매/�
   var gold = run.gold;
   if (b.result === 'win') { run.clearStage(); assert.strictEqual(run.gold, gold + 100); }
   var stock = run.buildShop();
-  assert.strictEqual(stock.length, 4);
-  stock.forEach(function (it) { assert.ok(!CHARACTER_BY_ID[it.id].locked); assert.notStrictEqual(it.id, 'CHR_007'); });
+  assert.strictEqual(stock.length, BALANCE.SHOP.slots);
+  var chars = stock.filter(function (it) { return it.kind === 'character'; }), items = stock.filter(function (it) { return it.kind === 'item'; });
+  assert.strictEqual(chars.length, BALANCE.SHOP.characterSlots); assert.strictEqual(items.length, BALANCE.SHOP.itemSlots);
+  chars.forEach(function (it) { assert.ok(!CHARACTER_BY_ID[it.id].locked); assert.notStrictEqual(it.id, 'CHR_007'); });
+  items.forEach(function (it) { assert.ok(BALANCE.ITEMS[it.itemId]); });
   run.gold = 1000;
-  assert.ok(run.buy(stock[0])); assert.ok(!run.buy(stock[0]));
+  assert.ok(run.buy(chars[0])); assert.ok(!run.buy(chars[0])); assert.ok(run.owns(chars[0].id));
+  assert.ok(run.buy(items[0])); assert.strictEqual(run.itemCount(items[0].itemId), 1);
   run.roster['CHR_007'].hp = 0;
   assert.ok(run.canRevive('CHR_007'));
   run.revive('CHR_007');
   assert.strictEqual(run.roster['CHR_007'].hp, Math.floor(CHARACTER_BY_ID['CHR_007'].hp * 0.5));
+  // 편성 교체
+  run.place(chars[0].id, 1); run.swapSlots(0, 1);
+  assert.strictEqual(run.formation[0], chars[0].id); assert.strictEqual(run.formation[1], 'CHR_007');
+});
+
+test('레벨/EXP/아이템: 레벨업마다 체·공·방·속 +1, 최대 HP +10, 회복약은 전투불능에 불가', function () {
+  var run = new Run(1, 11);
+  run.own('CHR_001'); run.place('CHR_001', 0);
+  var base = CHARACTER_BY_ID['CHR_001'];
+  assert.deepStrictEqual(run.charStats('CHR_001').pts, base.pts);
+  var res = run.addExp('CHR_001', BALANCE.LEVEL.expPerLevel);          // LV1 -> LV2
+  assert.strictEqual(res.gained, 1); assert.strictEqual(run.roster['CHR_001'].level, 2);
+  var st = run.charStats('CHR_001');
+  assert.strictEqual(st.pts.atk, base.pts.atk + 1); assert.strictEqual(st.hp, base.hp + 10);
+  assert.strictEqual(run.roster['CHR_001'].hp, base.hp + 10);           // 현재 HP 도 같이 상승
+  var u = run.formationUnits()[0];
+  assert.strictEqual(u.maxHp, base.hp + 10); assert.strictEqual(u.atk, base.atk + 1);
+  // 아이템
+  run.addItem('exp_l', 1); run.addItem('potion', 1);
+  assert.ok(run.useItem('exp_l', 'CHR_001').ok); assert.strictEqual(run.itemCount('exp_l'), 0);
+  assert.ok(run.roster['CHR_001'].level >= 3);
+  run.roster['CHR_001'].hp = 0;
+  assert.ok(!run.useItem('potion', 'CHR_001').ok); assert.strictEqual(run.itemCount('potion'), 1);
+  run.roster['CHR_001'].hp = 10;
+  assert.ok(run.useItem('potion', 'CHR_001').ok);
+  assert.strictEqual(run.roster['CHR_001'].hp, 10 + Math.floor(run.maxHp('CHR_001') * 0.5));
+  // 최대 레벨에서 멈춤
+  run.addExp('CHR_001', 100000);
+  assert.strictEqual(run.roster['CHR_001'].level, BALANCE.LEVEL.max);
+  // 인벤토리 목록
+  run.addItem('exp_s', 2);
+  assert.deepStrictEqual(run.inventoryList().map(function (e) { return e.item.id + 'x' + e.count; }), ['exp_sx2']);
 });
 
 test('런: 보스 스테이지 고정 편성 / 배율 적용 / 이벤트 효과', function () {

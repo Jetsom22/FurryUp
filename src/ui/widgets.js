@@ -213,53 +213,74 @@
     var line = scene.add.graphics(); line.lineStyle(2, T.line, 1); line.lineBetween(x + 20, y + 46, x + w - 20, y + 46);
     c.add(line);
 
-    // 초상 자리
-    var pSize = 200, px = x + 20, py = y + 64;
+    // 초상 자리 (compact: 좁은 패널용 - 초상·글자·간격을 줄인다)
+    var cp = !!opts.compact;
+    var M = cp ? {
+      pSize: 110, name: 22, role: 16, meta: 12, logline: 12, icon: 40, bTitle: 14, bDesc: 12, blockGap: 100, blockTop: 70, barTop: 275, barH: 16, barGap: 34, barLabel: 15, barVal: 13, barX: 46, barR: 70,
+    } : {
+      pSize: 200, name: 32, role: 22, meta: 16, logline: 16, icon: 60, bTitle: 19, bDesc: 15, blockGap: 122, blockTop: 92, barTop: 340, barH: 22, barGap: 44, barLabel: 20, barVal: 18, barX: 70, barR: 150,
+    };
+    var pSize = M.pSize, px = x + 20, py = y + 64;
     c.add(T.panel(scene, px, py, pSize, pSize, { fill: T.panel, radius: 8 }));
     var portrait = null;
-    var name = scene.add.text(px + pSize + 24, py + 10, '', T.style(32, T.text, { fontStyle: 'bold', wordWrap: { width: w - pSize - 64 } }));
-    var role = scene.add.text(px + pSize + 24, py + 62, '', T.style(22, T.text, { fontStyle: 'bold' }));
-    var meta = scene.add.text(px + pSize + 24, py + 100, '', T.style(16, T.muted, { lineSpacing: 4, wordWrap: { width: w - pSize - 64 } }));
-    var logline = scene.add.text(x + 20, py + pSize + 16, '', T.style(16, T.muted, { lineSpacing: 4, wordWrap: { width: w - 40 } }));
+    var tx = px + pSize + (cp ? 14 : 24), tw = w - pSize - (cp ? 54 : 64);
+    var name = scene.add.text(tx, py + (cp ? 4 : 10), '', T.style(M.name, T.text, { fontStyle: 'bold', wordWrap: { width: tw } }));
+    var role = scene.add.text(tx, py + (cp ? 40 : 62), '', T.style(M.role, T.text, { fontStyle: 'bold' }));
+    var meta = scene.add.text(tx, py + (cp ? 66 : 100), '', T.style(M.meta, T.muted, { lineSpacing: 4, wordWrap: { width: tw } }));
+    var logline = scene.add.text(x + 20, py + pSize + (cp ? 10 : 16), '', T.style(M.logline, T.muted, { lineSpacing: 4, wordWrap: { width: w - 40 } }));
     c.add([name, role, meta, logline]);
 
-    // 스킬 / 패시브 블록
-    var blockY = { skill: py + pSize + 92, passive: py + pSize + 214 };
-    var makeBlock = function (by, label, color) {
+    // 스킬 / 패시브 블록 (컨테이너에 담아 setCharacter 뒤에 위에서부터 흘려 배치)
+    var makeBlock = function (label, color) {
+      var bc = scene.add.container(0, 0);
       var icon = scene.add.graphics();
-      icon.fillStyle(color, 1); icon.fillRoundedRect(x + 20, by, 60, 60, 12);
-      icon.lineStyle(2, 0x000000, 0.4); icon.strokeRoundedRect(x + 20, by, 60, 60, 12);
-      c.add(icon);
-      c.add(scene.add.text(x + 50, by + 30, label, T.style(22, '#1a1510', { fontStyle: 'bold' })).setOrigin(0.5));
-      var t = scene.add.text(x + 96, by - 2, '', T.style(19, T.text, { fontStyle: 'bold', wordWrap: { width: w - 116 } }));
-      var d = scene.add.text(x + 96, by + 28, '', T.style(15, T.muted, { lineSpacing: 3, wordWrap: { width: w - 116 } }));
-      c.add([t, d]);
-      return { title: t, desc: d };
+      icon.fillStyle(color, 1); icon.fillRoundedRect(x + 20, 0, M.icon, M.icon, M.icon * 0.2);
+      icon.lineStyle(2, 0x000000, 0.4); icon.strokeRoundedRect(x + 20, 0, M.icon, M.icon, M.icon * 0.2);
+      bc.add(icon);
+      bc.add(scene.add.text(x + 20 + M.icon / 2, M.icon / 2, label, T.style(cp ? 13 : 22, '#1a1510', { fontStyle: 'bold' })).setOrigin(0.5));
+      var t = scene.add.text(x + 36 + M.icon, -2, '', T.style(M.bTitle, T.text, { fontStyle: 'bold', wordWrap: { width: w - 56 - M.icon } }));
+      var d = scene.add.text(x + 36 + M.icon, (cp ? 20 : 28), '', T.style(M.bDesc, T.muted, { lineSpacing: 3, wordWrap: { width: w - 56 - M.icon } }));
+      bc.add([t, d]);
+      c.add(bc);
+      bc.title = t; bc.desc = d;
+      bc.height = function () { return Math.max(M.icon, d.y + d.height); };
+      return bc;
     };
-    var skillT = makeBlock(blockY.skill, '스킬', T.accent);
-    var passT = makeBlock(blockY.passive, '패시브', 0x6ab0d8);
+    var skillT = makeBlock('스킬', T.accent);
+    var passT = makeBlock('패시브', 0x6ab0d8);
 
-    // 스탯 바
-    var barY = py + pSize + 340, barX = x + 70, barW = w - 150, barH = 22;
+    // 스탯 바 (컨테이너)
+    var barsC = scene.add.container(0, 0);
+    var barX = x + M.barX, barW = w - M.barX - M.barR, barH = M.barH;
     var bars = {};
     [['hp', '체'], ['atk', '공'], ['def', '방'], ['spd', '속']].forEach(function (row, i) {
-      var by = barY + i * 44;
-      c.add(scene.add.text(x + 24, by + barH / 2, row[1], T.style(20, T.text, { fontStyle: 'bold' })).setOrigin(0, 0.5));
+      var by = i * M.barGap;
+      barsC.add(scene.add.text(x + 24, by + barH / 2, row[1], T.style(M.barLabel, T.text, { fontStyle: 'bold' })).setOrigin(0, 0.5));
       var back = scene.add.graphics(); back.fillStyle(T.hpBack, 1); back.fillRoundedRect(barX, by, barW, barH, 6);
       var fill = scene.add.graphics();
-      var val = scene.add.text(x + w - 24, by + barH / 2, '', T.style(18, T.text, { fontStyle: 'bold' })).setOrigin(1, 0.5);
-      c.add([back, fill, val]);
+      var val = scene.add.text(x + w - 24, by + barH / 2, '', T.style(M.barVal, T.text, { fontStyle: 'bold' })).setOrigin(1, 0.5);
+      barsC.add([back, fill, val]);
       bars[row[0]] = { fill: fill, val: val, y: by };
     });
+    c.add(barsC);
+    var gapY = cp ? 14 : 22;
+    var reflow = function () {
+      var yy = Math.max(py + pSize, meta.y + meta.height) + (cp ? 10 : 16);
+      logline.setY(yy); yy += logline.height + gapY;
+      skillT.setY(yy); yy += skillT.height() + gapY;
+      passT.setY(yy); yy += passT.height() + gapY;
+      barsC.setY(Math.min(yy, y + h - 4 * M.barGap - 16));
+    };
     var BAR_COLOR = { hp: T.hpGreen, atk: 0xe06060, def: 0x6ab0d8, spd: 0xe8c04a };
 
-    c.setCharacter = function (ch) {
+    c.setCharacter = function (ch, st) {   // st: run.charStats(id) (레벨 반영 능력치, 없으면 기본값)
+      var pts = st ? st.pts : ch.pts, maxHp = st ? st.hp : ch.hp;
       if (portrait) portrait.destroy();
       portrait = T.portrait(scene, px, py, pSize, ch.id, { full: true, fill: T.panel, line: T.accent });
       c.add(portrait);
       name.setText(ch.name);
       role.setText(ch.role + (ch.sourceRole !== ch.role ? '  (문서: ' + ch.sourceRole + ')' : '')).setColor(T.ROLE_COLOR[ch.role]);
-      meta.setText(ch.typeName + ' 타입 · ' + ch.species + '\n최대 HP ' + ch.hp + ' · 능력치 합계 ' + (ch.pts.hp + ch.pts.atk + ch.pts.def + ch.pts.spd));
+      meta.setText(ch.typeName + ' 타입 · ' + ch.species + (st ? ' · LV. ' + st.level + (st.level < root.BALANCE.LEVEL.max ? ' (EXP ' + st.exp + '/' + st.expNext + ')' : ' (MAX)') : '') + '\n최대 HP ' + maxHp + ' · 능력치 합계 ' + (pts.hp + pts.atk + pts.def + pts.spd));
       logline.setText(Wd.logline(ch));
       var RR = root.BALANCE.RULES;
       if (ch.skill) { skillT.title.setText(ch.skill.name + '  [투지 ' + ch.skill.cost + (ch.skill.priority ? ' · 우선도 +' + ch.skill.priority : '') + ']'); skillT.desc.setText(ch.skill.desc); }
@@ -268,10 +289,11 @@
       else { passT.title.setText('역할군 효과 (문서 미정)'); passT.desc.setText(root.BALANCE.ROLE[ch.role].desc); }
       var m = Wd.statMax();
       Object.keys(bars).forEach(function (k) {
-        var b = bars[k], v = ch.pts[k];
-        b.fill.clear(); b.fill.fillStyle(BAR_COLOR[k], 1); b.fill.fillRoundedRect(barX, b.y, Math.max(8, barW * v / m[k]), barH, 6);
-        b.val.setText(k === 'hp' ? v + ' (HP ' + ch.hp + ')' : String(v));
+        var b = bars[k], v = pts[k];
+        b.fill.clear(); b.fill.fillStyle(BAR_COLOR[k], 1); b.fill.fillRoundedRect(barX, b.y, Math.max(8, Math.min(barW, barW * v / m[k])), barH, 6);
+        b.val.setText(k === 'hp' ? v + ' (HP ' + maxHp + ')' : String(v));
       });
+      reflow();
       c.setVisible(true);
       return c;
     };
@@ -280,9 +302,80 @@
       name.setText('캐릭터를 선택하세요'); role.setText(''); meta.setText(''); logline.setText('');
       skillT.title.setText(''); skillT.desc.setText(''); passT.title.setText(''); passT.desc.setText('');
       Object.keys(bars).forEach(function (k) { bars[k].fill.clear(); bars[k].val.setText(''); });
+      reflow();
       return c;
     };
     c.clear();
+    return c;
+  };
+
+  // ---- 스테이지 진행 바 (전투 / 상점 공용) ----
+  //   ▲ 스토리  ● 일반  ○ 이벤트  ◆ 중간보스  고양이 = 보스.  현재 위치는 빨간 점 + "현 위치 ▼"
+  Wd.stageTrack = function (scene, x, y, w, h, run) {
+    var c = scene.add.container(0, 0);
+    c.add(T.panel(scene, x, y, w, h, { fill: T.panelDark, radius: 8 }));
+    c.add(scene.add.text(x + 16, y + 10, '스테이지', T.style(20, T.text, { fontStyle: 'bold' })));
+    var n = run.stages.length;
+    var left = x + 50, right = x + w - 70, ly = y + h - 44;
+    var step = (right - left) / (n - 1);
+    var g = scene.add.graphics();
+    g.lineStyle(2, 0x8a7a5a, 1); g.lineBetween(left, ly, right, ly);
+    c.add(g);
+    run.stages.forEach(function (s, i) {
+      var px = left + step * i;
+      var cur = i === run.stageIndex, done = i < run.stageIndex;
+      var m = scene.add.graphics();
+      var col = cur ? 0xe03030 : (done ? 0x6b5f4c : 0xf0e6d2);
+      if (s.type === '보스') {
+        // 고양이 머리
+        m.fillStyle(cur ? 0xe03030 : 0xf0e6d2, 1);
+        m.fillCircle(px + 14, ly - 2, 18);
+        m.fillTriangle(px - 2, ly - 8, px + 2, ly - 26, px + 12, ly - 14);
+        m.fillTriangle(px + 30, ly - 8, px + 26, ly - 26, px + 16, ly - 14);
+      } else if (s.type === '스토리') {
+        m.fillStyle(col, 1); m.fillTriangle(px, ly + 7, px - 8, ly + 7 - 14, px + 8, ly + 7 - 14);
+      } else if (s.type === '이벤트') {
+        m.fillStyle(T.panelDark, 1); m.fillCircle(px, ly, 7); m.lineStyle(2, col, 1); m.strokeCircle(px, ly, 7);
+        if (cur) { m.fillStyle(col, 1); m.fillCircle(px, ly, 7); }
+      } else if (s.type === '중간보스') {
+        m.fillStyle(col, 1); m.fillTriangle(px, ly - 10, px + 10, ly, px, ly + 10); m.fillTriangle(px, ly - 10, px - 10, ly, px, ly + 10);
+      } else {
+        m.fillStyle(col, 1); m.fillCircle(px, ly, 7);
+      }
+      c.add(m);
+      if (i < 4) c.add(scene.add.text(px, ly + 14, run.chapter + '-' + s.no + (i === 3 ? ' …' : ''), T.style(12, T.muted)).setOrigin(0.5, 0));
+      if (cur) {
+        c.add(scene.add.text(px, ly - 40, '현 위치', T.style(12, T.text, { fontStyle: 'bold' })).setOrigin(0.5, 0));
+        c.add(scene.add.text(px, ly - 24, '▼', T.style(14, T.text)).setOrigin(0.5, 0));
+      }
+    });
+    return c;
+  };
+
+  // ---- 상태이상 / 버프 칩 한 줄 (전투 카드 위) ----
+  Wd.statusChips = function (u) {
+    var st = u.statuses || {}, chips = [];
+    if (u.duelBuffed || u.fullness > 0 || u.howlBuff > 0) chips.push({ t: '▲' + (u.fullness > 0 ? '배부름' : u.howlBuff > 0 ? '하울링' : '결전'), c: 0x6fbf5a });
+    if (st.mark) chips.push({ t: '▼표식', c: 0xe06060 });
+    if (st.stunActions > 0) chips.push({ t: '기절', c: 0xc0c0ff });
+    if (st.poison) chips.push({ t: '독' + (st.poison.stage ? st.poison.stage + 1 : ''), c: 0xb070e0 });
+    if (st.bleed) chips.push({ t: '출혈', c: 0xe06060 });
+    if (st.current) chips.push({ t: '▼물살', c: 0x5fc6d6 });
+    if (u.charge > 0) chips.push({ t: '차지' + u.charge, c: 0xe8a03a });
+    return chips;
+  };
+
+  // ---- 아이템 아이콘 (임시: 분류별 색 사각형 + 글자) ----
+  Wd.itemIcon = function (scene, cx, cy, size, itemId, dim) {
+    var it = root.BALANCE.ITEMS[itemId];
+    var c = scene.add.container(0, 0);
+    var col = it.exp ? (it.exp >= 30 ? 0xe8c04a : 0x6fbf5a) : 0x5fc6d6;
+    var g = scene.add.graphics();
+    g.fillStyle(dim ? 0x444444 : col, 1); g.fillRoundedRect(cx - size / 2, cy - size / 2, size, size, size * 0.15);
+    g.lineStyle(3, 0x000000, 0.4); g.strokeRoundedRect(cx - size / 2, cy - size / 2, size, size, size * 0.15);
+    c.add(g);
+    c.add(scene.add.text(cx, cy - size * 0.08, it.exp ? 'EXP' : 'HP', T.style(Math.floor(size * 0.3), '#1a1510', { fontStyle: 'bold' })).setOrigin(0.5));
+    c.add(scene.add.text(cx, cy + size * 0.25, it.exp ? '+' + it.exp : '+' + Math.round(it.healRate * 100) + '%', T.style(Math.floor(size * 0.18), '#1a1510', { fontStyle: 'bold' })).setOrigin(0.5));
     return c;
   };
 
